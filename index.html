@@ -252,8 +252,15 @@
         }
 
         @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .page.active {
@@ -270,27 +277,11 @@
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -10%;
-            width: 70%;
-            height: 140%;
-            background: radial-gradient(ellipse at 60% 40%, rgba(236, 72, 153, 0.1) 0%, rgba(249, 115, 22, 0.08) 30%, rgba(59, 130, 246, 0.04) 60%, transparent 80%);
-            pointer-events: none;
-            filter: blur(40px);
+            display: none;
         }
 
         .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            left: -5%;
-            width: 50%;
-            height: 80%;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, transparent 70%);
-            pointer-events: none;
-            filter: blur(60px);
+            display: none;
         }
 
         .hero-badge {
@@ -1267,7 +1258,8 @@
             <button class="nav-link" data-page="contact">Contact</button>
         </div>
         <div class="nav-actions">
-            <a href="https://mvp.d3pnjfzzovn4ad.amplifyapp.com/login" class="btn-primary nav-link-action" style="text-decoration:none;padding:6px 18px;font-size:0.85rem;">Sign in</a>
+            <a href="https://mvp.d3pnjfzzovn4ad.amplifyapp.com/login" class="btn-primary nav-link-action"
+                style="text-decoration:none;padding:6px 18px;font-size:0.85rem;">Sign in</a>
         </div>
         <button class="mobile-menu-btn"
             onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
@@ -1287,85 +1279,15 @@
                     <h1>Learning support all in one place</h1>
                     <p>Nurture your students by spending less time meddling with admin, and let IEP Pal do the work.</p>
                     <div style="display:flex;align-items:center;gap:16px;margin-top:24px;">
-                        <button class="btn-accent" data-page="contact" style="padding:14px 32px;font-size:1rem;border-radius:100px;box-shadow:0 4px 16px rgba(236,72,153,0.3);">Book a Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+                        <button class="btn-accent" data-page="contact"
+                            style="padding:14px 32px;font-size:1rem;border-radius:100px;box-shadow:0 4px 16px rgba(236,72,153,0.3);">Book
+                            a Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 8h10M9 4l4 4-4 4" />
+                            </svg></button>
                     </div>
                 </div>
                 <div style="position:relative;z-index:1;">
-                    <div style="background:#1a1a2e;border-radius:16px;aspect-ratio:4/3;position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.18);border:1px solid rgba(255,255,255,0.05);">
-                        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.06) 0%,rgba(249,115,22,0.04) 100%);"></div>
-                        <!-- App chrome -->
-                        <div style="position:absolute;top:0;left:0;right:0;height:32px;background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;padding:0 12px;gap:6px;">
-                            <div style="width:8px;height:8px;border-radius:50%;background:#ec6a5e;"></div>
-                            <div style="width:8px;height:8px;border-radius:50%;background:#f4bf4f;"></div>
-                            <div style="width:8px;height:8px;border-radius:50%;background:#61c554;"></div>
-                            <span style="margin-left:auto;font-size:9px;color:rgba(255,255,255,0.3);font-family:var(--font-body);letter-spacing:0.03em;">IEP Pal</span>
-                        </div>
-                        <!-- Sidebar + Content -->
-                        <div style="position:absolute;top:32px;left:0;bottom:0;width:26%;background:rgba(255,255,255,0.03);border-right:1px solid rgba(255,255,255,0.06);padding:14px 10px;display:flex;flex-direction:column;gap:4px;">
-                            <div style="font-size:8px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;font-family:var(--font-body);">Menu</div>
-                            <div style="padding:5px 8px;border-radius:5px;background:rgba(236,72,153,0.15);font-size:8.5px;color:rgba(236,72,153,0.8);font-family:var(--font-body);font-weight:600;">Students</div>
-                            <div style="padding:5px 8px;border-radius:5px;font-size:8.5px;color:rgba(255,255,255,0.3);font-family:var(--font-body);">IEP Documents</div>
-                            <div style="padding:5px 8px;border-radius:5px;font-size:8.5px;color:rgba(255,255,255,0.3);font-family:var(--font-body);">Goals</div>
-                            <div style="padding:5px 8px;border-radius:5px;font-size:8.5px;color:rgba(255,255,255,0.3);font-family:var(--font-body);">Data Collection</div>
-                            <div style="padding:5px 8px;border-radius:5px;font-size:8.5px;color:rgba(255,255,255,0.3);font-family:var(--font-body);">Strategies</div>
-                        </div>
-                        <!-- Main content -->
-                        <div style="position:absolute;top:32px;left:26%;right:0;bottom:0;padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
-                            <div style="font-size:11px;color:rgba(255,255,255,0.7);font-family:var(--font-body);font-weight:600;">Student Overview</div>
-                            <!-- Student cards row -->
-                            <div style="display:flex;gap:8px;">
-                                <div style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px;position:relative;">
-                                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
-                                        <div style="width:20px;height:20px;border-radius:50%;background:rgba(236,72,153,0.25);"></div>
-                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                                    </div>
-                                    <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.15);width:70%;margin-bottom:3px;"></div>
-                                    <div style="height:5px;border-radius:3px;background:rgba(255,255,255,0.07);width:50%;"></div>
-                                    <div style="margin-top:6px;height:4px;border-radius:2px;background:rgba(34,197,94,0.3);width:80%;"></div>
-                                </div>
-                                <div style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px;position:relative;">
-                                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
-                                        <div style="width:20px;height:20px;border-radius:50%;background:rgba(59,130,246,0.25);"></div>
-                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                                    </div>
-                                    <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.15);width:60%;margin-bottom:3px;"></div>
-                                    <div style="height:5px;border-radius:3px;background:rgba(255,255,255,0.07);width:45%;"></div>
-                                    <div style="margin-top:6px;height:4px;border-radius:2px;background:rgba(249,115,22,0.3);width:55%;"></div>
-                                </div>
-                                <div style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px;position:relative;">
-                                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
-                                        <div style="width:20px;height:20px;border-radius:50%;background:rgba(249,115,22,0.25);"></div>
-                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                                    </div>
-                                    <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.15);width:65%;margin-bottom:3px;"></div>
-                                    <div style="height:5px;border-radius:3px;background:rgba(255,255,255,0.07);width:40%;"></div>
-                                    <div style="margin-top:6px;height:4px;border-radius:2px;background:rgba(236,72,153,0.3);width:70%;"></div>
-                                </div>
-                            </div>
-                            <!-- Chart area -->
-                            <div style="flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:10px;display:flex;flex-direction:column;">
-                                <div style="font-size:8px;color:rgba(255,255,255,0.35);font-family:var(--font-body);margin-bottom:8px;">Goal Progress</div>
-                                <div style="flex:1;display:flex;align-items:flex-end;gap:5px;padding-bottom:4px;">
-                                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
-                                        <div style="width:100%;height:45%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,rgba(236,72,153,0.5),rgba(236,72,153,0.25));"></div>
-                                        <div style="font-size:6px;color:rgba(255,255,255,0.2);">Q1</div>
-                                    </div>
-                                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
-                                        <div style="width:100%;height:60%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,rgba(249,115,22,0.5),rgba(249,115,22,0.25));"></div>
-                                        <div style="font-size:6px;color:rgba(255,255,255,0.2);">Q2</div>
-                                    </div>
-                                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
-                                        <div style="width:100%;height:52%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,rgba(59,130,246,0.5),rgba(59,130,246,0.25));"></div>
-                                        <div style="font-size:6px;color:rgba(255,255,255,0.2);">Q3</div>
-                                    </div>
-                                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
-                                        <div style="width:100%;height:78%;border-radius:3px 3px 0 0;background:linear-gradient(180deg,rgba(34,197,94,0.5),rgba(34,197,94,0.25));"></div>
-                                        <div style="font-size:6px;color:rgba(255,255,255,0.2);">Q4</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="Screen 1.png" alt="IEP Pal App" style="width:100%;display:block;">
                 </div>
             </div>
         </section>
@@ -1379,24 +1301,35 @@
 
         <!-- Feature Section 1: Learning Support Without The Overwhelm -->
         <section class="section fade-in">
-            <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
+            <div
+                style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
                 <div>
-                    <h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.01em;">Learning Support Without The Overwhelm</h3>
-                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Have all documents and IEPs housed in one place for easy access.</p>
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.01em;">
+                        Learning Support Without The Overwhelm</h3>
+                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Have all
+                        documents and IEPs housed in one place for easy access.</p>
                     <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
                         <li>Fully customizable templates to match your School</li>
                         <li>Create new Templates</li>
                         <li>Update Documents Whenever Needed</li>
                     </ul>
                 </div>
-                <div style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(59,130,246,0.08) 100%);"></div>
+                <div
+                    style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
+                    <div
+                        style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(59,130,246,0.08) 100%);">
+                    </div>
                     <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                        <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="9,5 20,12 9,19"/></svg>
+                        <div
+                            style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                                <polygon points="9,5 20,12 9,19" />
+                            </svg>
                         </div>
                     </div>
-                    <span style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
+                    <span
+                        style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                 </div>
             </div>
         </section>
@@ -1405,25 +1338,38 @@
         <section class="section fade-in">
             <div style="max-width:1100px;margin:0 auto;">
                 <div style="margin-bottom:80px;text-align:center;">
-                    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:16px;letter-spacing:-0.02em;">
+                    <h2
+                        style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:16px;letter-spacing:-0.02em;">
                         Get more out of data, with less time invested</h2>
-                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.8;">Track data so you know what's working</p>
+                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.8;">Track data so you know what's
+                        working</p>
                 </div>
 
                 <!-- Row 1: Video left, text right -->
-                <div style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:140px;">
-                    <div style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(249,115,22,0.08) 100%);"></div>
+                <div
+                    style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:140px;">
+                    <div
+                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
+                        <div
+                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(249,115,22,0.08) 100%);">
+                        </div>
                         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="9,5 20,12 9,19"/></svg>
+                            <div
+                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                                    <polygon points="9,5 20,12 9,19" />
+                                </svg>
                             </div>
                         </div>
-                        <span style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
+                        <span
+                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
                     <div>
-                        <h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">Qualitative Data Surveys</h3>
-                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Create and manage qualitative data collection activities with ease.</p>
+                        <h3
+                            style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
+                            Qualitative Data Surveys</h3>
+                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
+                            Create and manage qualitative data collection activities with ease.</p>
                         <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
                             <li> Create surveys from scratch</li>
                             <li> Use Likert Measures</li>
@@ -1433,41 +1379,69 @@
                 </div>
 
                 <!-- Row 2: Text left, video right -->
-                <div style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:140px;">
+                <div
+                    style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:140px;">
                     <div>
-                        <h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">Data Visualization</h3>
-                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Transform raw data into clear, actionable visual insights for every student.</p>
+                        <h3
+                            style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
+                            Data Visualization</h3>
+                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
+                            Transform raw data into clear, actionable visual insights for every student.</p>
                         <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
                             <li> Bar Charts, Stacked Bar Charts, Boxplots & More</li>
                             <li> View Trends over Time</li>
                             <li> Track if students meet their goals</li>
                         </ul>
                     </div>
-                    <div style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,0.08) 0%,rgba(236,72,153,0.08) 100%);"></div>
+                    <div
+                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
+                        <div
+                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,0.08) 0%,rgba(236,72,153,0.08) 100%);">
+                        </div>
                         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="9,5 20,12 9,19"/></svg>
+                            <div
+                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                                    <polygon points="9,5 20,12 9,19" />
+                                </svg>
                             </div>
                         </div>
-                        <span style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
+                        <span
+                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
+                </div>
+
+                <!-- Strategy Library Header -->
+                <div style="text-align:center;margin-bottom:80px;">
+                    <h2
+                        style="font-family:var(--font-display);font-size:2.8rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;">
+                        Putting the 'support' in learning support</h2>
                 </div>
 
                 <!-- Row 3: Video left, text right -->
                 <div style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
-                    <div style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,0.08) 0%,rgba(59,130,246,0.08) 100%);"></div>
+                    <div
+                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
+                        <div
+                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,0.08) 0%,rgba(59,130,246,0.08) 100%);">
+                        </div>
                         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="9,5 20,12 9,19"/></svg>
+                            <div
+                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                                    <polygon points="9,5 20,12 9,19" />
+                                </svg>
                             </div>
                         </div>
-                        <span style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
+                        <span
+                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
                     <div>
-                        <h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">Strategy Library</h3>
-                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Add proven strategies from our curated library directly to student profiles.</p>
+                        <h3
+                            style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
+                            Strategy Library</h3>
+                        <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Add
+                            proven strategies from our curated library directly to student profiles.</p>
                         <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
                             <li> Access 150+ expert-curated strategies</li>
                             <li> Add strategies to student profiles</li>
@@ -1480,8 +1454,12 @@
 
         <section class="section fade-in">
             <div style="text-align:center;padding:20px 0;">
-                <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:600;margin-bottom:24px;">You've seen our <em>how</em>, learn about our <em>why</em>.</h2>
-                <button class="btn-accent" data-page="about">See Our About Page <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+                <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:600;margin-bottom:24px;">You've
+                    seen our <em>how</em>, learn about our <em>why</em>.</h2>
+                <button class="btn-accent" data-page="about">See Our About Page <svg width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg></button>
             </div>
         </section><!-- Footer -->
         <footer class="footer">
@@ -1690,31 +1668,60 @@
             <!-- Grid overlay: both children in same cell, crossfade simultaneously -->
             <div id="tc-wrap" style="max-width:800px;margin:0 auto;display:grid;">
                 <!-- Cards view -->
-                <div id="tc-cards" style="grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:32px;opacity:1;transition:opacity 0.4s ease;pointer-events:auto;">
-                    <div onclick="openCard('ansel')" style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img src="ansel.jpg" alt="Ansel Natarajan" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"></div>
-                        <div style="padding:16px;text-align:center;"><h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Ansel Natarajan</h4><p style="font-size:0.82rem;color:#64748b;font-weight:500;">Co-Founder</p></div>
+                <div id="tc-cards"
+                    style="grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:32px;opacity:1;transition:opacity 0.4s ease;pointer-events:auto;">
+                    <div onclick="openCard('ansel')"
+                        style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img
+                                src="ansel1.jpeg" alt="Ansel Natarajan"
+                                style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+                        </div>
+                        <div style="padding:16px;text-align:center;">
+                            <h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Ansel Natarajan</h4>
+                            <p style="font-size:0.82rem;color:#64748b;font-weight:500;">Co-Founder</p>
+                        </div>
                     </div>
-                    <div onclick="openCard('ian')" style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img src="ian.png" alt="Ian Wilson" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"></div>
-                        <div style="padding:16px;text-align:center;"><h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Ian Wilson</h4><p style="font-size:0.82rem;color:#64748b;font-weight:500;">Co-Founder & Software Developer</p></div>
+                    <div onclick="openCard('ian')"
+                        style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img src="ian.png"
+                                alt="Ian Wilson"
+                                style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+                        </div>
+                        <div style="padding:16px;text-align:center;">
+                            <h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Ian Wilson</h4>
+                            <p style="font-size:0.82rem;color:#64748b;font-weight:500;">Co-Founder & Software Developer
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Expanded view (same grid cell, hidden underneath) -->
-                <div id="tc-expanded" style="grid-area:1/1;display:grid;grid-template-columns:300px 1fr;opacity:0;transition:opacity 0.4s ease;pointer-events:none;visibility:hidden;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <div style="overflow:hidden;background:var(--bg-tertiary);"><img id="tc-exp-img" src="" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"></div>
+                <div id="tc-expanded"
+                    style="grid-area:1/1;display:grid;grid-template-columns:300px 1fr;opacity:0;transition:opacity 0.4s ease;pointer-events:none;visibility:hidden;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                    <div style="overflow:hidden;background:var(--bg-tertiary);"><img id="tc-exp-img" src="" alt=""
+                            style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+                    </div>
                     <div style="padding:32px 36px;display:flex;flex-direction:column;justify-content:center;">
                         <h4 id="tc-exp-name" style="font-size:1.15rem;font-weight:600;margin-bottom:2px;"></h4>
-                        <p id="tc-exp-role" style="font-size:0.84rem;color:#64748b;font-weight:500;margin-bottom:16px;"></p>
+                        <p id="tc-exp-role" style="font-size:0.84rem;color:#64748b;font-weight:500;margin-bottom:16px;">
+                        </p>
                         <p id="tc-exp-desc" style="font-size:0.88rem;color:var(--text-secondary);line-height:1.75;"></p>
-                        <button onclick="closeCard()" style="margin-top:20px;padding:8px 18px;border-radius:8px;font-size:0.82rem;font-weight:600;background:var(--bg-secondary);border:1px solid var(--border-subtle);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);transition:var(--transition);width:fit-content;">&#8592; Back to team</button>
+                        <button onclick="closeCard()"
+                            style="margin-top:20px;padding:8px 18px;border-radius:8px;font-size:0.82rem;font-weight:600;background:var(--bg-secondary);border:1px solid var(--border-subtle);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);transition:var(--transition);width:fit-content;">&#8592;
+                            Back to team</button>
+                        <a id="tc-exp-linkedin" href="https://www.linkedin.com/in/ansel-natarajan/" target="_blank"
+                            style="display:inline-flex;align-items:center;justify-content:center;margin-top:20px;padding:8px 12px;border-radius:8px;border:1px solid var(--border-subtle);background:var(--bg-secondary);transition:var(--transition);"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="#0A66C2">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
             <script>
                 var tcData = {
-                    ansel: { img:'ansel.jpg', name:'Ansel Natarajan', role:'Co-Founder', desc:"Hey! I'm Ansel, I was born and raised in Singapore and have resided here my whole life. After recently graduating high school and working in EdTech, I joined the Singapore Armed Forces (SAF) as part of my Singaporean National Service (NS). Outside of NS, I love weightlifting, reading non-fiction, and I'm slowly forcing myself to become a runner. My experiences traveling around the world have helped to cultivate a deep passion for education, coaching, and helping others fulfill their potential \u2014 IEPPAL is an incarnation of my wildest dreams of empowering those in education." },
-                    ian: { img:'ian.png', name:'Ian Wilson', role:'Co-Founder and Software Developer', desc:"Hi! I'm Ian, I'm French and Canadian but currently based in Singapore, where I am currently serving my mandatory 2 year national service as an infantry sergeant. I am passionate about exploring studies and careers in Physics, Sustainability, and AI post-NS. I am deeply intrigued by the opportunities that exist at the intersection of these fields and look forward to pursuing them in the future. As a student who went through the majority of my secondary education with an IEP, I hope to be able to contribute meaningfully to the field, and support students the way I would have hoped to have been supported when I was in their shoes." }
+                    ansel: { img: 'ansel1.jpeg', linkedin: 'https://www.linkedin.com/in/ansel-natarajan/', name: 'Ansel Natarajan', role: 'Co-Founder', desc: "Hey! I'm Ansel, I was born and raised in Singapore and have resided here my whole life. After recently graduating high school and working in EdTech, I joined the Singapore Armed Forces (SAF) as part of my Singaporean National Service (NS). Outside of NS, I love weightlifting, reading non-fiction, and I'm slowly forcing myself to become a runner. My experiences traveling around the world have helped to cultivate a deep passion for education, coaching, and helping others fulfill their potential \u2014 IEP Pal is an incarnation of my wildest dreams of empowering those in education." },
+                    ian: { img: 'ian.png', linkedin: 'https://www.linkedin.com/in/ian-wilson-a9ab40258/', name: 'Ian Wilson', role: 'Co-Founder and Software Developer', desc: "Hi! I'm Ian, I'm French and Canadian but currently based in Singapore, where I am currently serving my mandatory 2 year national service as an infantry sergeant. I am passionate about exploring studies and careers in Physics, Sustainability, and AI post-NS. I am deeply intrigued by the opportunities that exist at the intersection of these fields and look forward to pursuing them in the future. As a student who went through the majority of my secondary education with an IEP, I hope to be able to contribute meaningfully to the field, and support students the way I would have hoped to have been supported when I was in their shoes." }
                 };
                 var tcOpen = null;
                 function openCard(who) {
@@ -1725,19 +1732,20 @@
                     document.getElementById('tc-exp-name').textContent = d.name;
                     document.getElementById('tc-exp-role').textContent = d.role;
                     document.getElementById('tc-exp-desc').textContent = d.desc;
+                    document.getElementById('tc-exp-linkedin').href = d.linkedin;
                     var cards = document.getElementById('tc-cards');
                     var expanded = document.getElementById('tc-expanded');
                     // Show expanded in layout so it can crossfade
                     expanded.style.visibility = 'visible';
                     // Simultaneous crossfade
-                    requestAnimationFrame(function() {
+                    requestAnimationFrame(function () {
                         cards.style.opacity = '0';
                         cards.style.pointerEvents = 'none';
                         expanded.style.opacity = '1';
                         expanded.style.pointerEvents = 'auto';
                     });
                     // After transition, hide cards from layout
-                    setTimeout(function() {
+                    setTimeout(function () {
                         cards.style.visibility = 'hidden';
                     }, 420);
                 }
@@ -1748,14 +1756,14 @@
                     // Show cards in layout so it can crossfade
                     cards.style.visibility = 'visible';
                     // Simultaneous crossfade
-                    requestAnimationFrame(function() {
+                    requestAnimationFrame(function () {
                         expanded.style.opacity = '0';
                         expanded.style.pointerEvents = 'none';
                         cards.style.opacity = '1';
                         cards.style.pointerEvents = 'auto';
                     });
                     // After transition, hide expanded from layout
-                    setTimeout(function() {
+                    setTimeout(function () {
                         expanded.style.visibility = 'hidden';
                         tcOpen = null;
                     }, 420);
@@ -1820,7 +1828,7 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" placeholder="••••••••" />
+                    <input type="password" placeholder="��������" />
                 </div>
                 <button class="btn-accent">Sign In</button>
                 <div class="auth-divider">or</div>
@@ -1849,61 +1857,6 @@
     </div>
 
     <!-- ===== BOOK DEMO PAGE ===== -->
-    <div id="contact" class="page">
-        <section style="padding:100px 32px 60px;">
-            <div style="max-width:640px;margin:0 auto;text-align:center;">
-                <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;">Get in Touch</h1>
-                <p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;margin-bottom:32px;">Book a demo, ask a question, or just say hello. We'll respond within 24 hours.</p>
-                <form id="contact-form" style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
-                    <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
-                    <input type="hidden" name="subject" value="New Contact — IEP Pal Website">
-                    <input type="hidden" name="from_name" value="IEP Pal Website">
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
-                        <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name" id="cf-name" type="text" placeholder="John Doe" required/></div>
-                        <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email" id="cf-email" type="email" placeholder="you@school.edu" required/></div>
-                        <div class="form-group" style="margin-bottom:0;"><label>Role</label><input name="role" id="cf-role" type="text" placeholder="SpEd Teacher"/></div>
-                    </div>
-                    <div class="form-group"><label>Message</label><textarea name="message" id="cf-message" placeholder="Tell us about your needs..." required></textarea></div>
-                    <button type="submit" id="cf-btn" class="btn-accent" style="width:100%;justify-content:center;margin-top:4px;">
-                        Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                    </button>
-                </form>
-            </div>
-        </section>
-        <script>
-            document.getElementById('contact-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                var btn = document.getElementById('cf-btn');
-                btn.disabled = true;
-                btn.textContent = 'Sending...';
-                var formData = new FormData(this);
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                }).then(function(res) { return res.json(); }).then(function(data) {
-                    if (data.success) {
-                        btn.textContent = 'Sent!';
-                        btn.style.background = '#22c55e';
-                        document.getElementById('contact-form').reset();
-                        setTimeout(function() {
-                            btn.disabled = false;
-                            btn.style.background = '';
-                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
-                        }, 3000);
-                    } else {
-                        btn.textContent = 'Error — try again';
-                        btn.disabled = false;
-                        setTimeout(function() {
-                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
-                        }, 2000);
-                    }
-                }).catch(function() {
-                    btn.textContent = 'Error — try again';
-                    btn.disabled = false;
-                });
-            });
-        </script>
-
     <div id="updatelog" class="page">
         <section class="about-hero">
             <h1>Update Log</h1>
@@ -1911,61 +1864,65 @@
         </section>
         <section class="section">
             <div style="max-width:800px;margin:0 auto;">
-                <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><span
-                        style="background:#ef4444;color:white;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:100px;text-transform:uppercase;">Latest</span><span
-                        style="color:var(--text-muted);font-size:0.85rem;">Feb 20, 2026</span><span
-                        style="color:var(--text-muted);font-size:0.85rem;margin-left:auto;">2 min read</span></div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                    <span
+                        style="background:#ef4444;color:white;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em;">Latest</span>
+                    <span style="color:var(--text-muted);font-size:0.85rem;">Feb 20, 2026</span>
+                    <span style="color:var(--text-muted);font-size:0.85rem;margin-left:auto;">2 min read</span>
+                </div>
                 <div
                     style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-card);margin-bottom:48px;">
-                    <h3 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:16px;">MVP Completion,
-                        Demo-ing, & Website Redesign</h3>
-                    <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">
-                        After months of development and feedback from educators, we are excited to share our software
-                        with everyone. We also redesigned our website with updated product and pricing information,
-                        along with new additions
-                        for Investors and new users.
-                    </p>
-                    <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;">Key features in this
-                        IEP Pal software update include IEP creation and management, goal
-                        tracking, data collection activities, and
-                        standards onboarding, and administrative management.</p>
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:16px;">
+                        MVP Completion, Demo-ing, &amp; Website Redesign</h3>
+                    <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">After
+                        months of development and feedback from educators, we are excited to share our software with
+                        everyone. We also redesigned our website with updated product and pricing information, along
+                        with new additions for Investors and new users.</p>
+                    <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;">Key features in this IEP
+                        Pal software update include IEP creation and management, goal tracking, data collection
+                        activities, standards onboarding, and administrative management.</p>
                     <div id="latest-extra" style="max-height:0;overflow:hidden;transition:max-height 0.5s ease;">
                         <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-top:16px;"></p>
-                        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-top:16px;">
-                        </p>
                     </div>
-                    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button
-                            onclick="toggleSeeMore()" id="see-more-btn" class="btn-outline"
-                            style="padding:8px 20px;font-size:0.85rem;">See More &#9660;</button></div>
+                    <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+                        <button onclick="toggleSeeMore()" id="see-more-btn" class="btn-outline"
+                            style="padding:8px 20px;font-size:0.85rem;">See More &#9660;</button>
+                    </div>
                 </div>
                 <h3
-                    style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+                    style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
                     Past Updates</h3>
                 <div
                     style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-card);margin-bottom:20px;">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span
-                            style="color:var(--text-muted);font-size:0.85rem;">Jan 15, 2026</span><span
-                            style="color:var(--text-muted);font-size:0.85rem;">1 min read</span></div>
-                    <h4 style="font-size:1.1rem;font-weight:600;margin-bottom:8px;">Chugging Along</h4>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="color:var(--text-muted);font-size:0.85rem;">Jan 15, 2026</span>
+                        <span style="color:var(--text-muted);font-size:0.85rem;">1 min read</span>
+                    </div>
+                    <h4 style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:8px;">
+                        Chugging Along</h4>
                     <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Despite being full-time
                         servicemen, the team is still shipping and working hard on nights and weekends. Progress has
                         been consistent, regardless of the obstacles in our way.</p>
                     <div id="past-extra-1" style="max-height:0;overflow:hidden;transition:max-height 0.5s ease;">
-                        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin-top:12px;">We're
+                        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin-top:12px;">We are
                             planning to run a pilot with a school in India within the next few months. The goal:
                             validate our workflows end-to-end with real students and teachers, and iterate quickly based
                             on what actually helps.</p>
                     </div>
-                    <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button onclick="togglePast(1)"
-                            id="past-btn-1" class="btn-outline" style="padding:8px 20px;font-size:0.85rem;">See More
-                            &#9660;</button></div>
+                    <div style="display:flex;justify-content:flex-end;margin-top:12px;">
+                        <button onclick="togglePast(1)" id="past-btn-1" class="btn-outline"
+                            style="padding:8px 20px;font-size:0.85rem;">See More &#9660;</button>
+                    </div>
                 </div>
                 <div
                     style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-card);margin-bottom:20px;">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span
-                            style="color:var(--text-muted);font-size:0.85rem;">Aug 31, 2025</span><span
-                            style="color:var(--text-muted);font-size:0.85rem;">1 min read</span></div>
-                    <h4 style="font-size:1.1rem;font-weight:600;margin-bottom:8px;">Project Kickoff</h4>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="color:var(--text-muted);font-size:0.85rem;">Aug 31, 2025</span>
+                        <span style="color:var(--text-muted);font-size:0.85rem;">1 min read</span>
+                    </div>
+                    <h4 style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:8px;">
+                        Project Kickoff</h4>
                     <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">IEP Pal was born from
                         listening to dozens of global educators. We began development with a clear mission: support
                         special education teachers by housing and collecting data in one accessible place.</p>
@@ -1975,49 +1932,202 @@
                             feedback shaped our core product decisions and continues to guide our development
                             priorities.</p>
                     </div>
-                    <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button onclick="togglePast(2)"
-                            id="past-btn-2" class="btn-outline" style="padding:8px 20px;font-size:0.85rem;">See More
-                            &#9660;</button></div>
+                    <div style="display:flex;justify-content:flex-end;margin-top:12px;">
+                        <button onclick="togglePast(2)" id="past-btn-2" class="btn-outline"
+                            style="padding:8px 20px;font-size:0.85rem;">See More &#9660;</button>
+                    </div>
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo-mark"><img src="logo.svg" alt="IEP Pal logo"></div> IEP Pal
-                    </div>
-                    <p>The support tool built for speed, privacy, and care.</p>
-                    <div class="footer-tagline">All in one place.</div>
-                </div>
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#" data-page="home">Home</a></li>
-                        <li><a href="#" data-page="pricing">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#" data-page="about">About</a></li>
-                        <li><a href="#" data-page="updatelog">Update Log</a></li>
-                        <li><a href="#" data-page="helpcenter">Help Center</a></li>
-                        <li><a href="#" data-page="contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#" data-page="privacy">Privacy Policy</a></li>
-                        <li><a href="#" data-page="terms">Terms of Service</a></li>
-                        <li><a href="#" data-page="dpa">Data Processing Agreement</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom"><span>&copy; 2026 IEP Pal. All rights reserved.</span></div>
-        </footer>
     </div>
+
+    <div id="contact" class="page">
+        <section style="padding:100px 32px 60px;">
+            <div style="max-width:640px;margin:0 auto;text-align:center;">
+                <h1
+                    style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;">
+                    Get in Touch</h1>
+                <p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;margin-bottom:32px;">Book a demo,
+                    ask a question, or just say hello. We'll respond within 24 hours.</p>
+                <form id="contact-form"
+                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
+                    <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
+                    <input type="hidden" name="subject" value="New Contact � IEP Pal Website">
+                    <input type="hidden" name="from_name" value="IEP Pal Website">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
+                        <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
+                                id="cf-name" type="text" placeholder="John Doe" required /></div>
+                        <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
+                                id="cf-email" type="email" placeholder="you@school.edu" required /></div>
+                        <div class="form-group" style="margin-bottom:0;"><label>Role</label><input name="role"
+                                id="cf-role" type="text" placeholder="SpEd Teacher" /></div>
+                    </div>
+                    <div class="form-group"><label>Message</label><textarea name="message" id="cf-message"
+                            placeholder="Tell us about your needs..." required></textarea></div>
+                    <button type="submit" id="cf-btn" class="btn-accent"
+                        style="width:100%;justify-content:center;margin-top:4px;">
+                        Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 8h10M9 4l4 4-4 4" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                var btn = document.getElementById('cf-btn');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+                var formData = new FormData(this);
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                }).then(function (res) { return res.json(); }).then(function (data) {
+                    if (data.success) {
+                        btn.textContent = 'Sent!';
+                        btn.style.background = '#22c55e';
+                        document.getElementById('contact-form').reset();
+                        setTimeout(function () {
+                            btn.disabled = false;
+                            btn.style.background = '';
+                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                        }, 3000);
+                    } else {
+                        btn.textContent = 'Error � try again';
+                        btn.disabled = false;
+                        setTimeout(function () {
+                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                        }, 2000);
+                    }
+                }).catch(function () {
+                    btn.textContent = 'Error � try again';
+                    btn.disabled = false;
+                });
+            });
+        </script>
+
+        <div id="updatelog" class="page">
+            <section class="about-hero">
+                <h1>Update Log</h1>
+                <p>Check out our latest updates</p>
+            </section>
+            <section class="section">
+                <div style="max-width:800px;margin:0 auto;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;"><span
+                            style="background:#ef4444;color:white;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:100px;text-transform:uppercase;">Latest</span><span
+                            style="color:var(--text-muted);font-size:0.85rem;">Feb 20, 2026</span><span
+                            style="color:var(--text-muted);font-size:0.85rem;margin-left:auto;">2 min read</span></div>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-card);margin-bottom:48px;">
+                        <h3 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:16px;">MVP Completion,
+                            Demo-ing, & Website Redesign</h3>
+                        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">
+                            After months of development and feedback from educators, we are excited to share our
+                            software
+                            with everyone. We also redesigned our website with updated product and pricing information,
+                            along with new additions
+                            for Investors and new users.
+                        </p>
+                        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;">Key features in this
+                            IEP Pal software update include IEP creation and management, goal
+                            tracking, data collection activities, and
+                            standards onboarding, and administrative management.</p>
+                        <div id="latest-extra" style="max-height:0;overflow:hidden;transition:max-height 0.5s ease;">
+                            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-top:16px;">
+                            </p>
+                            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-top:16px;">
+                            </p>
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button
+                                onclick="toggleSeeMore()" id="see-more-btn" class="btn-outline"
+                                style="padding:8px 20px;font-size:0.85rem;">See More &#9660;</button></div>
+                    </div>
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+                        Past Updates</h3>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-card);margin-bottom:20px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span style="color:var(--text-muted);font-size:0.85rem;">Jan 15, 2026</span><span
+                                style="color:var(--text-muted);font-size:0.85rem;">1 min read</span></div>
+                        <h4 style="font-size:1.1rem;font-weight:600;margin-bottom:8px;">Chugging Along</h4>
+                        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">Despite being full-time
+                            servicemen, the team is still shipping and working hard on nights and weekends. Progress has
+                            been consistent, regardless of the obstacles in our way.</p>
+                        <div id="past-extra-1" style="max-height:0;overflow:hidden;transition:max-height 0.5s ease;">
+                            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin-top:12px;">
+                                We're
+                                planning to run a pilot with a school in India within the next few months. The goal:
+                                validate our workflows end-to-end with real students and teachers, and iterate quickly
+                                based
+                                on what actually helps.</p>
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button
+                                onclick="togglePast(1)" id="past-btn-1" class="btn-outline"
+                                style="padding:8px 20px;font-size:0.85rem;">See More
+                                &#9660;</button></div>
+                    </div>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-card);margin-bottom:20px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span style="color:var(--text-muted);font-size:0.85rem;">Aug 31, 2025</span><span
+                                style="color:var(--text-muted);font-size:0.85rem;">1 min read</span></div>
+                        <h4 style="font-size:1.1rem;font-weight:600;margin-bottom:8px;">Project Kickoff</h4>
+                        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">IEP Pal was born from
+                            listening to dozens of global educators. We began development with a clear mission: support
+                            special education teachers by housing and collecting data in one accessible place.</p>
+                        <div id="past-extra-2" style="max-height:0;overflow:hidden;transition:max-height 0.5s ease;">
+                            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin-top:12px;">We
+                                listened to dozens of global educators across multiple countries and school systems.
+                                Their
+                                feedback shaped our core product decisions and continues to guide our development
+                                priorities.</p>
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button
+                                onclick="togglePast(2)" id="past-btn-2" class="btn-outline"
+                                style="padding:8px 20px;font-size:0.85rem;">See More
+                                &#9660;</button></div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-mark"><img src="logo.svg" alt="IEP Pal logo"></div> IEP Pal
+                        </div>
+                        <p>The support tool built for speed, privacy, and care.</p>
+                        <div class="footer-tagline">All in one place.</div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#" data-page="home">Home</a></li>
+                            <li><a href="#" data-page="pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" data-page="about">About</a></li>
+                            <li><a href="#" data-page="updatelog">Update Log</a></li>
+                            <li><a href="#" data-page="helpcenter">Help Center</a></li>
+                            <li><a href="#" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#" data-page="privacy">Privacy Policy</a></li>
+                            <li><a href="#" data-page="terms">Terms of Service</a></li>
+                            <li><a href="#" data-page="dpa">Data Processing Agreement</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><span>&copy; 2026 IEP Pal. All rights reserved.</span></div>
+            </footer>
+        </div>
         <footer class="footer">
             <div class="footer-inner">
                 <div class="footer-brand">
@@ -2344,7 +2454,7 @@
                             style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
                             IEP Pal transforms your collected data into clear, actionable visuals including bar charts,
                             stacked bar charts, boxplots, and more. You can view trends over time and see whether
-                            students are on track to meet their goals — all without manual spreadsheet work.
+                            students are on track to meet their goals � all without manual spreadsheet work.
                         </div>
                     </div>
                 </div>
@@ -2639,7 +2749,7 @@
         }, { threshold: 0.1 });
 
         // Only start observing after first scroll so hero-adjacent elements don't fade in on load
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         }, { once: true });
 
