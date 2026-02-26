@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -268,6 +268,7 @@
                 transform: translateY(30px);
                 filter: blur(4px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -281,10 +282,21 @@
         }
 
         /* Staggered hero children */
-        .page.active .hero > div > *:nth-child(1) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
-        .page.active .hero > div > *:nth-child(2) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
-        .page.active .about-hero > *:nth-child(1) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
-        .page.active .about-hero > *:nth-child(2) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+        .page.active .hero>div>*:nth-child(1) {
+            animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .page.active .hero>div>*:nth-child(2) {
+            animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+        }
+
+        .page.active .about-hero>*:nth-child(1) {
+            animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .page.active .about-hero>*:nth-child(2) {
+            animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+        }
 
         /* ===== HERO SECTION ===== */
         .hero {
@@ -505,41 +517,96 @@
             align-items: center;
             justify-content: center;
         }
+
         .investor-icon-container svg {
             transition: transform 0.4s ease;
         }
+
         .investor-icon-container:hover svg {
             transform: scale(1.08);
         }
+
         /* Paper stack animation */
         .paper-stack .paper {
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
-        .paper-stack:hover .paper-1 { transform: translate(-3px, -3px) rotate(-4deg); }
-        .paper-stack:hover .paper-2 { transform: translate(2px, -1px) rotate(2deg); }
-        .paper-stack:hover .paper-3 { transform: translate(0, -6px); }
-        .paper-stack:hover .clock-hand { animation: investorSpin 2s ease-in-out infinite; }
-        @keyframes investorSpin {
-            0%, 100% { transform: rotate(0deg); transform-origin: 50% 58%; }
-            50% { transform: rotate(180deg); transform-origin: 50% 58%; }
+
+        .paper-stack:hover .paper-1 {
+            transform: translate(-3px, -3px) rotate(-4deg);
         }
+
+        .paper-stack:hover .paper-2 {
+            transform: translate(2px, -1px) rotate(2deg);
+        }
+
+        .paper-stack:hover .paper-3 {
+            transform: translate(0, -6px);
+        }
+
+        .paper-stack:hover .clock-hand {
+            animation: investorSpin 2s ease-in-out infinite;
+        }
+
+        @keyframes investorSpin {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+                transform-origin: 50% 58%;
+            }
+
+            50% {
+                transform: rotate(180deg);
+                transform-origin: 50% 58%;
+            }
+        }
+
         /* Data rise animation */
         .data-bars .bar {
             transition: transform 0.5s ease;
             transform-origin: bottom center;
         }
-        .data-bars:hover .bar-1 { transform: scaleY(1.3); }
-        .data-bars:hover .bar-2 { transform: scaleY(1.25); }
-        .data-bars:hover .bar-3 { transform: scaleY(1.15); }
-        .data-bars:hover .bar-4 { transform: scaleY(1.2); }
+
+        .data-bars:hover .bar-1 {
+            transform: scaleY(1.3);
+        }
+
+        .data-bars:hover .bar-2 {
+            transform: scaleY(1.25);
+        }
+
+        .data-bars:hover .bar-3 {
+            transform: scaleY(1.15);
+        }
+
+        .data-bars:hover .bar-4 {
+            transform: scaleY(1.2);
+        }
+
         .data-bars .pulse-dot {
             animation: investorPulse 2s ease-in-out infinite;
         }
-        .data-bars .pulse-dot:nth-child(2) { animation-delay: 0.3s; }
-        .data-bars .pulse-dot:nth-child(3) { animation-delay: 0.6s; }
+
+        .data-bars .pulse-dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .data-bars .pulse-dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
         @keyframes investorPulse {
-            0%, 100% { opacity: 0.4; r: 2; }
-            50% { opacity: 1; r: 3; }
+
+            0%,
+            100% {
+                opacity: 0.4;
+                r: 2;
+            }
+
+            50% {
+                opacity: 1;
+                r: 3;
+            }
         }
 
         /* ===== INTERACTIVE APP DEMO ===== */
@@ -586,8 +653,9 @@
             user-select: none;
             font-family: 'Inter', -apple-system, sans-serif;
             width: 100%;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         .id-sidebar {
             width: 3.6em;
             background: linear-gradient(to bottom, #ec4899, #f97316);
@@ -600,40 +668,104 @@
             transition: width 0.3s ease-in-out;
             overflow: hidden;
         }
-        .id-sidebar:hover { width: 11.5em; }
+
+        .id-sidebar:hover {
+            width: 11.5em;
+        }
+
         .id-sidebar-logo {
-            height: 3.2em; margin-bottom: 0.3em;
-            display: flex; align-items: center; padding: 0 0.3em;
+            height: 3.2em;
+            margin-bottom: 0.3em;
+            display: flex;
+            align-items: center;
+            padding: 0 0.3em;
             cursor: pointer;
         }
-        .id-sidebar-logo img { width: 2.6em; height: 2.6em; min-width: 2.6em; max-width: 2.6em; flex-shrink: 0; object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+
+        .id-sidebar-logo img {
+            width: 2.6em;
+            height: 2.6em;
+            min-width: 2.6em;
+            max-width: 2.6em;
+            flex-shrink: 0;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
         .id-sidebar-logo span {
-            margin-left: 0.5em; font-size: 1.4em; font-weight: 600; color: #fff;
-            white-space: nowrap; opacity: 0;
+            margin-left: 0.5em;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            opacity: 0;
             transition: opacity 0.2s;
         }
-        .id-sidebar:hover .id-sidebar-logo span { opacity: 1; }
+
+        .id-sidebar:hover .id-sidebar-logo span {
+            opacity: 1;
+        }
+
         .id-sidebar-icon {
             height: 2.6em;
             border-radius: 0.5em;
-            display: flex; align-items: center;
+            display: flex;
+            align-items: center;
             padding: 0 0.6em;
             transition: background 0.2s;
             cursor: pointer;
             white-space: nowrap;
         }
-        .id-sidebar-icon:hover { background: rgba(255,255,255,0.15); }
-        .id-sidebar-icon.active { background: rgba(255,255,255,0.2); }
-        .id-sidebar-icon svg { width: 1.5em; height: 1.5em; flex-shrink: 0; fill: none; stroke: rgba(255,255,255,0.7); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .id-sidebar-icon.active svg { stroke: #fff; }
-        .id-sidebar-icon:hover svg { stroke: #fff; }
-        .id-sidebar-icon span {
-            margin-left: 0.6em; font-size: 0.8em; font-weight: 500; color: rgba(255,255,255,0.7);
-            opacity: 0; transition: opacity 0.2s;
+
+        .id-sidebar-icon:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
-        .id-sidebar:hover .id-sidebar-icon span { opacity: 1; }
-        .id-sidebar-icon.active span { color: #fff; }
-        .id-sidebar-icon:hover span { color: #fff; }
+
+        .id-sidebar-icon.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .id-sidebar-icon svg {
+            width: 1.5em;
+            height: 1.5em;
+            flex-shrink: 0;
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.7);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .id-sidebar-icon.active svg {
+            stroke: #fff;
+        }
+
+        .id-sidebar-icon:hover svg {
+            stroke: #fff;
+        }
+
+        .id-sidebar-icon span {
+            margin-left: 0.6em;
+            font-size: 0.8em;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .id-sidebar:hover .id-sidebar-icon span {
+            opacity: 1;
+        }
+
+        .id-sidebar-icon.active span {
+            color: #fff;
+        }
+
+        .id-sidebar-icon:hover span {
+            color: #fff;
+        }
+
         .id-main {
             flex: 1;
             padding: 1.6em 2em 1.2em;
@@ -642,131 +774,259 @@
             background: #171717;
             border-radius: 0 1.2em 1.2em 0;
         }
-        .id-main::-webkit-scrollbar { display: none; }
-        .id-main { scrollbar-width: none; }
+
+        .id-main::-webkit-scrollbar {
+            display: none;
+        }
+
+        .id-main {
+            scrollbar-width: none;
+        }
+
         .id-header {
-            display: flex; justify-content: space-between; align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 1.4em;
         }
+
         .id-header h2 {
-            font-size: 2.6em; font-weight: 400; color: #f5f5f5;
-            margin: 0; line-height: 1.15;
+            font-size: 2.6em;
+            font-weight: 400;
+            color: #f5f5f5;
+            margin: 0;
+            line-height: 1.15;
             font-family: 'Playfair Display', Georgia, serif;
         }
+
         .id-header .id-subtitle {
-            font-size: 0.88em; color: #737373; margin-top: 0.3em; font-weight: 300;
+            font-size: 0.88em;
+            color: #737373;
+            margin-top: 0.3em;
+            font-weight: 300;
         }
+
         .id-new-btn {
             background: #262626;
             border: 1px solid #525252;
-            border-radius: 0.5em; padding: 0.45em 0.8em;
-            color: #d4d4d4; font-size: 0.78em;
-            font-weight: 500; cursor: pointer;
-            transition: all 0.2s; white-space: nowrap;
+            border-radius: 0.5em;
+            padding: 0.45em 0.8em;
+            color: #d4d4d4;
+            font-size: 0.78em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
             font-family: inherit;
-            display: flex; align-items: center; gap: 0.35em;
+            display: flex;
+            align-items: center;
+            gap: 0.35em;
         }
-        .id-new-btn:hover { border-color: #737373; color: #f5f5f5; }
+
+        .id-new-btn:hover {
+            border-color: #737373;
+            color: #f5f5f5;
+        }
+
         .id-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1em;
         }
+
         .id-card {
             background: #262626;
             border-radius: 0.75em;
             border: 1px solid #404040;
             transition: all 0.3s;
             cursor: pointer;
-            display: flex; flex-direction: column;
+            display: flex;
+            flex-direction: column;
         }
+
         .id-card:hover {
-            border-color: rgba(236,72,153,0.5);
+            border-color: rgba(236, 72, 153, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
+
         .id-card-top {
             padding: 1em 1em 0.5em;
             border-bottom: 1px solid #404040;
         }
+
         .id-card-header {
-            display: flex; justify-content: space-between; align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
+
         .id-card-header h4 {
-            font-size: 1.1em; color: #f5f5f5; font-weight: 400; margin: 0;
+            font-size: 1.1em;
+            color: #f5f5f5;
+            font-weight: 400;
+            margin: 0;
             font-family: 'Playfair Display', Georgia, serif;
             line-height: 1.25;
         }
-        .id-card-count { font-size: 0.65em; color: #737373; font-weight: 300; margin-top: 0.1em; }
-        .id-card-header svg { width: 1.3em; height: 1.3em; fill: none; stroke: #d4d4d4; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-        .id-card-block { font-size: 0.7em; color: #737373; margin-top: 0.15em; }
-        .id-card-students { padding: 0.6em 0.8em; flex: 1; }
+
+        .id-card-count {
+            font-size: 0.65em;
+            color: #737373;
+            font-weight: 300;
+            margin-top: 0.1em;
+        }
+
+        .id-card-header svg {
+            width: 1.3em;
+            height: 1.3em;
+            fill: none;
+            stroke: #d4d4d4;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .id-card-block {
+            font-size: 0.7em;
+            color: #737373;
+            margin-top: 0.15em;
+        }
+
+        .id-card-students {
+            padding: 0.6em 0.8em;
+            flex: 1;
+        }
+
         .id-student {
-            display: flex; align-items: center; gap: 0.6em;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
             padding: 0.3em 0.35em;
             border-radius: 0.5em;
             transition: background 0.15s;
         }
-        .id-student:hover { background: rgba(255,255,255,0.04); }
+
+        .id-student:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
         .id-avatar {
-            width: 2em; height: 2em; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(236,72,153,0.1), rgba(249,115,22,0.1));
-            border: 1px solid rgba(236,72,153,0.3);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.7em; font-weight: 500; color: #ec4899; flex-shrink: 0;
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(249, 115, 22, 0.1));
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            font-weight: 500;
+            color: #ec4899;
+            flex-shrink: 0;
         }
-        .id-student-name { font-size: 0.78em; color: #e5e5e5; font-weight: 500; }
-        .id-student-level { font-size: 0.6em; color: #737373; }
+
+        .id-student-name {
+            font-size: 0.78em;
+            color: #e5e5e5;
+            font-weight: 500;
+        }
+
+        .id-student-level {
+            font-size: 0.6em;
+            color: #737373;
+        }
+
         .id-see-full {
-            display: block; width: calc(100% - 1.6em); text-align: center;
-            margin: 0.5em 0.8em 0.8em; padding: 0.5em;
+            display: block;
+            width: calc(100% - 1.6em);
+            text-align: center;
+            margin: 0.5em 0.8em 0.8em;
+            padding: 0.5em;
             background: #404040;
-            border-radius: 0.5em; font-size: 0.68em;
-            color: #a3a3a3; font-weight: 500;
-            cursor: pointer; transition: all 0.3s;
-            border: none; font-family: inherit;
+            border-radius: 0.5em;
+            font-size: 0.68em;
+            color: #a3a3a3;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: inherit;
         }
+
         .id-card:hover .id-see-full {
             background: linear-gradient(to right, #ec4899, #f97316);
             color: #fff;
         }
+
         .id-cta-overlay {
-            position: absolute; inset: 0;
+            position: absolute;
+            inset: 0;
             background: rgba(23, 23, 23, 0.93);
             backdrop-filter: blur(10px);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             gap: 0.8em;
-            opacity: 0; pointer-events: none;
+            opacity: 0;
+            pointer-events: none;
             transition: opacity 0.3s ease;
             z-index: 10;
         }
-        .id-cta-overlay.visible { opacity: 1; pointer-events: auto; }
+
+        .id-cta-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         .id-cta-overlay h3 {
-            color: #fff; font-size: 1.8em; font-weight: 700; text-align: center;
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-align: center;
             margin: 0;
         }
+
         .id-cta-overlay p {
-            color: rgba(255,255,255,0.55); font-size: 0.95em; text-align: center;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.95em;
+            text-align: center;
             margin: 0;
         }
+
         .id-cta-btn {
             background: linear-gradient(to right, #ec4899, #f97316);
-            color: #fff; border: none; border-radius: 100px;
-            padding: 0.7em 2.2em; font-size: 1em; font-weight: 600;
-            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+            border: none;
+            border-radius: 100px;
+            padding: 0.7em 2.2em;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
             font-family: inherit;
         }
+
         .id-cta-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 24px rgba(236, 72, 153, 0.4);
         }
+
         .id-cta-close {
-            color: rgba(255,255,255,0.35); font-size: 0.78em;
-            cursor: pointer; background: none; border: none;
-            transition: color 0.2s; font-family: inherit;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.78em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s;
+            font-family: inherit;
         }
-        .id-cta-close:hover { color: rgba(255,255,255,0.7); }
+
+        .id-cta-close:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
 
         /* ===== DEMO STEPS (Home page) ===== */
         .steps-row {
@@ -1450,47 +1710,85 @@
             transform: translateY(50px);
             transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0) translateX(0);
         }
+
         /* Directional slide variants */
         .fade-in-left {
             opacity: 0;
             transform: translateX(-60px) translateY(20px);
             transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .fade-in-right {
             opacity: 0;
             transform: translateX(60px) translateY(20px);
             transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .fade-in-left.visible, .fade-in-right.visible {
+
+        .fade-in-left.visible,
+        .fade-in-right.visible {
             opacity: 1;
             transform: translateX(0) translateY(0);
         }
+
         /* Scale up variant */
         .fade-in-scale {
             opacity: 0;
             transform: scale(0.92) translateY(30px);
             transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .fade-in-scale.visible {
             opacity: 1;
             transform: scale(1) translateY(0);
         }
+
         /* Stagger children within a grid */
-        .stagger-children > * {
+        .stagger-children>* {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
-        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
-        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
-        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
-        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.48s; opacity: 1; transform: translateY(0); }
-        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+        .stagger-children.visible>*:nth-child(1) {
+            transition-delay: 0s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(2) {
+            transition-delay: 0.12s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(3) {
+            transition-delay: 0.24s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(4) {
+            transition-delay: 0.36s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(5) {
+            transition-delay: 0.48s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(6) {
+            transition-delay: 0.6s;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Typewriter effect */
         .typewriter-line {
@@ -1502,18 +1800,34 @@
             opacity: 0;
             transition: none;
         }
+
         .typewriter-line.typing {
             opacity: 1;
             animation: typewrite 2s steps(40, end) forwards, blink-caret 0.6s step-end 6;
         }
+
         @keyframes typewrite {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
+
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--accent); }
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--accent);
+            }
         }
+
         .typewriter-line.done {
             border-color: transparent;
         }
@@ -1524,13 +1838,16 @@
             transform: scale(0.85) translateY(20px);
             transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .cta-finale.visible .cta-finale-heading {
             opacity: 1;
             transform: scale(1) translateY(0);
         }
+
         .cta-finale .cta-finale-btn {
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
         }
+
         .cta-finale.visible .cta-finale-btn {
             opacity: 1 !important;
             transform: translateY(0) !important;
@@ -1551,6 +1868,7 @@
         }
 
         @media (max-width: 900px) {
+
             /* Nav: switch to hamburger menu */
             .nav {
                 padding: 0 20px;
@@ -1590,24 +1908,41 @@
                 animation: navDropIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             }
 
-            .nav-links.mobile-open .nav-link:nth-child(1) { animation-delay: 0.03s; }
-            .nav-links.mobile-open .nav-link:nth-child(2) { animation-delay: 0.07s; }
-            .nav-links.mobile-open .nav-link:nth-child(3) { animation-delay: 0.11s; }
-            .nav-links.mobile-open .nav-link:nth-child(4) { animation-delay: 0.15s; }
-            .nav-links.mobile-open .nav-link:nth-child(5) { animation-delay: 0.19s; }
+            .nav-links.mobile-open .nav-link:nth-child(1) {
+                animation-delay: 0.03s;
+            }
+
+            .nav-links.mobile-open .nav-link:nth-child(2) {
+                animation-delay: 0.07s;
+            }
+
+            .nav-links.mobile-open .nav-link:nth-child(3) {
+                animation-delay: 0.11s;
+            }
+
+            .nav-links.mobile-open .nav-link:nth-child(4) {
+                animation-delay: 0.15s;
+            }
+
+            .nav-links.mobile-open .nav-link:nth-child(5) {
+                animation-delay: 0.19s;
+            }
 
             @keyframes navDropIn {
                 0% {
                     opacity: 0;
                     transform: translateY(-12px) scale(0.95);
                 }
+
                 60% {
                     opacity: 1;
                     transform: translateY(3px) scale(1.01);
                 }
+
                 80% {
                     transform: translateY(-2px) scale(0.995);
                 }
+
                 100% {
                     opacity: 1;
                     transform: translateY(0) scale(1);
@@ -1656,7 +1991,7 @@
             }
 
             /* Center the "Book a Demo" button row */
-            .hero-grid > div > div[style*="display:flex"] {
+            .hero-grid>div>div[style*="display:flex"] {
                 justify-content: center;
             }
 
@@ -1713,7 +2048,7 @@
                 grid-template-columns: 1fr !important;
             }
 
-            .team-expanded > div:first-child {
+            .team-expanded>div:first-child {
                 max-height: 360px;
             }
 
@@ -1794,19 +2129,19 @@
                 margin: 0 auto;
             }
 
-            .team-grid > div > div:first-child {
+            .team-grid>div>div:first-child {
                 aspect-ratio: 3/4 !important;
             }
 
-            .team-grid > div > div:first-child img {
+            .team-grid>div>div:first-child img {
                 object-position: center 15% !important;
             }
 
-            .team-expanded > div:first-child {
+            .team-expanded>div:first-child {
                 max-height: 320px;
             }
 
-            .team-expanded > div:last-child {
+            .team-expanded>div:last-child {
                 padding: 24px 20px !important;
             }
 
@@ -1870,7 +2205,8 @@
                     <div style="display:flex;align-items:center;gap:16px;margin-top:16px;">
                         <button class="btn-accent" data-page="contact"
                             style="padding:10px 24px;font-size:0.88rem;border-radius:8px;box-shadow:none;letter-spacing:0.01em;font-weight:500;">Book
-                            a Demo <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            a Demo <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M3 7h8M8 4l3 3-3 3" />
                             </svg></button>
                     </div>
@@ -1879,13 +2215,31 @@
                     <!-- Interactive Demo -->
                     <div class="interactive-demo" onclick="showDemoCTA(event)">
                         <div class="id-sidebar">
-                            <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
-                            <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
+                            <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP
+                                    Pal</span></div>
+                            <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                                </svg><span>Classrooms</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg><span>Strategy Library</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg><span>Settings</span></div>
                             <div style="flex:1;"></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span>Dark Mode</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg><span>Sign Out</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="4" />
+                                    <path
+                                        d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                </svg><span>Dark Mode</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg><span>Sign Out</span></div>
                         </div>
                         <div class="id-main">
                             <div class="id-header">
@@ -1893,37 +2247,223 @@
                                     <h2>Classrooms</h2>
                                     <div class="id-subtitle">Good evening, Ian</div>
                                 </div>
-                                <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> New Classroom</button>
+                                <button class="id-new-btn"><svg viewBox="0 0 24 24"
+                                        style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round">
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg> New Classroom</button>
                             </div>
                             <div class="id-grid">
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>Algebra 2</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/></svg></div><div class="id-card-block">A block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">N</div><div><div class="id-student-name">Niko Valez</div><div class="id-student-level">Level 1</div></div></div><div class="id-student"><div class="id-avatar">T</div><div><div class="id-student-name">Talia Venn</div><div class="id-student-level">Level 3</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>Algebra 2</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                                <line x1="8" y1="6" x2="16" y2="6" />
+                                                <line x1="16" y1="14" x2="16" y2="14.01" />
+                                                <line x1="12" y1="14" x2="12" y2="14.01" />
+                                                <line x1="8" y1="14" x2="8" y2="14.01" />
+                                                <line x1="16" y1="10" x2="16" y2="10.01" />
+                                                <line x1="12" y1="10" x2="12" y2="10.01" />
+                                                <line x1="8" y1="10" x2="8" y2="10.01" />
+                                                <line x1="16" y1="18" x2="16" y2="18.01" />
+                                                <line x1="12" y1="18" x2="12" y2="18.01" />
+                                                <line x1="8" y1="18" x2="8" y2="18.01" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">A block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">N</div>
+                                            <div>
+                                                <div class="id-student-name">Niko Valez</div>
+                                                <div class="id-student-level">Level 1</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">T</div>
+                                            <div>
+                                                <div class="id-student-name">Talia Venn</div>
+                                                <div class="id-student-level">Level 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>CS 1</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="id-card-block">B block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">S</div><div><div class="id-student-name">Selene Ashcroft</div><div class="id-student-level">Level 2</div></div></div><div class="id-student"><div class="id-avatar">N</div><div><div class="id-student-name">Nia Tavros</div><div class="id-student-level">Level 1</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>CS 1</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <path
+                                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">B block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">S</div>
+                                            <div>
+                                                <div class="id-student-name">Selene Ashcroft</div>
+                                                <div class="id-student-level">Level 2</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">N</div>
+                                            <div>
+                                                <div class="id-student-name">Nia Tavros</div>
+                                                <div class="id-student-level">Level 1</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>Algorithms</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="id-card-block">C block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">M</div><div><div class="id-student-name">Malek Orin</div><div class="id-student-level">Level 1</div></div></div><div class="id-student"><div class="id-avatar">N</div><div><div class="id-student-name">Noemi Calder</div><div class="id-student-level">Level 3</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>Algorithms</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <path
+                                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">C block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">M</div>
+                                            <div>
+                                                <div class="id-student-name">Malek Orin</div>
+                                                <div class="id-student-level">Level 1</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">N</div>
+                                            <div>
+                                                <div class="id-student-name">Noemi Calder</div>
+                                                <div class="id-student-level">Level 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>Calculus 1</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/></svg></div><div class="id-card-block">E block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">K</div><div><div class="id-student-name">Kieran Solis</div><div class="id-student-level">Level 2</div></div></div><div class="id-student"><div class="id-avatar">Z</div><div><div class="id-student-name">Zuri Haddad</div><div class="id-student-level">Level 3</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>Calculus 1</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                                <line x1="8" y1="6" x2="16" y2="6" />
+                                                <line x1="16" y1="14" x2="16" y2="14.01" />
+                                                <line x1="12" y1="14" x2="12" y2="14.01" />
+                                                <line x1="8" y1="14" x2="8" y2="14.01" />
+                                                <line x1="16" y1="10" x2="16" y2="10.01" />
+                                                <line x1="12" y1="10" x2="12" y2="10.01" />
+                                                <line x1="8" y1="10" x2="8" y2="10.01" />
+                                                <line x1="16" y1="18" x2="16" y2="18.01" />
+                                                <line x1="12" y1="18" x2="12" y2="18.01" />
+                                                <line x1="8" y1="18" x2="8" y2="18.01" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">E block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">K</div>
+                                            <div>
+                                                <div class="id-student-name">Kieran Solis</div>
+                                                <div class="id-student-level">Level 2</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">Z</div>
+                                            <div>
+                                                <div class="id-student-name">Zuri Haddad</div>
+                                                <div class="id-student-level">Level 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>Algebra 1</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/></svg></div><div class="id-card-block">F block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">T</div><div><div class="id-student-name">Tariq Velasquez</div><div class="id-student-level">Level 2</div></div></div><div class="id-student"><div class="id-avatar">K</div><div><div class="id-student-name">Kevin Rousseau</div><div class="id-student-level">Level 3</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>Algebra 1</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                                <line x1="8" y1="6" x2="16" y2="6" />
+                                                <line x1="16" y1="14" x2="16" y2="14.01" />
+                                                <line x1="12" y1="14" x2="12" y2="14.01" />
+                                                <line x1="8" y1="14" x2="8" y2="14.01" />
+                                                <line x1="16" y1="10" x2="16" y2="10.01" />
+                                                <line x1="12" y1="10" x2="12" y2="10.01" />
+                                                <line x1="8" y1="10" x2="8" y2="10.01" />
+                                                <line x1="16" y1="18" x2="16" y2="18.01" />
+                                                <line x1="12" y1="18" x2="12" y2="18.01" />
+                                                <line x1="8" y1="18" x2="8" y2="18.01" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">F block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">T</div>
+                                            <div>
+                                                <div class="id-student-name">Tariq Velasquez</div>
+                                                <div class="id-student-level">Level 2</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">K</div>
+                                            <div>
+                                                <div class="id-student-name">Kevin Rousseau</div>
+                                                <div class="id-student-level">Level 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                                 <div class="id-card">
-                                    <div class="id-card-top"><div class="id-card-header"><div><h4>Intro to AI</h4><div class="id-card-count">2 students</div></div><svg viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="id-card-block">G block</div></div>
-                                    <div class="id-card-students"><div class="id-student"><div class="id-avatar">D</div><div><div class="id-student-name">Dario Nasser</div><div class="id-student-level">Level 3</div></div></div><div class="id-student"><div class="id-avatar">K</div><div><div class="id-student-name">Keiko Farouk</div><div class="id-student-level">Level 2</div></div></div></div>
+                                    <div class="id-card-top">
+                                        <div class="id-card-header">
+                                            <div>
+                                                <h4>Intro to AI</h4>
+                                                <div class="id-card-count">2 students</div>
+                                            </div><svg viewBox="0 0 24 24">
+                                                <path
+                                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="id-card-block">G block</div>
+                                    </div>
+                                    <div class="id-card-students">
+                                        <div class="id-student">
+                                            <div class="id-avatar">D</div>
+                                            <div>
+                                                <div class="id-student-name">Dario Nasser</div>
+                                                <div class="id-student-level">Level 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="id-student">
+                                            <div class="id-avatar">K</div>
+                                            <div>
+                                                <div class="id-student-name">Keiko Farouk</div>
+                                                <div class="id-student-level">Level 2</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="id-see-full">See Full Class</button>
                                 </div>
                             </div>
@@ -1932,16 +2472,21 @@
                         <div class="id-cta-overlay" id="demoCTAOverlay">
                             <h3>Want to explore more?</h3>
                             <p>Book a demo to get hands-on with IEP Pal</p>
-                            <button class="id-cta-btn" onclick="event.stopPropagation(); document.getElementById('demoCTAOverlay').classList.remove('visible'); navigateTo('contact');">Book a Demo</button>
-                            <button class="id-cta-close" onclick="event.stopPropagation(); document.getElementById('demoCTAOverlay').classList.remove('visible');">Just browsing</button>
+                            <button class="id-cta-btn"
+                                onclick="event.stopPropagation(); document.getElementById('demoCTAOverlay').classList.remove('visible'); navigateTo('contact');">Book
+                                a Demo</button>
+                            <button class="id-cta-close"
+                                onclick="event.stopPropagation(); document.getElementById('demoCTAOverlay').classList.remove('visible');">Just
+                                browsing</button>
                         </div>
                     </div>
                 </div>
-                <img src="classrooms.png" alt="IEP Pal Classrooms dashboard" class="hero-mobile-img" style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.12);">
+                <img src="classrooms.png" alt="IEP Pal Classrooms dashboard" class="hero-mobile-img"
+                    style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.12);">
             </div>
         </section>
 
-        <section class="section fade-in-scale">
+        <section class="section fade-in-scale" style="padding-bottom:20px;">
             <div style="max-width:1000px;margin:0 auto;text-align:center;">
                 <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.02em;">How
                     we support <em style="font-style:italic;">You</em>, the educator</h2>
@@ -1949,9 +2494,9 @@
         </section>
 
         <!-- Feature Section 1: Learning Support Without The Overwhelm -->
-        <section class="section" style="overflow:visible;">
-            <div
-                class="feature-row" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
+        <section class="section" style="overflow:visible;padding-top:20px;">
+            <div class="feature-row"
+                style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
                 <div class="fade-in-left">
                     <h3
                         style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.01em;">
@@ -1984,7 +2529,7 @@
         </section>
 
         <!-- Feature Section 2: Data features - alternating layout -->
-        <section class="section">
+        <section class="section" style="padding-top:20px;">
             <div style="max-width:1100px;margin:0 auto;">
                 <div class="fade-in-scale section-intro" style="margin-bottom:80px;text-align:center;">
                     <h2
@@ -1995,8 +2540,8 @@
                 </div>
 
                 <!-- Row 1: Video left, text right -->
-                <div
-                    class="feature-row" style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:140px;">
+                <div class="feature-row"
+                    style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:80px;">
                     <div class="fade-in-left"
                         style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
                         <div
@@ -2028,8 +2573,8 @@
                 </div>
 
                 <!-- Row 2: Text left, video right -->
-                <div
-                    class="feature-row" style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:140px;">
+                <div class="feature-row"
+                    style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:80px;">
                     <div class="fade-in-left">
                         <h3
                             style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
@@ -2068,7 +2613,8 @@
                 </div>
 
                 <!-- Row 3: Video left, text right -->
-                <div class="feature-row" style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
+                <div class="feature-row"
+                    style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
                     <div class="fade-in-left"
                         style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
                         <div
@@ -2101,12 +2647,14 @@
             </div>
         </section>
 
-        <section class="section cta-finale">
+        <section class="section cta-finale" style="padding-top:20px;">
             <div style="text-align:center;padding:40px 0;">
-                <h2 class="cta-finale-heading" style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:28px;">You've
+                <h2 class="cta-finale-heading"
+                    style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:28px;">You've
                     seen our <em>how</em>, learn about our <em>why</em>.</h2>
-                <button class="btn-accent cta-finale-btn" data-page="about" style="opacity:0;transform:translateY(20px);">See Our About Page <svg width="16" height="16" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                <button class="btn-accent cta-finale-btn" data-page="about"
+                    style="opacity:0;transform:translateY(20px);">See Our About Page <svg width="16" height="16"
+                        fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg></button>
             </div>
@@ -2196,7 +2744,8 @@
                             </svg></span>Create Goals
                     </li>
                 </ul>
-                <button class="btn-outline btn-full" data-page="contact" onclick="navigateTo('contact')">Get Started</button>
+                <button class="btn-outline btn-full" data-page="contact" onclick="navigateTo('contact')">Get
+                    Started</button>
             </div>
 
             <!-- Schools -->
@@ -2226,7 +2775,8 @@
                             </svg></span>Standards Onboarding
                     </li>
                 </ul>
-                <button class="btn-accent btn-full" data-page="contact" onclick="navigateTo('contact')">Get Started</button>
+                <button class="btn-accent btn-full" data-page="contact" onclick="navigateTo('contact')">Get
+                    Started</button>
             </div>
 
             <!-- Enterprise -->
@@ -2305,12 +2855,20 @@
     <div id="about" class="page">
         <section class="about-hero">
             <h1>About IEP Pal</h1>
-            <p>IEP Pal exists to free teachers from administrative burden so they can spend more time in meaningful,
-                in-person relationships with students. We empower educators with accessible tools and robust data. We
-                continually evolve learning support, through speaking directly with teachers, ensuring we
-                strengthen teaching practice and support long-term student growth.</p>
+            <p>We saw first hand that educators, many of whom became friends, needed a way to expand support to students
+                with special learning needs. Current systems overload teachers with administrative tasks and data, both
+                of which require time and resources-taking away from their ability to support students. We want
+                educators to see the long-term and positive impact of their support on students.</p>
+            <p>
+                IEP Pal exists to free teachers from that administrative burden so they can spend more time in
+                meaningful,
+                in-person relationships with students. We will accomplish this by empowering educators with accessible
+                tools, robust data, and development opportunities. We will work unrelentingly to
+                evolve learning support by consistently speaking directly with educators. In the long-term we will
+                ensure the
+                strengthening of teaching practice and student growth by putting both above all else.</p>
         </section>
-        <section class="section fade-in">
+        <section class="section fade-in" style="padding-top:20px;">
             <div class="section-header">
                 <h2>Meet the Team</h2>
             </div>
@@ -2484,7 +3042,7 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" placeholder="��������" />
+                    <input type="password" placeholder="????????" />
                 </div>
                 <button class="btn-accent">Sign In</button>
                 <div class="auth-divider">or</div>
@@ -2548,9 +3106,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -2679,9 +3239,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -2700,9 +3262,10 @@
                 <form id="contact-form"
                     style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
                     <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
-                    <input type="hidden" name="subject" value="New Contact � IEP Pal Website">
+                    <input type="hidden" name="subject" value="New Contact ? IEP Pal Website">
                     <input type="hidden" name="from_name" value="IEP Pal Website">
-                    <div class="contact-fields" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div class="contact-fields"
+                        style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
                         <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
                                 id="cf-name" type="text" placeholder="John Doe" required /></div>
                         <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
@@ -2742,14 +3305,14 @@
                             btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
                         }, 3000);
                     } else {
-                        btn.textContent = 'Error � try again';
+                        btn.textContent = 'Error ? try again';
                         btn.disabled = false;
                         setTimeout(function () {
                             btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
                         }, 2000);
                     }
                 }).catch(function () {
-                    btn.textContent = 'Error � try again';
+                    btn.textContent = 'Error ? try again';
                     btn.disabled = false;
                 });
             });
@@ -2791,9 +3354,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -2820,29 +3385,42 @@
 
         <section class="section">
             <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
-                <div
-                    class="investor-card" style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+                <div class="investor-card"
+                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
                     <div
                         style="background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default;">
                         <div class="investor-icon-container paper-stack">
                             <svg viewBox="0 0 80 80" style="width:55%;height:auto;" fill="none">
                                 <defs>
-                                    <linearGradient id="iconGrad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EC4899"/><stop offset="100%" stop-color="#F97316"/></linearGradient>
+                                    <linearGradient id="iconGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#EC4899" />
+                                        <stop offset="100%" stop-color="#F97316" />
+                                    </linearGradient>
                                 </defs>
                                 <!-- Stacked papers -->
-                                <rect class="paper paper-1" x="18" y="16" width="36" height="46" rx="3" stroke="url(#iconGrad1)" stroke-width="1.8" fill="none" opacity="0.35"/>
-                                <rect class="paper paper-2" x="22" y="12" width="36" height="46" rx="3" stroke="url(#iconGrad1)" stroke-width="1.8" fill="none" opacity="0.6"/>
-                                <rect class="paper paper-3" x="26" y="8" width="36" height="46" rx="3" stroke="url(#iconGrad1)" stroke-width="1.8" fill="var(--bg-tertiary)"/>
+                                <rect class="paper paper-1" x="18" y="16" width="36" height="46" rx="3"
+                                    stroke="url(#iconGrad1)" stroke-width="1.8" fill="none" opacity="0.35" />
+                                <rect class="paper paper-2" x="22" y="12" width="36" height="46" rx="3"
+                                    stroke="url(#iconGrad1)" stroke-width="1.8" fill="none" opacity="0.6" />
+                                <rect class="paper paper-3" x="26" y="8" width="36" height="46" rx="3"
+                                    stroke="url(#iconGrad1)" stroke-width="1.8" fill="var(--bg-tertiary)" />
                                 <!-- Lines on top paper -->
-                                <line x1="32" y1="18" x2="56" y2="18" stroke="url(#iconGrad1)" stroke-width="1.5" opacity="0.5"/>
-                                <line x1="32" y1="24" x2="52" y2="24" stroke="url(#iconGrad1)" stroke-width="1.5" opacity="0.4"/>
-                                <line x1="32" y1="30" x2="54" y2="30" stroke="url(#iconGrad1)" stroke-width="1.5" opacity="0.3"/>
-                                <line x1="32" y1="36" x2="48" y2="36" stroke="url(#iconGrad1)" stroke-width="1.5" opacity="0.25"/>
+                                <line x1="32" y1="18" x2="56" y2="18" stroke="url(#iconGrad1)" stroke-width="1.5"
+                                    opacity="0.5" />
+                                <line x1="32" y1="24" x2="52" y2="24" stroke="url(#iconGrad1)" stroke-width="1.5"
+                                    opacity="0.4" />
+                                <line x1="32" y1="30" x2="54" y2="30" stroke="url(#iconGrad1)" stroke-width="1.5"
+                                    opacity="0.3" />
+                                <line x1="32" y1="36" x2="48" y2="36" stroke="url(#iconGrad1)" stroke-width="1.5"
+                                    opacity="0.25" />
                                 <!-- Small clock overlay (time pressure) -->
-                                <circle cx="56" cy="56" r="12" stroke="url(#iconGrad1)" stroke-width="1.8" fill="var(--bg-tertiary)"/>
-                                <line class="clock-hand" x1="56" y1="56" x2="56" y2="48" stroke="url(#iconGrad1)" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="56" y1="56" x2="62" y2="58" stroke="url(#iconGrad1)" stroke-width="1.5" stroke-linecap="round"/>
-                                <circle cx="56" cy="56" r="1.5" fill="url(#iconGrad1)"/>
+                                <circle cx="56" cy="56" r="12" stroke="url(#iconGrad1)" stroke-width="1.8"
+                                    fill="var(--bg-tertiary)" />
+                                <line class="clock-hand" x1="56" y1="56" x2="56" y2="48" stroke="url(#iconGrad1)"
+                                    stroke-width="1.8" stroke-linecap="round" />
+                                <line x1="56" y1="56" x2="62" y2="58" stroke="url(#iconGrad1)" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="56" cy="56" r="1.5" fill="url(#iconGrad1)" />
                             </svg>
                         </div>
                     </div>
@@ -2859,8 +3437,8 @@
                             mission of inclusion.</p>
                     </div>
                 </div>
-                <div
-                    class="investor-card" style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+                <div class="investor-card"
+                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
                     <div>
                         <h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:16px;">How are we
                             addressing the problem?
@@ -2880,35 +3458,47 @@
                         <div class="investor-icon-container data-bars">
                             <svg viewBox="0 0 80 80" style="width:55%;height:auto;" fill="none">
                                 <defs>
-                                    <linearGradient id="iconGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EC4899"/><stop offset="100%" stop-color="#F97316"/></linearGradient>
+                                    <linearGradient id="iconGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#EC4899" />
+                                        <stop offset="100%" stop-color="#F97316" />
+                                    </linearGradient>
                                 </defs>
                                 <!-- Dashboard frame -->
-                                <rect x="8" y="8" width="64" height="48" rx="5" stroke="url(#iconGrad2)" stroke-width="1.8" fill="none"/>
+                                <rect x="8" y="8" width="64" height="48" rx="5" stroke="url(#iconGrad2)"
+                                    stroke-width="1.8" fill="none" />
                                 <!-- Title bar -->
-                                <line x1="8" y1="18" x2="72" y2="18" stroke="url(#iconGrad2)" stroke-width="1" opacity="0.3"/>
-                                <circle cx="16" cy="13" r="2" fill="url(#iconGrad2)" opacity="0.4"/>
-                                <circle cx="23" cy="13" r="2" fill="url(#iconGrad2)" opacity="0.3"/>
+                                <line x1="8" y1="18" x2="72" y2="18" stroke="url(#iconGrad2)" stroke-width="1"
+                                    opacity="0.3" />
+                                <circle cx="16" cy="13" r="2" fill="url(#iconGrad2)" opacity="0.4" />
+                                <circle cx="23" cy="13" r="2" fill="url(#iconGrad2)" opacity="0.3" />
                                 <!-- Rising bars -->
-                                <rect class="bar bar-1" x="18" y="38" width="8" rx="1.5" height="16" fill="url(#iconGrad2)" opacity="0.5"/>
-                                <rect class="bar bar-2" x="30" y="32" width="8" rx="1.5" height="22" fill="url(#iconGrad2)" opacity="0.65"/>
-                                <rect class="bar bar-3" x="42" y="26" width="8" rx="1.5" height="28" fill="url(#iconGrad2)" opacity="0.8"/>
-                                <rect class="bar bar-4" x="54" y="30" width="8" rx="1.5" height="24" fill="url(#iconGrad2)" opacity="0.9"/>
+                                <rect class="bar bar-1" x="18" y="38" width="8" rx="1.5" height="16"
+                                    fill="url(#iconGrad2)" opacity="0.5" />
+                                <rect class="bar bar-2" x="30" y="32" width="8" rx="1.5" height="22"
+                                    fill="url(#iconGrad2)" opacity="0.65" />
+                                <rect class="bar bar-3" x="42" y="26" width="8" rx="1.5" height="28"
+                                    fill="url(#iconGrad2)" opacity="0.8" />
+                                <rect class="bar bar-4" x="54" y="30" width="8" rx="1.5" height="24"
+                                    fill="url(#iconGrad2)" opacity="0.9" />
                                 <!-- Trend line with dots -->
-                                <polyline points="22,36 34,30 46,24 58,28" stroke="url(#iconGrad2)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle class="pulse-dot" cx="22" cy="36" r="2.5" fill="url(#iconGrad2)"/>
-                                <circle class="pulse-dot" cx="34" cy="30" r="2.5" fill="url(#iconGrad2)"/>
-                                <circle class="pulse-dot" cx="46" cy="24" r="2.5" fill="url(#iconGrad2)"/>
-                                <circle class="pulse-dot" cx="58" cy="28" r="2.5" fill="url(#iconGrad2)"/>
+                                <polyline points="22,36 34,30 46,24 58,28" stroke="url(#iconGrad2)" stroke-width="1.5"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle class="pulse-dot" cx="22" cy="36" r="2.5" fill="url(#iconGrad2)" />
+                                <circle class="pulse-dot" cx="34" cy="30" r="2.5" fill="url(#iconGrad2)" />
+                                <circle class="pulse-dot" cx="46" cy="24" r="2.5" fill="url(#iconGrad2)" />
+                                <circle class="pulse-dot" cx="58" cy="28" r="2.5" fill="url(#iconGrad2)" />
                                 <!-- Checkmark badge -->
-                                <circle cx="66" cy="62" r="10" stroke="url(#iconGrad2)" stroke-width="1.8" fill="var(--bg-tertiary)"/>
-                                <polyline points="60,62 64,66 72,58" stroke="url(#iconGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="66" cy="62" r="10" stroke="url(#iconGrad2)" stroke-width="1.8"
+                                    fill="var(--bg-tertiary)" />
+                                <polyline points="60,62 64,66 72,58" stroke="url(#iconGrad2)" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section" style="padding-top:0;">
             <div style="max-width:1000px;margin:0 auto;">
                 <div
                     style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);text-align:center;">
@@ -2962,9 +3552,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -2997,7 +3589,7 @@
                 </div>
 
                 <!-- Category: Getting Started -->
-                <div style="margin-bottom:12px;">
+                <div style="margin-bottom:12px;margin-top:12px;">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
                         <div
                             style="width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(236,72,153,0.1);display:flex;align-items:center;justify-content:center;">
@@ -3012,71 +3604,81 @@
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        How do I create an account?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            To get started with IEP Pal, click <strong>"Book a Demo"</strong> on our homepage. After
-                            your demo session, our team will set up your admin account and walk you through the
-                            onboarding process. Your school's educators can then be invited to join through the admin
-                            dashboard.
+                <div style="margin-bottom:8px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            How do I create an account?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                To get started with IEP Pal, click <strong>"Book a Demo"</strong> on our homepage. After
+                                your demo session, our team will set up your admin account and walk you through the
+                                onboarding process. Your school's educators can then be invited to join through the
+                                admin
+                                dashboard.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        What plan is right for my school?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            We offer three tiers: <strong>Basic</strong> for individual educators who need IEP creation
-                            and goal tracking, <strong>Schools</strong> (recommended) which adds data visualizations,
-                            the strategy library, and data collection activities, and <strong>Custom</strong> for
-                            organizations needing tailored features. Visit our <a href="#" data-page="pricing"
-                                style="color:var(--accent);font-weight:600;">Pricing page</a> for full details.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            What plan is right for my school?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                We offer three tiers: <strong>Basic</strong> for individual educators who need IEP
+                                creation
+                                and goal tracking, <strong>Schools</strong> (recommended) which adds data
+                                visualizations,
+                                the strategy library, and data collection activities, and <strong>Custom</strong> for
+                                organizations needing tailored features. Visit our <a href="#" data-page="pricing"
+                                    style="color:var(--accent);font-weight:600;">Pricing page</a> for full details.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        Is there a free trial available?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            Yes! The Schools plan includes a free trial so you can explore data visualizations, the
-                            strategy library, and data collection activities before committing. Book a demo and our team
-                            will get you set up.
+                <div style="margin-bottom:8px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">Is
+                            there a free trial available?<svg class="help-chevron" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg></button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                We don't have a self-serve free trial, but we'd love to show you what IEP Pal can do.
+                                Reach out to book a demo and our team will walk you through the platform and set up a
+                                trial tailored to your school's needs. Just head to our contact page or click "Book a
+                                Demo" to get started.</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Category: Features & Usage -->
-                <div style="margin-bottom:12px;margin-top:24px;">
+                <div style="margin-bottom:12px;margin-top:12px;">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
                         <div
                             style="width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;">
@@ -3090,69 +3692,81 @@
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        How do I create and manage an IEP?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            IEP Pal lets you create IEPs using fully customizable templates that match your school's
-                            requirements. You can create new templates from scratch, update documents whenever needed,
-                            and house all IEPs in one accessible location. Navigate to the student's profile and select
-                            "Create IEP" to get started.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            How do I create and manage an IEP?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                First, begin by creating a class. Click "+ New Classroom" in the top right. Fill up your
+                                class details. Once inside, click "+ Add Student," which is the middle button on the top
+                                right. Once your student is added, click on their profile and fill up the IEP template
+                                present. If your IEP Template is not viewing, contact your administrator.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        What is the Strategy Library?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            The Strategy Library gives you access to over 150+ proven strategies curated by experts. You
-                            can browse the library, add strategies directly to student profiles, and even create and add
-                            your own custom strategies. It's available on the Schools and Custom plans.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            What is the Strategy Library?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                The Strategy Library gives you access to over 150+ proven strategies curated by experts.
+                                You
+                                can browse the library, add strategies directly to student profiles, and even create and
+                                add
+                                your own custom strategies. It's available on the Schools and Custom plans.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        How does data visualization work?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            IEP Pal transforms your collected data into clear, actionable visuals including bar charts,
-                            stacked bar charts, boxplots, and more. You can view trends over time and see whether
-                            students are on track to meet their goals � all without manual spreadsheet work.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            How do data visualizations work?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                You gain the ability to create bar charts, stacked bar charts, and boxplots. These
+                                visualizations can be manually created and we are expanding capability so it becomes
+                                just as easy as dragging in a spreadsheet, no questions asked! If you're curious about
+                                gaining these new superpowers, book a demo!
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Category: Privacy & Security -->
-                <div style="margin-bottom:12px;margin-top:24px;">
+                <div style="margin-bottom:12px;margin-top:12px;">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
                         <div
                             style="width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(249,115,22,0.1);display:flex;align-items:center;justify-content:center;">
@@ -3166,43 +3780,52 @@
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        How is student data protected?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            Student privacy is our top priority. IEP Pal is built with security-first principles
-                            including encrypted data storage, role-based access controls, and compliance with relevant
-                            education data privacy standards. See our Privacy Policy and Data Processing Agreement for
-                            full details.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            How is student data protected?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                Student privacy is our top priority. IEP Pal is built with security-first principles
+                                including encrypted data storage, role-based access controls, and compliance with
+                                relevant
+                                education data privacy standards. See our Privacy Policy and Data Processing Agreement
+                                for
+                                full details.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="help-topic"
-                    style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                    <button onclick="toggleHelp(this)"
-                        style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
-                        Who can access the data in my account?
-                        <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24" style="transition:transform 0.3s ease;flex-shrink:0;">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
-                        <div
-                            style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                            Only authorized users within your school or organization can access your data. Admin
-                            accounts control who is invited and what permissions each educator has. IEP Pal staff do not
-                            access student data unless required for technical support with your explicit permission.
+                <div style="margin-bottom:12px;">
+                    <div class="help-topic"
+                        style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <button onclick="toggleHelp(this)"
+                            style="width:100%;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;font-family:var(--font-body);text-align:left;">
+                            Who can access the data in my account?
+                            <svg class="help-chevron" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24"
+                                style="transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+                            <div
+                                style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
+                                Only authorized users within your school or organization can access your data. Admin
+                                accounts control who is invited and what permissions each educator has. IEP Pal staff do
+                                not
+                                access student data unless required for technical support with your explicit permission.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3219,7 +3842,8 @@
                     </div>
                     <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;">Still have
                         questions?</h3>
-                    <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:24px;">Our team is happy to
+                    <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:24px;">Our team is happy
+                        to
                         help. Reach out and we'll get back to you within 24 hours.</p>
                     <button class="btn-accent" data-page="contact">Contact Us <svg width="16" height="16" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -3266,9 +3890,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -3319,9 +3945,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -3373,9 +4001,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
@@ -3427,9 +4057,11 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 IEP Pal. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/iep-pal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
                 </div>
