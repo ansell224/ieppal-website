@@ -58,6 +58,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -96,7 +97,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 0 max(40px, calc((100vw - 1200px) / 2 + 32px));
+            padding: 0 40px;
             height: 60px;
             display: flex;
             align-items: center;
@@ -104,6 +105,12 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(24px) saturate(1.2);
             border-bottom: 1px solid var(--border-subtle);
+        }
+
+        @media (min-width: 1264px) {
+            .nav {
+                padding: 0 calc((100% - 1200px) / 2 + 32px);
+            }
         }
 
         .nav-logo {
@@ -136,6 +143,9 @@
             padding: 4px;
             border: 1px solid var(--border-subtle);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-link {
@@ -249,6 +259,7 @@
             display: none;
             padding-top: 64px;
             min-height: 100vh;
+            overflow-x: clip;
         }
 
         @keyframes pageFadeIn {
@@ -266,14 +277,14 @@
 
         .page.active {
             display: block;
-            animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: pageFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         /* Staggered hero children */
-        .page.active .hero > div > *:nth-child(1) { animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
-        .page.active .hero > div > *:nth-child(2) { animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
-        .page.active .about-hero > *:nth-child(1) { animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
-        .page.active .about-hero > *:nth-child(2) { animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+        .page.active .hero > div > *:nth-child(1) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+        .page.active .hero > div > *:nth-child(2) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+        .page.active .about-hero > *:nth-child(1) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+        .page.active .about-hero > *:nth-child(2) { animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
 
         /* ===== HERO SECTION ===== */
         .hero {
@@ -532,6 +543,37 @@
         }
 
         /* ===== INTERACTIVE APP DEMO ===== */
+        .hero-mobile-img {
+            display: none;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-tags li {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 15px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .feature-tags li::before {
+            content: '\2713';
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
         .interactive-demo {
             border-radius: 1.2em;
             aspect-ratio: 14/10;
@@ -1495,7 +1537,88 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            flex-shrink: 0;
+        }
+
         @media (max-width: 900px) {
+            /* Nav: switch to hamburger menu */
+            .nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                position: fixed !important;
+                top: 60px !important;
+                left: 0 !important;
+                right: 0 !important;
+                transform: none !important;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(24px);
+                border-bottom: 1px solid var(--border-subtle);
+                border-radius: 0 !important;
+                padding: 12px 16px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+                z-index: 999;
+                display: none;
+            }
+
+            .nav-links.mobile-open {
+                display: flex !important;
+            }
+
+            .nav-links .nav-link {
+                width: 100%;
+                text-align: left;
+                padding: 12px 16px;
+                border-radius: var(--radius-sm);
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+
+            .nav-links.mobile-open .nav-link {
+                animation: navDropIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            }
+
+            .nav-links.mobile-open .nav-link:nth-child(1) { animation-delay: 0.03s; }
+            .nav-links.mobile-open .nav-link:nth-child(2) { animation-delay: 0.07s; }
+            .nav-links.mobile-open .nav-link:nth-child(3) { animation-delay: 0.11s; }
+            .nav-links.mobile-open .nav-link:nth-child(4) { animation-delay: 0.15s; }
+            .nav-links.mobile-open .nav-link:nth-child(5) { animation-delay: 0.19s; }
+
+            @keyframes navDropIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-12px) scale(0.95);
+                }
+                60% {
+                    opacity: 1;
+                    transform: translateY(3px) scale(1.01);
+                }
+                80% {
+                    transform: translateY(-2px) scale(0.995);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            /* Grids: stack to single column */
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -1517,6 +1640,95 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
+            .hero-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+
+            .hero {
+                text-align: center !important;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Center the "Book a Demo" button row */
+            .hero-grid > div > div[style*="display:flex"] {
+                justify-content: center;
+            }
+
+            .demo-wrapper {
+                display: none !important;
+            }
+
+            .hero-mobile-img {
+                display: none !important;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.8rem, 8vw, 3.8rem) !important;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+                margin-bottom: 64px !important;
+            }
+
+            .feature-tags {
+                flex-direction: column;
+                gap: 0;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border: 1px solid var(--border-subtle);
+                overflow: hidden;
+            }
+
+            .feature-tags li {
+                border-radius: 0;
+                border: none;
+                background: none;
+                padding: 12px 16px;
+                font-size: 0.88rem;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .feature-tags li:last-child {
+                border-bottom: none;
+            }
+
+            .contact-fields {
+                grid-template-columns: 1fr !important;
+            }
+
+            .investor-card {
+                grid-template-columns: 1fr !important;
+                padding: 32px !important;
+            }
+
+            .team-expanded {
+                grid-template-columns: 1fr !important;
+            }
+
+            .team-expanded > div:first-child {
+                max-height: 360px;
+            }
+
+            .section-intro {
+                margin-bottom: 48px !important;
+            }
+
+            .nav-logo {
+                font-size: 1.8rem;
+            }
+
+            .nav-logo .logo-mark {
+                width: 32px;
+                height: 32px;
+            }
         }
 
         @media (max-width: 640px) {
@@ -1524,16 +1736,28 @@
                 padding: 0 16px;
             }
 
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
             .hero {
                 padding: 60px 20px 48px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.8rem, 10vw, 3.5rem) !important;
+            }
+
+            .id-sidebar {
+                width: 3em;
+                padding: 0.6em 0.25em 0.5em;
+            }
+
+            .id-sidebar:hover {
+                width: 3em;
+            }
+
+            .id-sidebar-icon span,
+            .id-sidebar:hover .id-sidebar-icon span,
+            .id-sidebar-logo span,
+            .id-sidebar:hover .id-sidebar-logo span {
+                display: none;
             }
 
             .section {
@@ -1549,23 +1773,60 @@
                 flex-direction: column;
                 gap: 16px;
             }
-        }
 
-        @media (min-width: 641px) {
-            .mobile-menu-btn {
-                display: none;
+            .hero-grid {
+                gap: 24px !important;
             }
-        }
 
-        .mobile-menu-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-sm);
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-subtle);
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
+            .feature-row {
+                gap: 24px !important;
+                margin-bottom: 48px !important;
+            }
+
+            .investor-card {
+                padding: 24px !important;
+                gap: 24px !important;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr !important;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .team-grid > div > div:first-child {
+                aspect-ratio: 3/4 !important;
+            }
+
+            .team-grid > div > div:first-child img {
+                object-position: center 15% !important;
+            }
+
+            .team-expanded > div:first-child {
+                max-height: 320px;
+            }
+
+            .team-expanded > div:last-child {
+                padding: 24px 20px !important;
+            }
+
+            .section-intro {
+                margin-bottom: 32px !important;
+            }
+
+            .nav-logo {
+                font-size: 1.5rem;
+                gap: 8px;
+            }
+
+            .nav-logo .logo-mark {
+                width: 28px;
+                height: 28px;
+            }
+
+            .mission-block .quote-mark {
+                font-size: 3.5rem;
+            }
         }
     </style>
 </head>
@@ -1578,7 +1839,7 @@
             <div class="logo-mark"><img src="logo.svg" alt="IEP Pal logo"></div>
             IEP Pal
         </div>
-        <div class="nav-links" style="position:absolute;left:50%;transform:translateX(-50%);">
+        <div class="nav-links">
             <button class="nav-link active" data-page="home">Home</button>
             <button class="nav-link" data-page="pricing">Pricing</button>
             <button class="nav-link" data-page="about">About</button>
@@ -1588,13 +1849,13 @@
         <div class="nav-actions">
             <a href="https://mvp.d3pnjfzzovn4ad.amplifyapp.com/login" class="btn-primary nav-link-action"
                 style="text-decoration:none;padding:6px 18px;font-size:0.85rem;">Sign in</a>
+            <button class="mobile-menu-btn"
+                onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 6h14M3 10h14M3 14h14" />
+                </svg>
+            </button>
         </div>
-        <button class="mobile-menu-btn"
-            onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 6h14M3 10h14M3 14h14" />
-            </svg>
-        </button>
     </nav>
 
     <!-- ===== HOME PAGE ===== -->
@@ -1602,7 +1863,7 @@
 
         <!-- Hero -->
         <section class="hero" style="text-align:left;max-width:1200px;margin:0 auto;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+            <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
                 <div style="position:relative;z-index:1;">
                     <h1>Learning support all in one place</h1>
                     <p>Nurture your students by spending less time meddling with admin, and let IEP Pal do the work.</p>
@@ -1614,7 +1875,7 @@
                             </svg></button>
                     </div>
                 </div>
-                <div style="position:relative;z-index:1;">
+                <div class="demo-wrapper" style="position:relative;z-index:1;">
                     <!-- Interactive Demo -->
                     <div class="interactive-demo" onclick="showDemoCTA(event)">
                         <div class="id-sidebar">
@@ -1676,6 +1937,7 @@
                         </div>
                     </div>
                 </div>
+                <img src="classrooms.png" alt="IEP Pal Classrooms dashboard" class="hero-mobile-img" style="width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.12);">
             </div>
         </section>
 
@@ -1689,17 +1951,17 @@
         <!-- Feature Section 1: Learning Support Without The Overwhelm -->
         <section class="section" style="overflow:visible;">
             <div
-                style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
+                class="feature-row" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;">
                 <div class="fade-in-left">
                     <h3
                         style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.01em;">
                         Learning Support Without The Overwhelm</h3>
                     <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Have all
                         documents and IEPs housed in one place for easy access.</p>
-                    <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
-                        <li>Fully customizable templates to match your School</li>
-                        <li>Create new Templates</li>
-                        <li>Update Documents Whenever Needed</li>
+                    <ul class="feature-tags">
+                        <li>Customizable templates</li>
+                        <li>Create new templates</li>
+                        <li>Update anytime</li>
                     </ul>
                 </div>
                 <div class="fade-in-right"
@@ -1724,17 +1986,17 @@
         <!-- Feature Section 2: Data features - alternating layout -->
         <section class="section">
             <div style="max-width:1100px;margin:0 auto;">
-                <div class="fade-in" style="margin-bottom:80px;text-align:center;">
-                    <h2 class="typewriter-trigger"
+                <div class="fade-in-scale section-intro" style="margin-bottom:80px;text-align:center;">
+                    <h2
                         style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:16px;letter-spacing:-0.02em;">
-                        <span class="typewriter-line">Get more out of data, with less time invested</span></h2>
-                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.8;opacity:0;" class="typewriter-subtitle">Track data so you know what's
+                        Get more out of data, with less time invested</h2>
+                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.8;">Track data so you know what's
                         working</p>
                 </div>
 
                 <!-- Row 1: Video left, text right -->
                 <div
-                    style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:140px;">
+                    class="feature-row" style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:140px;">
                     <div class="fade-in-left"
                         style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
                         <div
@@ -1757,27 +2019,27 @@
                             Qualitative Data Surveys</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
                             Create and manage qualitative data collection activities with ease.</p>
-                        <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
-                            <li> Create surveys from scratch</li>
-                            <li> Use Likert Measures</li>
-                            <li> Get written reflections</li>
+                        <ul class="feature-tags">
+                            <li>Custom surveys</li>
+                            <li>Likert measures</li>
+                            <li>Written reflections</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Row 2: Text left, video right -->
                 <div
-                    style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:140px;">
+                    class="feature-row" style="display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:center;margin-bottom:140px;">
                     <div class="fade-in-left">
                         <h3
                             style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
                             Data Visualization</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
                             Transform raw data into clear, actionable visual insights for every student.</p>
-                        <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
-                            <li> Bar Charts, Stacked Bar Charts, Boxplots & More</li>
-                            <li> View Trends over Time</li>
-                            <li> Track if students meet their goals</li>
+                        <ul class="feature-tags">
+                            <li>Bar charts & boxplots</li>
+                            <li>Trends over time</li>
+                            <li>Goal tracking</li>
                         </ul>
                     </div>
                     <div class="fade-in-right"
@@ -1799,14 +2061,14 @@
                 </div>
 
                 <!-- Strategy Library Header -->
-                <div class="fade-in" style="text-align:center;margin-bottom:80px;">
-                    <h2 class="typewriter-trigger"
-                        style="font-family:var(--font-display);font-size:2.8rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;">
-                        <span class="typewriter-line">Putting the 'support' in learning support</span></h2>
+                <div class="fade-in-scale section-intro" style="text-align:center;margin-bottom:80px;">
+                    <h2
+                        style="font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.2;">
+                        Putting the 'support' in learning support</h2>
                 </div>
 
                 <!-- Row 3: Video left, text right -->
-                <div style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
+                <div class="feature-row" style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
                     <div class="fade-in-left"
                         style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
                         <div
@@ -1829,10 +2091,10 @@
                             Strategy Library</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Add
                             proven strategies from our curated library directly to student profiles.</p>
-                        <ul style="color:var(--text-secondary);font-size:0.92rem;line-height:2.2;padding-left:20px;">
-                            <li> Access 150+ expert-curated strategies</li>
-                            <li> Add strategies to student profiles</li>
-                            <li> Create &amp; add your own strategies</li>
+                        <ul class="feature-tags">
+                            <li>150+ curated strategies</li>
+                            <li>Add to student profiles</li>
+                            <li>Create your own</li>
                         </ul>
                     </div>
                 </div>
@@ -2055,7 +2317,7 @@
             <!-- Grid overlay: both children in same cell, crossfade simultaneously -->
             <div id="tc-wrap" style="max-width:800px;margin:0 auto;display:grid;">
                 <!-- Cards view -->
-                <div id="tc-cards"
+                <div id="tc-cards" class="team-grid"
                     style="grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:32px;opacity:1;transition:opacity 0.4s ease;pointer-events:auto;">
                     <div onclick="openCard('ansel')"
                         style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
@@ -2082,7 +2344,7 @@
                     </div>
                 </div>
                 <!-- Expanded view (same grid cell, hidden underneath) -->
-                <div id="tc-expanded"
+                <div id="tc-expanded" class="team-expanded"
                     style="grid-area:1/1;display:grid;grid-template-columns:300px 1fr;opacity:0;transition:opacity 0.4s ease;pointer-events:none;visibility:hidden;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
                     <div style="overflow:hidden;background:var(--bg-tertiary);"><img id="tc-exp-img" src="" alt=""
                             style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
@@ -2124,38 +2386,43 @@
                     document.getElementById('tc-exp-linkedin').href = d.linkedin;
                     var cards = document.getElementById('tc-cards');
                     var expanded = document.getElementById('tc-expanded');
-                    // Show expanded in layout so it can crossfade
+                    // Immediately hide cards and collapse
+                    cards.style.opacity = '0';
+                    cards.style.pointerEvents = 'none';
+                    cards.style.visibility = 'hidden';
+                    cards.style.height = '0';
+                    cards.style.overflow = 'hidden';
+                    // Show expanded
                     expanded.style.visibility = 'visible';
-                    // Simultaneous crossfade
-                    requestAnimationFrame(function () {
-                        cards.style.opacity = '0';
-                        cards.style.pointerEvents = 'none';
-                        expanded.style.opacity = '1';
-                        expanded.style.pointerEvents = 'auto';
-                    });
-                    // After transition, hide cards from layout
+                    expanded.style.opacity = '1';
+                    expanded.style.pointerEvents = 'auto';
+                    // Scroll to top of the card, offset for fixed nav
+                    var wrap = document.getElementById('tc-wrap');
                     setTimeout(function () {
-                        cards.style.visibility = 'hidden';
-                    }, 420);
+                        var top = wrap.getBoundingClientRect().top + window.scrollY - 72;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }, 50);
                 }
                 function closeCard() {
                     if (!tcOpen) return;
                     var cards = document.getElementById('tc-cards');
                     var expanded = document.getElementById('tc-expanded');
-                    // Show cards in layout so it can crossfade
+                    // Hide expanded
+                    expanded.style.opacity = '0';
+                    expanded.style.pointerEvents = 'none';
+                    expanded.style.visibility = 'hidden';
+                    // Restore and show cards
+                    cards.style.height = '';
+                    cards.style.overflow = '';
                     cards.style.visibility = 'visible';
-                    // Simultaneous crossfade
-                    requestAnimationFrame(function () {
-                        expanded.style.opacity = '0';
-                        expanded.style.pointerEvents = 'none';
-                        cards.style.opacity = '1';
-                        cards.style.pointerEvents = 'auto';
-                    });
-                    // After transition, hide expanded from layout
+                    cards.style.opacity = '1';
+                    cards.style.pointerEvents = 'auto';
+                    tcOpen = null;
+                    // Scroll back to cards
+                    var wrap = document.getElementById('tc-wrap');
                     setTimeout(function () {
-                        expanded.style.visibility = 'hidden';
-                        tcOpen = null;
-                    }, 420);
+                        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
                 }
             </script>
         </section>
@@ -2435,7 +2702,7 @@
                     <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
                     <input type="hidden" name="subject" value="New Contact � IEP Pal Website">
                     <input type="hidden" name="from_name" value="IEP Pal Website">
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div class="contact-fields" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
                         <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
                                 id="cf-name" type="text" placeholder="John Doe" required /></div>
                         <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
@@ -2554,7 +2821,7 @@
         <section class="section">
             <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
                 <div
-                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+                    class="investor-card" style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
                     <div
                         style="background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default;">
                         <div class="investor-icon-container paper-stack">
@@ -2593,7 +2860,7 @@
                     </div>
                 </div>
                 <div
-                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+                    class="investor-card" style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
                     <div>
                         <h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:16px;">How are we
                             addressing the problem?
@@ -3171,6 +3438,11 @@
     </div>
     <!-- ===== JAVASCRIPT ===== -->
     <script>
+        // Scroll to top on load/reload
+        window.addEventListener('beforeunload', function () { window.scrollTo(0, 0); });
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+
         // Interactive demo CTA
         function showDemoCTA(e) {
             e.stopPropagation();
@@ -3203,6 +3475,10 @@
 
             const navBtn = document.querySelector(`.nav-link[data-page="${pageId}"]`);
             if (navBtn) navBtn.classList.add('active');
+
+            // Close mobile menu after navigation
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) navLinks.classList.remove('mobile-open');
         }
 
         // Attach click events via delegation (supports dynamically added links)
