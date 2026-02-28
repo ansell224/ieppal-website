@@ -509,6 +509,15 @@
         }
 
         /* ===== INVESTOR ICONS ===== */
+        .investor-graphic {
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .investor-graphic:hover {
+            border-color: rgba(236, 72, 153, 0.2) !important;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.06);
+        }
+
         .investor-icon-container {
             position: relative;
             width: 100%;
@@ -519,94 +528,115 @@
         }
 
         .investor-icon-container svg {
-            transition: transform 0.4s ease;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        filter 0.5s ease;
+            filter: drop-shadow(0 0 0px transparent);
         }
 
         .investor-icon-container:hover svg {
-            transform: scale(1.08);
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(236, 72, 153, 0.15));
         }
 
         /* Paper stack animation */
         .paper-stack .paper {
-            transition: transform 0.4s ease, opacity 0.4s ease;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        opacity 0.5s ease;
         }
 
+        .paper-stack .paper-1 { transition-delay: 0.05s; }
+        .paper-stack .paper-2 { transition-delay: 0.1s; }
+        .paper-stack .paper-3 { transition-delay: 0.15s; }
+
         .paper-stack:hover .paper-1 {
-            transform: translate(-3px, -3px) rotate(-4deg);
+            transform: translate(-4px, 3px) rotate(-3deg);
+            opacity: 0.5;
         }
 
         .paper-stack:hover .paper-2 {
-            transform: translate(2px, -1px) rotate(2deg);
+            transform: translate(-1px, 1px) rotate(-1deg);
+            opacity: 0.75;
         }
 
         .paper-stack:hover .paper-3 {
-            transform: translate(0, -6px);
+            transform: translate(3px, -3px) rotate(1deg);
+        }
+
+        .paper-stack .clock-hand {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origin: 50% 58%;
         }
 
         .paper-stack:hover .clock-hand {
-            animation: investorSpin 2s ease-in-out infinite;
+            transform: rotate(90deg);
+            transform-origin: 50% 58%;
         }
 
-        @keyframes investorSpin {
+        /* Lines on paper - staggered reveal */
+        .paper-stack line {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
 
-            0%,
-            100% {
-                transform: rotate(0deg);
-                transform-origin: 50% 58%;
-            }
-
-            50% {
-                transform: rotate(180deg);
-                transform-origin: 50% 58%;
-            }
+        .paper-stack:hover line {
+            opacity: 0.6 !important;
         }
 
         /* Data rise animation */
         .data-bars .bar {
-            transition: transform 0.5s ease;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.4s ease;
             transform-origin: bottom center;
         }
 
+        .data-bars .bar-1 { transition-delay: 0s; }
+        .data-bars .bar-2 { transition-delay: 0.08s; }
+        .data-bars .bar-3 { transition-delay: 0.16s; }
+        .data-bars .bar-4 { transition-delay: 0.24s; }
+
         .data-bars:hover .bar-1 {
-            transform: scaleY(1.3);
+            transform: scaleY(1.2);
+            opacity: 0.7;
         }
 
         .data-bars:hover .bar-2 {
-            transform: scaleY(1.25);
+            transform: scaleY(1.15);
+            opacity: 0.8;
         }
 
         .data-bars:hover .bar-3 {
-            transform: scaleY(1.15);
+            transform: scaleY(1.1);
+            opacity: 0.9;
         }
 
         .data-bars:hover .bar-4 {
-            transform: scaleY(1.2);
+            transform: scaleY(1.18);
+            opacity: 1;
         }
 
+        /* Trend dots - staggered grow on hover, no infinite pulse */
         .data-bars .pulse-dot {
-            animation: investorPulse 2s ease-in-out infinite;
+            transition: r 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.4s ease;
+            opacity: 0.6;
         }
 
-        .data-bars .pulse-dot:nth-child(2) {
-            animation-delay: 0.3s;
+        .data-bars .pulse-dot:nth-child(1) { transition-delay: 0.05s; }
+        .data-bars .pulse-dot:nth-child(2) { transition-delay: 0.12s; }
+        .data-bars .pulse-dot:nth-child(3) { transition-delay: 0.19s; }
+        .data-bars .pulse-dot:nth-child(4) { transition-delay: 0.26s; }
+
+        .data-bars:hover .pulse-dot {
+            r: 3.5;
+            opacity: 1;
         }
 
-        .data-bars .pulse-dot:nth-child(3) {
-            animation-delay: 0.6s;
+        /* Trend line */
+        .data-bars polyline {
+            transition: stroke-width 0.4s ease;
         }
 
-        @keyframes investorPulse {
-
-            0%,
-            100% {
-                opacity: 0.4;
-                r: 2;
-            }
-
-            50% {
-                opacity: 1;
-                r: 3;
-            }
+        .data-bars:hover polyline {
+            stroke-width: 2;
         }
 
         /* ===== INTERACTIVE APP DEMO ===== */
@@ -1026,6 +1056,354 @@
 
         .id-cta-close:hover {
             color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== FEATURE DEMO STYLES ===== */
+        .feature-demo {
+            border-radius: 1.2em;
+            aspect-ratio: 16/10;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+            display: flex;
+            background: #171717;
+            font-size: clamp(7px, 1.1vw, 11px);
+            user-select: none;
+            font-family: 'Inter', -apple-system, sans-serif;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-demo .id-sidebar {
+            width: 3.2em;
+            padding: 0.8em 0.3em 0.6em;
+        }
+
+        .feature-demo .id-sidebar:hover {
+            width: 10em;
+        }
+
+        .feature-demo .id-sidebar-logo img {
+            width: 2.2em;
+            height: 2.2em;
+            min-width: 2.2em;
+            max-width: 2.2em;
+        }
+
+        .feature-demo .id-sidebar-logo {
+            height: 2.6em;
+            margin-bottom: 0.2em;
+        }
+
+        .feature-demo .id-sidebar-icon {
+            height: 2.2em;
+        }
+
+        .feature-demo .id-main {
+            padding: 1.2em 1.6em 1em;
+        }
+
+        .feature-demo .id-header {
+            margin-bottom: 1em;
+        }
+
+        .feature-demo .id-header h2 {
+            font-size: 2em;
+        }
+
+        /* Form elements for demos */
+        .fd-label {
+            font-size: 0.82em;
+            font-weight: 600;
+            color: #a3a3a3;
+            margin-bottom: 0.3em;
+            display: block;
+        }
+
+        .fd-input {
+            width: 100%;
+            padding: 0.5em 0.65em;
+            background: #262626;
+            border: 1px solid #404040;
+            border-radius: 0.45em;
+            color: #e5e5e5;
+            font-size: 0.78em;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .fd-input-placeholder {
+            color: #525252;
+        }
+
+        .fd-textarea {
+            width: 100%;
+            padding: 0.5em 0.65em;
+            background: #262626;
+            border: 1px solid #404040;
+            border-radius: 0.45em;
+            color: #737373;
+            font-size: 0.78em;
+            font-family: inherit;
+            outline: none;
+            resize: none;
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .fd-btn-primary {
+            padding: 0.55em 1.2em;
+            background: #e5e5e5;
+            color: #171717;
+            border: none;
+            border-radius: 0.45em;
+            font-size: 0.78em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .fd-btn-outline {
+            padding: 0.55em 1em;
+            background: transparent;
+            color: #a3a3a3;
+            border: 1px solid #404040;
+            border-radius: 0.45em;
+            font-size: 0.78em;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .fd-toggle-btn {
+            padding: 0.45em 0.8em;
+            border-radius: 0.45em;
+            font-size: 0.72em;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+        }
+
+        .fd-toggle-active {
+            background: #e5e5e5;
+            color: #171717;
+            border: 1px solid #e5e5e5;
+        }
+
+        .fd-toggle-inactive {
+            background: transparent;
+            color: #a3a3a3;
+            border: 1px solid #404040;
+        }
+
+        /* Skill dropdown for goal demo */
+        .fd-dropdown {
+            background: #262626;
+            border: 1px solid #404040;
+            border-radius: 0.45em;
+            margin-top: 0.25em;
+            max-height: 9em;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .fd-dropdown::-webkit-scrollbar { display: none; }
+
+        .fd-dropdown-cat {
+            font-size: 0.62em;
+            font-weight: 600;
+            color: #737373;
+            padding: 0.35em 0.7em;
+            background: #1a1a1a;
+            margin: 0.2em 0.3em;
+            border-radius: 0.3em;
+        }
+
+        .fd-dropdown-item {
+            font-size: 0.72em;
+            color: #d4d4d4;
+            padding: 0.3em 0.7em;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .fd-dropdown-item:hover {
+            background: rgba(255,255,255,0.04);
+        }
+
+        .fd-dropdown-item.selected {
+            background: rgba(236, 72, 153, 0.12);
+            color: #f5f5f5;
+        }
+
+        /* Chart demo */
+        .fd-chart-card {
+            background: linear-gradient(to top right, #7e22ce, #c026d3, #ec4899);
+            border-radius: 0.8em;
+            padding: 0.7em;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        }
+
+        .fd-chart-border {
+            position: absolute;
+            inset: 0.5em;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0.6em;
+            pointer-events: none;
+        }
+
+        .fd-chart-title {
+            font-size: 0.78em;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.4em;
+        }
+
+        .fd-controls {
+            background: #262626;
+            border-radius: 0.8em;
+            padding: 0.7em;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+        }
+
+        .fd-ctrl-label {
+            font-size: 0.6em;
+            color: #737373;
+            margin-bottom: 0.15em;
+        }
+
+        .fd-ctrl-input {
+            width: 100%;
+            padding: 0.35em 0.5em;
+            background: #171717;
+            border: 1px solid #404040;
+            border-radius: 0.35em;
+            color: #e5e5e5;
+            font-size: 0.68em;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .fd-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3em;
+            padding: 0.25em 0.6em;
+            border-radius: 100px;
+            font-size: 0.68em;
+            font-weight: 600;
+        }
+
+        .fd-badge-green {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+        }
+
+        /* Strategy library demo */
+        .fd-strat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5em;
+        }
+
+        .fd-strat-tile {
+            background: #262626;
+            border: 1px solid #404040;
+            border-radius: 0.55em;
+            padding: 0.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fd-strat-tile:hover {
+            border-color: rgba(236, 72, 153, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .fd-strat-icon {
+            width: 1.6em;
+            height: 1.6em;
+            border-radius: 0.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .fd-strat-icon svg {
+            width: 0.85em;
+            height: 0.85em;
+            fill: none;
+            stroke: white;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .fd-strat-name {
+            font-size: 0.72em;
+            font-weight: 600;
+            color: #e5e5e5;
+            line-height: 1.3;
+        }
+
+        .fd-strat-count {
+            font-size: 0.58em;
+            color: #737373;
+            font-weight: 300;
+        }
+
+        .fd-strat-browse {
+            margin-top: auto;
+            padding: 0.3em 0.5em;
+            border-radius: 0.35em;
+            background: #171717;
+            color: #737373;
+            font-size: 0.58em;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .fd-strat-tile:hover .fd-strat-browse {
+            background: linear-gradient(to right, #ec4899, #f97316);
+            color: #fff;
+        }
+
+        /* Prompt box for survey demo */
+        .fd-prompt-box {
+            background: #262626;
+            border-radius: 0.5em;
+            padding: 0.6em 0.7em;
+        }
+
+        .fd-prompt-label {
+            font-size: 0.72em;
+            font-weight: 500;
+            color: #a3a3a3;
+            margin-bottom: 0.25em;
+        }
+
+        .fd-prompt-text {
+            font-size: 0.68em;
+            color: #d4d4d4;
+            line-height: 1.6;
         }
 
         /* ===== DEMO STEPS (Home page) ===== */
@@ -2509,21 +2887,62 @@
                         <li>Update anytime</li>
                     </ul>
                 </div>
-                <div class="fade-in-right"
-                    style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                    <div
-                        style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(59,130,246,0.08) 100%);">
-                    </div>
-                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                        <div
-                            style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-                                <polygon points="9,5 20,12 9,19" />
-                            </svg>
+                <div class="fade-in-right">
+                    <div class="feature-demo" onclick="showDemoCTA(event)">
+                        <div class="id-sidebar">
+                            <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
+                            <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
                         </div>
+                        <div class="id-main">
+                            <div class="id-header">
+                                <div>
+                                    <h2>Create New Goal</h2>
+                                    <div class="id-subtitle">Niko Valez — Algebra 2</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:0.7em;">
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em;">
+                                    <div>
+                                        <div class="fd-label">Goal Title *</div>
+                                        <div class="fd-input" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Improve reading fluency by 20%</div>
+                                    </div>
+                                    <div>
+                                        <div class="fd-label">Target Date</div>
+                                        <div class="fd-input" style="color:#a3a3a3;">2026-06-15</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="fd-label">Description</div>
+                                    <div class="fd-textarea" style="min-height:2em;">Student will increase oral reading fluency from 60 to 72 words per minute by end of semester...</div>
+                                </div>
+                                <div>
+                                    <div class="fd-label">Skill *</div>
+                                    <div class="fd-input" style="display:flex;justify-content:space-between;align-items:center;"><span>Comprehension</span><svg viewBox="0 0 24 24" style="width:0.9em;height:0.9em;fill:none;stroke:#737373;stroke-width:2;stroke-linecap:round;"><path d="M6 9l6 6 6-6"/></svg></div>
+                                    <div class="fd-dropdown">
+                                        <div class="fd-dropdown-cat">Cognitive</div>
+                                        <div class="fd-dropdown-item">Attention</div>
+                                        <div class="fd-dropdown-item">Observation</div>
+                                        <div class="fd-dropdown-item selected">Comprehension</div>
+                                        <div class="fd-dropdown-item">Memory</div>
+                                        <div class="fd-dropdown-item">Problem Solving</div>
+                                        <div class="fd-dropdown-cat">Physical/Motor</div>
+                                        <div class="fd-dropdown-item">Body Awareness</div>
+                                        <div class="fd-dropdown-item">Balance</div>
+                                        <div class="fd-dropdown-cat">Social/Emotional</div>
+                                        <div class="fd-dropdown-item">Emotions</div>
+                                        <div class="fd-dropdown-item">Relationships</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:0.5em;margin-top:0.2em;">
+                                    <button class="fd-btn-primary" style="flex:1;">Create Goal</button>
+                                    <button class="fd-btn-outline">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="id-cta-overlay"><h3>See It Live</h3><p>Try creating IEP goals in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
                     </div>
-                    <span
-                        style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                 </div>
             </div>
         </section>
@@ -2542,21 +2961,37 @@
                 <!-- Row 1: Video left, text right -->
                 <div class="feature-row"
                     style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;margin-bottom:80px;">
-                    <div class="fade-in-left"
-                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div
-                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(249,115,22,0.08) 100%);">
-                        </div>
-                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div
-                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-                                    <polygon points="9,5 20,12 9,19" />
-                                </svg>
+                    <div class="fade-in-left">
+                        <div class="feature-demo" onclick="showDemoCTA(event)">
+                            <div class="id-sidebar">
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
                             </div>
+                            <div class="id-main">
+                                <div style="max-width:85%;margin:0 auto;">
+                                    <h2 style="font-size:1.8em;font-weight:700;color:#f5f5f5;text-align:center;margin:0 0 0.6em;font-family:'Playfair Display',Georgia,serif;">Share Your Thoughts</h2>
+                                    <div class="fd-prompt-box" style="margin-bottom:0.7em;">
+                                        <div class="fd-prompt-label">Prompt:</div>
+                                        <div class="fd-prompt-text">How has the student responded to the new reading intervention strategy over the past two weeks? Describe any changes in engagement, comprehension, or behavior.</div>
+                                    </div>
+                                    <div style="display:flex;gap:0.4em;margin-bottom:0.7em;">
+                                        <div class="fd-toggle-btn fd-toggle-active"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Type Response</div>
+                                        <div class="fd-toggle-btn fd-toggle-inactive"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> Voice Response</div>
+                                    </div>
+                                    <div>
+                                        <div class="fd-label">Your Response</div>
+                                        <div class="fd-textarea" style="min-height:4em;color:#e5e5e5;">The student has shown noticeable improvement in engagement during guided reading sessions. She is now voluntarily participating in group discussions and asking clarifying questions...</div>
+                                    </div>
+                                    <div style="display:flex;justify-content:space-between;margin-top:0.6em;">
+                                        <button class="fd-btn-outline">Back</button>
+                                        <button class="fd-btn-primary" style="display:flex;align-items:center;gap:0.3em;"><svg viewBox="0 0 24 24" style="width:0.9em;height:0.9em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Response</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Try qualitative surveys in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
                         </div>
-                        <span
-                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
                     <div class="fade-in-right">
                         <h3
@@ -2587,21 +3022,91 @@
                             <li>Goal tracking</li>
                         </ul>
                     </div>
-                    <div class="fade-in-right"
-                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div
-                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,0.08) 0%,rgba(236,72,153,0.08) 100%);">
-                        </div>
-                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div
-                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-                                    <polygon points="9,5 20,12 9,19" />
-                                </svg>
+                    <div class="fade-in-right">
+                        <div class="feature-demo" onclick="showDemoCTA(event)">
+                            <div class="id-sidebar">
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
                             </div>
+                            <div class="id-main" style="padding:1em 1.2em;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6em;">
+                                    <h2 style="font-size:1.6em;margin:0;">Data Visualiser</h2>
+                                    <div class="fd-status-badge fd-badge-green"><span style="width:0.4em;height:0.4em;border-radius:50%;background:#4ade80;"></span> On Track</div>
+                                </div>
+                                <div style="display:flex;gap:0.7em;height:calc(100% - 3em);">
+                                    <div class="fd-chart-card">
+                                        <div class="fd-chart-border"></div>
+                                        <div class="fd-chart-title">Pomodoro Study Time vs Test Score (Weekly)</div>
+                                        <svg viewBox="0 0 280 140" style="flex:1;width:100%;" fill="none">
+                                            <!-- Grid lines -->
+                                            <line x1="35" y1="15" x2="35" y2="120" stroke="rgba(255,255,255,0.18)" stroke-width="0.5"/>
+                                            <line x1="35" y1="120" x2="270" y2="120" stroke="rgba(255,255,255,0.18)" stroke-width="0.5"/>
+                                            <line x1="35" y1="93" x2="270" y2="93" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+                                            <line x1="35" y1="66" x2="270" y2="66" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+                                            <line x1="35" y1="39" x2="270" y2="39" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+                                            <!-- Y axis labels -->
+                                            <text x="30" y="122" fill="white" font-size="6" text-anchor="end" font-family="Inter,sans-serif">60</text>
+                                            <text x="30" y="95" fill="white" font-size="6" text-anchor="end" font-family="Inter,sans-serif">70</text>
+                                            <text x="30" y="68" fill="white" font-size="6" text-anchor="end" font-family="Inter,sans-serif">80</text>
+                                            <text x="30" y="41" fill="white" font-size="6" text-anchor="end" font-family="Inter,sans-serif">90</text>
+                                            <!-- X axis labels -->
+                                            <text x="58" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 1</text>
+                                            <text x="84" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 2</text>
+                                            <text x="110" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 3</text>
+                                            <text x="136" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 4</text>
+                                            <text x="162" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 5</text>
+                                            <text x="188" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 6</text>
+                                            <text x="214" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 7</text>
+                                            <text x="240" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 8</text>
+                                            <!-- Goal crosshair lines (dashed) -->
+                                            <line x1="35" y1="12" x2="270" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="0.7" stroke-dasharray="3,3"/>
+                                            <!-- Data line segments (white) -->
+                                            <polyline points="58,120 84,112 110,104 136,93 162,85 188,77 214,66 240,58" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <!-- Regression/trend line (green dashed) -->
+                                            <line x1="58" y1="118" x2="270" y2="30" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="4,3"/>
+                                            <!-- Data dots -->
+                                            <circle cx="58" cy="120" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="84" cy="112" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="110" cy="104" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="136" cy="93" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="162" cy="85" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="188" cy="77" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="214" cy="66" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="240" cy="58" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <!-- Axis titles -->
+                                            <text x="152" y="140" fill="white" font-size="5.5" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">WEEKS</text>
+                                            <text x="10" y="70" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500" transform="rotate(-90 10 70)">TEST SCORE</text>
+                                        </svg>
+                                        <div style="text-align:center;font-size:0.55em;color:rgba(255,255,255,0.7);margin-top:0.2em;">Trend predicts about <span style="font-weight:700;color:#fff;">91.2</span> by Week 12 (goal is <span style="font-weight:700;color:#fff;">90</span>).</div>
+                                    </div>
+                                    <div class="fd-controls">
+                                        <div>
+                                            <div class="fd-ctrl-label">Title</div>
+                                            <div class="fd-ctrl-input">Pomodoro Study Time vs Test Score</div>
+                                        </div>
+                                        <div>
+                                            <div class="fd-ctrl-label">Goal Score</div>
+                                            <div class="fd-ctrl-input">90</div>
+                                        </div>
+                                        <div>
+                                            <div class="fd-ctrl-label">Goal Week</div>
+                                            <div class="fd-ctrl-input">12</div>
+                                        </div>
+                                        <div style="border-top:1px solid #404040;padding-top:0.4em;margin-top:0.1em;">
+                                            <div class="fd-ctrl-label" style="font-weight:600;color:#e5e5e5;">Add Week</div>
+                                            <div style="display:flex;gap:0.3em;margin-top:0.2em;">
+                                                <div class="fd-ctrl-input" style="flex:1;color:#525252;">Mins/day</div>
+                                                <div class="fd-ctrl-input" style="flex:1;color:#525252;">Score</div>
+                                            </div>
+                                            <button class="fd-btn-primary" style="width:100%;margin-top:0.3em;font-size:0.68em;padding:0.4em;">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Try data visualization in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
                         </div>
-                        <span
-                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
                 </div>
 
@@ -2615,21 +3120,72 @@
                 <!-- Row 3: Video left, text right -->
                 <div class="feature-row"
                     style="display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;">
-                    <div class="fade-in-left"
-                        style="background:#1a1a2e;border-radius:20px;aspect-ratio:16/10;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);cursor:pointer;">
-                        <div
-                            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,0.08) 0%,rgba(59,130,246,0.08) 100%);">
-                        </div>
-                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                            <div
-                                style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-                                    <polygon points="9,5 20,12 9,19" />
-                                </svg>
+                    <div class="fade-in-left">
+                        <div class="feature-demo" onclick="showDemoCTA(event)">
+                            <div class="id-sidebar">
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
                             </div>
+                            <div class="id-main">
+                                <div class="id-header">
+                                    <div>
+                                        <h2 style="font-family:'Playfair Display',Georgia,serif;">Strategy Library</h2>
+                                        <div class="id-subtitle">152 evidence-based strategies from 12 books</div>
+                                    </div>
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> Add Strategy</button>
+                                </div>
+                                <div style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8em;">Browse by category</div>
+                                <div class="fd-strat-grid">
+                                    <!-- Row 1 -->
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#ef4444;"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                                            <div><div class="fd-strat-name">Behavioral</div><div class="fd-strat-count">24 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#f97316;"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                                            <div><div class="fd-strat-name">Emotional Regulation</div><div class="fd-strat-count">18 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#f59e0b;"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></div>
+                                            <div><div class="fd-strat-name">Self-Regulation</div><div class="fd-strat-count">14 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                    <!-- Row 2 -->
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#10b981;"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                                            <div><div class="fd-strat-name">Environment & Sensory</div><div class="fd-strat-count">20 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#06b6d4;"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+                                            <div><div class="fd-strat-name">Literacy & Reading</div><div class="fd-strat-count">22 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                    <div class="fd-strat-tile">
+                                        <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
+                                            <div class="fd-strat-icon" style="background:#6366f1;"><svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 018 8c0 6-8 12-8 12S4 16 4 10a8 8 0 018-8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                            <div><div class="fd-strat-name">Executive Function</div><div class="fd-strat-count">19 strategies</div></div>
+                                        </div>
+                                        <div class="fd-strat-browse">Browse</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Browse 150+ strategies in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
                         </div>
-                        <span
-                            style="position:absolute;bottom:18px;left:18px;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;">Demo</span>
                     </div>
                     <div class="fade-in-right">
                         <h3
@@ -3253,38 +3809,172 @@
 
     <div id="contact" class="page">
         <section style="padding:100px 32px 60px;">
-            <div style="max-width:640px;margin:0 auto;text-align:center;">
+            <div style="max-width:640px;margin:0 auto;text-align:center;margin-bottom:48px;">
                 <h1
                     style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;">
                     Get in Touch</h1>
-                <p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;margin-bottom:32px;">Book a demo,
+                <p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;">Book a demo,
                     ask a question, or just say hello. We'll respond within 24 hours.</p>
-                <form id="contact-form"
-                    style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
-                    <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
-                    <input type="hidden" name="subject" value="New Contact ? IEP Pal Website">
-                    <input type="hidden" name="from_name" value="IEP Pal Website">
-                    <div class="contact-fields"
-                        style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;">
-                        <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
-                                id="cf-name" type="text" placeholder="John Doe" required /></div>
-                        <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
-                                id="cf-email" type="email" placeholder="you@school.edu" required /></div>
-                        <div class="form-group" style="margin-bottom:0;"><label>Role</label><input name="role"
-                                id="cf-role" type="text" placeholder="SpEd Teacher" /></div>
-                    </div>
-                    <div class="form-group"><label>Message</label><textarea name="message" id="cf-message"
-                            placeholder="Tell us about your needs..." required></textarea></div>
-                    <button type="submit" id="cf-btn" class="btn-accent"
-                        style="width:100%;justify-content:center;margin-top:4px;">
-                        Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 8h10M9 4l4 4-4 4" />
+            </div>
+
+            <!-- Tab switcher -->
+            <div style="max-width:720px;margin:0 auto;">
+                <div class="contact-tabs" style="display:flex;gap:4px;background:var(--bg-tertiary);border-radius:var(--radius-md);padding:4px;margin-bottom:32px;">
+                    <button class="contact-tab active" data-contact-tab="demo"
+                        style="flex:1;padding:12px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><circle cx="8" cy="14" r="1.5"/><path d="M13 13h4M13 16h2.5"/>
                         </svg>
+                        Book a Demo
                     </button>
-                </form>
+                    <button class="contact-tab" data-contact-tab="general"
+                        style="flex:1;padding:12px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Book a Demo form -->
+                <div class="contact-panel active" id="contact-panel-demo">
+                    <form id="demo-form"
+                        style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
+                        <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
+                        <input type="hidden" name="subject" value="Demo Request - IEP Pal Website">
+                        <input type="hidden" name="from_name" value="IEP Pal Website">
+                        <div style="margin-bottom:20px;">
+                            <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">Schedule a Demo</h3>
+                            <p style="color:var(--text-muted);font-size:0.85rem;">See IEP Pal in action. We'll walk you through the platform and answer any questions.</p>
+                        </div>
+                        <div class="contact-fields"
+                            style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                            <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
+                                    type="text" placeholder="John Doe" required /></div>
+                            <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
+                                    type="email" placeholder="you@school.edu" required /></div>
+                        </div>
+                        <div class="contact-fields"
+                            style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                            <div class="form-group" style="margin-bottom:0;"><label>School / Organization</label><input name="organization"
+                                    type="text" placeholder="Lincoln Elementary" /></div>
+                            <div class="form-group" style="margin-bottom:0;"><label>Role</label><input name="role"
+                                    type="text" placeholder="SpEd Teacher" /></div>
+                        </div>
+                        <div class="form-group"><label>What are you hoping to see?</label><textarea name="message"
+                                placeholder="e.g. IEP tracking for 30+ students, data collection features..." rows="3"></textarea></div>
+                        <button type="submit" class="btn-accent demo-submit-btn"
+                            style="width:100%;justify-content:center;margin-top:4px;">
+                            Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                                <path d="M3 8h10M9 4l4 4-4 4" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- General Contact form -->
+                <div class="contact-panel" id="contact-panel-general">
+                    <form id="contact-form"
+                        style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-card);text-align:left;">
+                        <input type="hidden" name="access_key" value="fcaa8efe-a43c-4871-909e-ae5195573c6b">
+                        <input type="hidden" name="subject" value="New Contact - IEP Pal Website">
+                        <input type="hidden" name="from_name" value="IEP Pal Website">
+                        <div style="margin-bottom:20px;">
+                            <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">Send a Message</h3>
+                            <p style="color:var(--text-muted);font-size:0.85rem;">Questions, feedback, or just want to say hi? We'd love to hear from you.</p>
+                        </div>
+                        <div class="contact-fields"
+                            style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                            <div class="form-group" style="margin-bottom:0;"><label>Name</label><input name="name"
+                                    id="cf-name" type="text" placeholder="John Doe" required /></div>
+                            <div class="form-group" style="margin-bottom:0;"><label>Email</label><input name="email"
+                                    id="cf-email" type="email" placeholder="you@school.edu" required /></div>
+                        </div>
+                        <div class="form-group"><label>Message</label><textarea name="message" id="cf-message"
+                                placeholder="Tell us about your needs..." required></textarea></div>
+                        <button type="submit" id="cf-btn" class="btn-accent"
+                            style="width:100%;justify-content:center;margin-top:4px;">
+                            Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                                <path d="M3 8h10M9 4l4 4-4 4" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <style>
+            .contact-tab {
+                background: transparent;
+                color: var(--text-muted);
+            }
+            .contact-tab.active {
+                background: var(--bg-card);
+                color: var(--text-primary);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            }
+            .contact-tab:hover:not(.active) {
+                color: var(--text-secondary);
+            }
+            .contact-panel {
+                display: none;
+            }
+            .contact-panel.active {
+                display: block;
+                animation: contactFadeIn 0.3s ease;
+            }
+            @keyframes contactFadeIn {
+                from { opacity: 0; transform: translateY(8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
         <script>
+            /* Contact tab switching */
+            document.querySelectorAll('.contact-tab').forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.contact-tab').forEach(function(t) { t.classList.remove('active'); });
+                    document.querySelectorAll('.contact-panel').forEach(function(p) { p.classList.remove('active'); });
+                    tab.classList.add('active');
+                    document.getElementById('contact-panel-' + tab.dataset.contactTab).classList.add('active');
+                });
+            });
+
+            /* Demo form submission */
+            document.getElementById('demo-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = this.querySelector('.demo-submit-btn');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+                var formData = new FormData(this);
+                var form = this;
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                }).then(function(res) { return res.json(); }).then(function(data) {
+                    if (data.success) {
+                        btn.textContent = 'Request Sent!';
+                        btn.style.background = '#22c55e';
+                        form.reset();
+                        setTimeout(function() {
+                            btn.disabled = false;
+                            btn.style.background = '';
+                            btn.innerHTML = 'Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                        }, 3000);
+                    } else {
+                        btn.textContent = 'Error - try again';
+                        btn.disabled = false;
+                        setTimeout(function() {
+                            btn.innerHTML = 'Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                        }, 2000);
+                    }
+                }).catch(function() {
+                    btn.textContent = 'Error - try again';
+                    btn.disabled = false;
+                });
+            });
+
+            /* General contact form submission */
             document.getElementById('contact-form').addEventListener('submit', function (e) {
                 e.preventDefault();
                 var btn = document.getElementById('cf-btn');
@@ -3302,17 +3992,17 @@
                         setTimeout(function () {
                             btn.disabled = false;
                             btn.style.background = '';
-                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
                         }, 3000);
                     } else {
-                        btn.textContent = 'Error ? try again';
+                        btn.textContent = 'Error - try again';
                         btn.disabled = false;
                         setTimeout(function () {
-                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                            btn.innerHTML = 'Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
                         }, 2000);
                     }
                 }).catch(function () {
-                    btn.textContent = 'Error ? try again';
+                    btn.textContent = 'Error - try again';
                     btn.disabled = false;
                 });
             });
@@ -3387,7 +4077,7 @@
             <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
                 <div class="investor-card"
                     style="background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
-                    <div
+                    <div class="investor-graphic"
                         style="background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default;">
                         <div class="investor-icon-container paper-stack">
                             <svg viewBox="0 0 80 80" style="width:55%;height:auto;" fill="none">
@@ -3453,7 +4143,7 @@
                             digitize IEPs and assessment tools. We're continually iterating on our product, and in
                             parallel, demoing new features for validation.</p>
                     </div>
-                    <div
+                    <div class="investor-graphic"
                         style="background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default;">
                         <div class="investor-icon-container data-bars">
                             <svg viewBox="0 0 80 80" style="width:55%;height:auto;" fill="none">
@@ -4078,7 +4768,9 @@
         // Interactive demo CTA
         function showDemoCTA(e) {
             e.stopPropagation();
-            document.getElementById('demoCTAOverlay').classList.add('visible');
+            var demo = e.currentTarget;
+            var overlay = demo.querySelector('.id-cta-overlay');
+            if (overlay) overlay.classList.add('visible');
         }
 
         // Page navigation
