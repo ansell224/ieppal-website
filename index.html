@@ -2901,50 +2901,59 @@
                         <div class="id-main">
                             <div class="id-header">
                                 <div>
-                                    <h2>Create New Goal</h2>
-                                    <div class="id-subtitle">Niko Valez — Algebra 2</div>
+                                    <h2>John Doe</h2>
+                                    <div class="id-subtitle">Level 2 — Algebra 2</div>
+                                </div>
+                                <div style="display:flex;gap:0.4em;">
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> New Goal</button>
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> New IEP</button>
                                 </div>
                             </div>
-                            <div style="display:flex;flex-direction:column;gap:0.7em;">
-                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em;">
-                                    <div>
-                                        <div class="fd-label">Goal Title *</div>
-                                        <div class="fd-input" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Improve reading fluency by 20%</div>
+                            <!-- IEPs Section -->
+                            <div style="margin-bottom:1em;">
+                                <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.5em;">IEPs</h3>
+                                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5em;">
+                                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;transition:all 0.2s;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Case History</div>
+                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated 15/02/2026</div>
                                     </div>
-                                    <div>
-                                        <div class="fd-label">Target Date</div>
-                                        <div class="fd-input" style="color:#a3a3a3;">2026-06-15</div>
+                                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;transition:all 0.2s;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Functional Assessment</div>
+                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated 10/02/2026</div>
                                     </div>
-                                </div>
-                                <div>
-                                    <div class="fd-label">Description</div>
-                                    <div class="fd-textarea" style="min-height:2em;">Student will increase oral reading fluency from 60 to 72 words per minute by end of semester...</div>
-                                </div>
-                                <div>
-                                    <div class="fd-label">Skill *</div>
-                                    <div class="fd-input" style="display:flex;justify-content:space-between;align-items:center;"><span>Comprehension</span><svg viewBox="0 0 24 24" style="width:0.9em;height:0.9em;fill:none;stroke:#737373;stroke-width:2;stroke-linecap:round;"><path d="M6 9l6 6 6-6"/></svg></div>
-                                    <div class="fd-dropdown">
-                                        <div class="fd-dropdown-cat">Cognitive</div>
-                                        <div class="fd-dropdown-item">Attention</div>
-                                        <div class="fd-dropdown-item">Observation</div>
-                                        <div class="fd-dropdown-item selected">Comprehension</div>
-                                        <div class="fd-dropdown-item">Memory</div>
-                                        <div class="fd-dropdown-item">Problem Solving</div>
-                                        <div class="fd-dropdown-cat">Physical/Motor</div>
-                                        <div class="fd-dropdown-item">Body Awareness</div>
-                                        <div class="fd-dropdown-item">Balance</div>
-                                        <div class="fd-dropdown-cat">Social/Emotional</div>
-                                        <div class="fd-dropdown-item">Emotions</div>
-                                        <div class="fd-dropdown-item">Relationships</div>
+                                    <div style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;transition:all 0.2s;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Behavior Profile</div>
+                                        <div style="font-size:0.58em;color:#737373;margin-top:0.15em;">Not yet filled</div>
                                     </div>
                                 </div>
-                                <div style="display:flex;gap:0.5em;margin-top:0.2em;">
-                                    <button class="fd-btn-primary" style="flex:1;">Create Goal</button>
-                                    <button class="fd-btn-outline">Cancel</button>
+                            </div>
+                            <!-- Goals Section -->
+                            <div>
+                                <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.4em;">Goals</h3>
+                                <div style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5em;">Active (2)</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5em;">
+                                    <div style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;transition:all 0.2s;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">Improve reading fluency by 20%</div>
+                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Comprehension</div>
+                                        <div style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Increase oral reading fluency from 60 to 72 words per minute</div>
+                                        <div style="display:flex;gap:0.6em;font-size:0.55em;color:#525252;">
+                                            <span>Target: 06/15/2026</span>
+                                            <span>Created: 01/20/2026</span>
+                                        </div>
+                                    </div>
+                                    <div style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;transition:all 0.2s;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">Build social interaction skills</div>
+                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Relationships</div>
+                                        <div style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Initiate peer conversations 3+ times per class session</div>
+                                        <div style="display:flex;gap:0.6em;font-size:0.55em;color:#525252;">
+                                            <span>Target: 05/30/2026</span>
+                                            <span>Created: 01/15/2026</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="id-cta-overlay"><h3>See It Live</h3><p>Try creating IEP goals in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
+                        <div class="id-cta-overlay"><h3>See It Live</h3><p>Manage IEPs and goals in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
                     </div>
                 </div>
             </div>
@@ -3069,26 +3078,26 @@
                                             <text x="188" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 6</text>
                                             <text x="214" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 7</text>
                                             <text x="240" y="132" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif">Wk 8</text>
-                                            <!-- Goal crosshair lines (dashed) -->
-                                            <line x1="35" y1="12" x2="270" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="0.7" stroke-dasharray="3,3"/>
-                                            <!-- Data line segments (white) -->
-                                            <polyline points="58,120 84,112 110,104 136,93 162,85 188,77 214,66 240,58" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <!-- Regression/trend line (green dashed) -->
-                                            <line x1="58" y1="118" x2="270" y2="30" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="4,3"/>
+                                            <!-- Goal crosshair line at score 90 (dashed) -->
+                                            <line x1="35" y1="41" x2="270" y2="41" stroke="rgba(255,255,255,0.5)" stroke-width="0.7" stroke-dasharray="3,3"/>
+                                            <!-- Data line segments (white) — scores: 60,64,67,71,74,77,81,84 -->
+                                            <polyline points="58,122 84,111 110,103 136,92 162,84 188,76 214,65 240,57" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <!-- Regression line (green dashed) — slope=3.4, intercept=56.9 -->
+                                            <line x1="58" y1="121" x2="270" y2="46" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="4,3"/>
                                             <!-- Data dots -->
-                                            <circle cx="58" cy="120" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="84" cy="112" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="110" cy="104" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="136" cy="93" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="162" cy="85" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="188" cy="77" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="214" cy="66" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
-                                            <circle cx="240" cy="58" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="58" cy="122" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="84" cy="111" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="110" cy="103" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="136" cy="92" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="162" cy="84" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="188" cy="76" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="214" cy="65" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
+                                            <circle cx="240" cy="57" r="3.5" fill="white" stroke="#171717" stroke-width="1.5"/>
                                             <!-- Axis titles -->
                                             <text x="152" y="140" fill="white" font-size="5.5" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500">WEEKS</text>
                                             <text x="10" y="70" fill="white" font-size="5" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500" transform="rotate(-90 10 70)">TEST SCORE</text>
                                         </svg>
-                                        <div style="text-align:center;font-size:0.55em;color:rgba(255,255,255,0.7);margin-top:0.2em;">Trend predicts about <span style="font-weight:700;color:#fff;">91.2</span> by Week 12 (goal is <span style="font-weight:700;color:#fff;">90</span>).</div>
+                                        <div style="text-align:center;font-size:0.55em;color:rgba(255,255,255,0.7);margin-top:0.2em;">Trend predicts about <span style="font-weight:700;color:#fff;">97.8</span> by Week 12 (goal is <span style="font-weight:700;color:#fff;">90</span>).</div>
                                     </div>
                                     <div class="fd-controls">
                                         <div>
