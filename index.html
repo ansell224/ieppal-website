@@ -3927,10 +3927,10 @@
                 <h2>Meet the Team</h2>
             </div>
             <!-- Grid overlay: both children in same cell, crossfade simultaneously -->
-            <div id="tc-wrap" style="max-width:800px;margin:0 auto;display:grid;">
+            <div id="tc-wrap" style="max-width:1100px;margin:0 auto;display:grid;">
                 <!-- Cards view -->
                 <div id="tc-cards" class="team-grid"
-                    style="grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:32px;opacity:1;transition:opacity 0.4s ease;pointer-events:auto;">
+                    style="grid-area:1/1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;opacity:1;transition:opacity 0.4s ease;pointer-events:auto;">
                     <div onclick="openCard('ansel')"
                         style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
                         <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img
@@ -3954,10 +3954,21 @@
                             </p>
                         </div>
                     </div>
+                    <div onclick="openCard('niranjan')"
+                        style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img src="niranjan.jpg"
+                                alt="Niranjan"
+                                style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+                        </div>
+                        <div style="padding:16px;text-align:center;">
+                            <h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Niranjan</h4>
+                            <p style="font-size:0.82rem;color:#64748b;font-weight:500;">Advisor & Software Engineer</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Expanded view (same grid cell, hidden underneath) -->
                 <div id="tc-expanded" class="team-expanded"
-                    style="grid-area:1/1;display:grid;grid-template-columns:300px 1fr;opacity:0;transition:opacity 0.4s ease;pointer-events:none;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
+                    style="grid-area:1/1;display:none;grid-template-columns:300px 1fr;opacity:0;transition:opacity 0.4s ease;pointer-events:none;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
                     <div style="overflow:hidden;background:var(--bg-tertiary);"><img id="tc-exp-img" src="" alt=""
                             style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
                     </div>
@@ -3984,7 +3995,8 @@
             <script>
                 var tcData = {
                     ansel: { img: 'ansel1.jpeg', linkedin: 'https://www.linkedin.com/in/ansel-natarajan/', name: 'Ansel Natarajan', role: 'Co-Founder', desc: "Hey! I'm Ansel, I was born and raised in Singapore and have resided here my whole life. After recently graduating high school and working in EdTech, I joined the Singapore Armed Forces (SAF) as part of my Singaporean National Service (NS). Outside of NS, I love weightlifting, reading non-fiction, and I'm slowly forcing myself to become a runner. My experiences traveling around the world have helped to cultivate a deep passion for education, coaching, and helping others fulfill their potential \u2014 IEP Pal is an incarnation of my wildest dreams of empowering those in education." },
-                    ian: { img: 'ian.png', linkedin: 'https://www.linkedin.com/in/ian-wilson-a9ab40258/', name: 'Ian Wilson', role: 'Co-Founder and Software Developer', desc: "Hi! I'm Ian, I'm French and Canadian but currently based in Singapore, where I am currently serving my mandatory 2 year national service as an infantry sergeant. I am passionate about exploring studies and careers in Physics, Sustainability, and AI post-NS. I am deeply intrigued by the opportunities that exist at the intersection of these fields and look forward to pursuing them in the future. As a student who went through the majority of my secondary education with an IEP, I hope to be able to contribute meaningfully to the field, and support students the way I would have hoped to have been supported when I was in their shoes." }
+                    ian: { img: 'ian.png', linkedin: 'https://www.linkedin.com/in/ian-wilson-a9ab40258/', name: 'Ian Wilson', role: 'Co-Founder and Software Developer', desc: "Hi! I'm Ian, I'm French and Canadian but currently based in Singapore, where I am currently serving my mandatory 2 year national service as an infantry sergeant. I am passionate about exploring studies and careers in Physics, Sustainability, and AI post-NS. I am deeply intrigued by the opportunities that exist at the intersection of these fields and look forward to pursuing them in the future. As a student who went through the majority of my secondary education with an IEP, I hope to be able to contribute meaningfully to the field, and support students the way I would have hoped to have been supported when I was in their shoes." },
+                    niranjan: { img: 'niranjan.jpg', linkedin: '#', name: 'Niranjan', role: 'Advisor & Software Engineer', desc: "I am an engineering leader by profession and a mental health professional by training, with experience building and scaling technology platforms at Dhiway Networks, VMware, and Motorola Solutions. I hold a Master\u2019s degree in Information Technology and completed the GMITE (General Management Programme for IT Executives) at the Indian Institute of Management Bangalore, and I also earned a work-integrated Master\u2019s degree in Psychology driven by a deep interest in human development and behaviour. I am a certified mental health counsellor accredited by the National Institute of Mental Health and Neurosciences (NIMHANS). For over nine years, I have volunteered part-time with Samadhana Counselling Center \u2014 a non-profit providing accessible counselling to children, adolescents, and families \u2014 as a personal commitment to serving and supporting others. Through this platform, I bring together technology leadership, management training, and lived counselling experience to create thoughtful, individualized educational support for every child." }
                 };
                 var tcOpen = null;
                 function openCard(who) {
@@ -3995,15 +4007,21 @@
                     document.getElementById('tc-exp-name').textContent = d.name;
                     document.getElementById('tc-exp-role').textContent = d.role;
                     document.getElementById('tc-exp-desc').textContent = d.desc;
-                    document.getElementById('tc-exp-linkedin').href = d.linkedin;
+                    var liBtn = document.getElementById('tc-exp-linkedin');
+                    if (d.linkedin && d.linkedin !== '#') { liBtn.href = d.linkedin; liBtn.style.display = 'inline-flex'; }
+                    else { liBtn.style.display = 'none'; }
                     var cards = document.getElementById('tc-cards');
                     var expanded = document.getElementById('tc-expanded');
                     cards.style.opacity = '0';
                     cards.style.pointerEvents = 'none';
                     setTimeout(function () {
                         cards.style.display = 'none';
+                        expanded.style.display = 'grid';
                         expanded.style.opacity = '1';
                         expanded.style.pointerEvents = 'auto';
+                        var navH = document.querySelector('nav').offsetHeight || 60;
+                        var top = expanded.getBoundingClientRect().top + window.pageYOffset - navH - 16;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
                     }, 420);
                 }
                 function closeCard() {
@@ -4013,6 +4031,7 @@
                     expanded.style.opacity = '0';
                     expanded.style.pointerEvents = 'none';
                     setTimeout(function () {
+                        expanded.style.display = 'none';
                         cards.style.display = 'grid';
                         cards.style.opacity = '1';
                         cards.style.pointerEvents = 'auto';
