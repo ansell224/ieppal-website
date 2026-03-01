@@ -529,7 +529,7 @@
 
         .investor-icon-container svg {
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        filter 0.5s ease;
+                filter 0.5s ease;
             filter: drop-shadow(0 0 0px transparent);
         }
 
@@ -541,12 +541,20 @@
         /* Paper stack animation */
         .paper-stack .paper {
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        opacity 0.5s ease;
+                opacity 0.5s ease;
         }
 
-        .paper-stack .paper-1 { transition-delay: 0.05s; }
-        .paper-stack .paper-2 { transition-delay: 0.1s; }
-        .paper-stack .paper-3 { transition-delay: 0.15s; }
+        .paper-stack .paper-1 {
+            transition-delay: 0.05s;
+        }
+
+        .paper-stack .paper-2 {
+            transition-delay: 0.1s;
+        }
+
+        .paper-stack .paper-3 {
+            transition-delay: 0.15s;
+        }
 
         .paper-stack:hover .paper-1 {
             transform: translate(-4px, 3px) rotate(-3deg);
@@ -584,14 +592,25 @@
         /* Data rise animation */
         .data-bars .bar {
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        opacity 0.4s ease;
+                opacity 0.4s ease;
             transform-origin: bottom center;
         }
 
-        .data-bars .bar-1 { transition-delay: 0s; }
-        .data-bars .bar-2 { transition-delay: 0.08s; }
-        .data-bars .bar-3 { transition-delay: 0.16s; }
-        .data-bars .bar-4 { transition-delay: 0.24s; }
+        .data-bars .bar-1 {
+            transition-delay: 0s;
+        }
+
+        .data-bars .bar-2 {
+            transition-delay: 0.08s;
+        }
+
+        .data-bars .bar-3 {
+            transition-delay: 0.16s;
+        }
+
+        .data-bars .bar-4 {
+            transition-delay: 0.24s;
+        }
 
         .data-bars:hover .bar-1 {
             transform: scaleY(1.2);
@@ -616,14 +635,25 @@
         /* Trend dots - staggered grow on hover, no infinite pulse */
         .data-bars .pulse-dot {
             transition: r 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        opacity 0.4s ease;
+                opacity 0.4s ease;
             opacity: 0.6;
         }
 
-        .data-bars .pulse-dot:nth-child(1) { transition-delay: 0.05s; }
-        .data-bars .pulse-dot:nth-child(2) { transition-delay: 0.12s; }
-        .data-bars .pulse-dot:nth-child(3) { transition-delay: 0.19s; }
-        .data-bars .pulse-dot:nth-child(4) { transition-delay: 0.26s; }
+        .data-bars .pulse-dot:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .data-bars .pulse-dot:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+
+        .data-bars .pulse-dot:nth-child(3) {
+            transition-delay: 0.19s;
+        }
+
+        .data-bars .pulse-dot:nth-child(4) {
+            transition-delay: 0.26s;
+        }
 
         .data-bars:hover .pulse-dot {
             r: 3.5;
@@ -1064,7 +1094,7 @@
             aspect-ratio: 16/10;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
             display: flex;
             background: #171717;
             font-size: clamp(7px, 1.1vw, 11px);
@@ -1100,8 +1130,9 @@
             transition: background 0.2s, transform 0.15s;
             border-radius: 0.35em;
         }
+
         .feature-demo .id-sidebar-icon:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             transform: scale(1.1);
         }
 
@@ -1139,9 +1170,10 @@
             box-sizing: border-box;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .fd-input:hover {
             border-color: #737373;
-            box-shadow: 0 0 0 1px rgba(115,115,115,0.15);
+            box-shadow: 0 0 0 1px rgba(115, 115, 115, 0.15);
         }
 
         .fd-input-placeholder {
@@ -1163,9 +1195,10 @@
             line-height: 1.5;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .fd-textarea:hover {
             border-color: #737373;
-            box-shadow: 0 0 0 1px rgba(115,115,115,0.15);
+            box-shadow: 0 0 0 1px rgba(115, 115, 115, 0.15);
         }
 
         .fd-btn-primary {
@@ -1180,10 +1213,11 @@
             font-family: inherit;
             transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
         }
+
         .fd-btn-primary:hover {
             background: #fff;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(255,255,255,0.15);
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
         }
 
         .fd-btn-outline {
@@ -1198,10 +1232,11 @@
             font-family: inherit;
             transition: border-color 0.2s, color 0.2s, background 0.2s;
         }
+
         .fd-btn-outline:hover {
             border-color: #737373;
             color: #e5e5e5;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .fd-toggle-btn {
@@ -1222,6 +1257,7 @@
             color: #171717;
             border: 1px solid #e5e5e5;
         }
+
         .fd-toggle-active:hover {
             background: #fff;
             border-color: #fff;
@@ -1233,10 +1269,11 @@
             color: #a3a3a3;
             border: 1px solid #404040;
         }
+
         .fd-toggle-inactive:hover {
             border-color: #737373;
             color: #e5e5e5;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         /* Skill dropdown for goal demo */
@@ -1250,7 +1287,9 @@
             scrollbar-width: none;
         }
 
-        .fd-dropdown::-webkit-scrollbar { display: none; }
+        .fd-dropdown::-webkit-scrollbar {
+            display: none;
+        }
 
         .fd-dropdown-cat {
             font-size: 0.62em;
@@ -1271,7 +1310,7 @@
         }
 
         .fd-dropdown-item:hover {
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .fd-dropdown-item.selected {
@@ -1292,9 +1331,10 @@
             flex: 2;
             transition: transform 0.25s, box-shadow 0.25s;
         }
+
         .fd-chart-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
         }
 
         .fd-chart-title {
@@ -1311,6 +1351,7 @@
             gap: 0.7em;
             margin-bottom: 0.3em;
         }
+
         .fd-chart-legend span {
             display: flex;
             align-items: center;
@@ -1348,9 +1389,10 @@
             box-sizing: border-box;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .fd-ctrl-input:hover {
             border-color: #737373;
-            box-shadow: 0 0 0 1px rgba(115,115,115,0.15);
+            box-shadow: 0 0 0 1px rgba(115, 115, 115, 0.15);
         }
 
         .fd-status-badge {
@@ -1364,17 +1406,19 @@
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: default;
         }
+
         .fd-status-badge:hover {
             transform: scale(1.05);
         }
 
         .fd-badge-green {
-            background: rgba(34,197,94,0.12);
+            background: rgba(34, 197, 94, 0.12);
             color: #4ade80;
-            border: 1px solid rgba(34,197,94,0.3);
+            border: 1px solid rgba(34, 197, 94, 0.3);
         }
+
         .fd-badge-green:hover {
-            box-shadow: 0 0 6px rgba(34,197,94,0.25);
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.25);
         }
 
         /* Strategy library demo */
@@ -1398,7 +1442,7 @@
         .fd-strat-tile:hover {
             border-color: rgba(236, 72, 153, 0.5);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .fd-strat-icon {
@@ -1459,23 +1503,27 @@
             border: 1px solid transparent;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .fd-prompt-box:hover {
             border-color: #404040;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Hover for IEP/Goal cards in student profile demo */
         .fd-card-hover {
             transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s !important;
         }
+
         .fd-card-hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
+
         .fd-card-hover.fd-card-green:hover {
-            border-color: rgba(34,197,94,0.5) !important;
-            box-shadow: 0 4px 12px rgba(34,197,94,0.15);
+            border-color: rgba(34, 197, 94, 0.5) !important;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
+
         .fd-card-hover.fd-card-neutral:hover {
             border-color: #737373 !important;
         }
@@ -1485,10 +1533,12 @@
         .sb-question {
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .sb-question:hover {
             border-color: #525252 !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
+
         /* Action icons in question header */
         .sb-action {
             padding: 0.12em;
@@ -1496,83 +1546,102 @@
             cursor: pointer;
             transition: stroke 0.15s, background 0.15s;
         }
+
         .sb-action:hover svg,
         .sb-action:hover {
             stroke: #e5e5e5;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
+
         /* Likert/checkbox rows */
         .sb-option-row {
             cursor: pointer;
             border-radius: 0.2em;
             transition: background 0.15s;
         }
+
         .sb-option-row:hover {
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
         }
+
         .sb-option-row:hover span[style*="border:1px solid #333"] {
             border-color: #525252 !important;
         }
+
         .sb-option-row:hover svg {
             stroke: #737373 !important;
         }
+
         /* Add point / add option links */
         .sb-add-link {
             cursor: pointer;
             transition: color 0.15s;
         }
+
         .sb-add-link:hover {
             color: #a3a3a3 !important;
         }
+
         /* Add question buttons */
         .sb-add-btn {
             cursor: pointer !important;
             transition: border-color 0.2s, color 0.2s, background 0.2s;
         }
+
         .sb-add-btn:hover {
             border-color: #737373 !important;
             color: #a3a3a3 !important;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
         }
+
         /* Type badge */
         .sb-type-badge {
             cursor: pointer;
             transition: background 0.15s, color 0.15s;
         }
+
         .sb-type-badge:hover {
             background: #404040 !important;
             color: #e5e5e5 !important;
         }
+
         /* Footer buttons */
         .sb-cancel {
             cursor: pointer !important;
             transition: color 0.15s;
         }
+
         .sb-cancel:hover {
             color: #e5e5e5 !important;
         }
+
         .sb-submit {
             cursor: pointer !important;
             transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
         }
+
         .sb-submit:hover {
             background: #fff !important;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(255,255,255,0.15);
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
         }
+
         /* Back to Goal link */
         .sb-back {
             cursor: pointer !important;
             transition: color 0.15s;
         }
+
         .sb-back:hover {
             color: #e5e5e5 !important;
         }
+
         /* Multi-select pill */
         .sb-pill {
             cursor: pointer;
             transition: background 0.15s, color 0.15s;
         }
+
         .sb-pill:hover {
             background: #404040 !important;
         }
@@ -1582,21 +1651,26 @@
         .interactive-demo [class*="id-new-btn"] {
             cursor: pointer;
         }
+
         .feature-demo .id-new-btn:active,
         .interactive-demo .id-new-btn:active {
             transform: scale(0.96);
         }
+
         .id-see-full:hover {
-            background: rgba(255,255,255,0.08) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
             color: #f5f5f5 !important;
         }
+
         .id-student {
             cursor: pointer;
         }
+
         /* Strategy browse active */
         .fd-strat-tile:active {
             transform: scale(0.97);
         }
+
         .fd-card-hover:active {
             transform: scale(0.97) !important;
         }
@@ -1605,8 +1679,9 @@
         .fd-controls {
             transition: box-shadow 0.25s;
         }
+
         .fd-controls:hover {
-            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
         }
 
         .fd-prompt-label {
@@ -2423,7 +2498,9 @@
         }
 
         @keyframes sb-blink {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
 
         .typewriter-line.done {
@@ -2610,16 +2687,18 @@
                 gap: 24px !important;
                 margin-bottom: 160px !important;
             }
+
             .feature-row:last-child {
                 margin-bottom: 0 !important;
             }
 
             /* On mobile, always show text description above the demo */
-            .feature-row > div:has(.feature-demo),
-            .feature-row > div:has(.interactive-demo) {
+            .feature-row>div:has(.feature-demo),
+            .feature-row>div:has(.interactive-demo) {
                 order: 2;
             }
-            .feature-row > div:not(:has(.feature-demo)):not(:has(.interactive-demo)) {
+
+            .feature-row>div:not(:has(.feature-demo)):not(:has(.interactive-demo)) {
                 order: 1;
             }
 
@@ -2629,6 +2708,7 @@
                 padding-bottom: 80px !important;
                 border-top: 1px solid var(--border-subtle);
             }
+
             .section:first-child {
                 border-top: none;
             }
@@ -2640,13 +2720,15 @@
                 padding-top: 56px !important;
                 border-top: 1px solid var(--border-subtle);
             }
+
             /* Don't add top border/margin on first section-intro in a section */
-            .section > div > .section-intro:first-child,
-            .section > .section-intro:first-child {
+            .section>div>.section-intro:first-child,
+            .section>.section-intro:first-child {
                 margin-top: 0 !important;
                 padding-top: 0 !important;
                 border-top: none;
             }
+
             .section-intro h2 {
                 font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
             }
@@ -2656,6 +2738,7 @@
                 font-size: 1.4rem !important;
                 margin-bottom: 8px !important;
             }
+
             .feature-row p {
                 font-size: 0.92rem !important;
                 margin-bottom: 14px !important;
@@ -2910,7 +2993,8 @@
             <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
                 <div style="position:relative;z-index:1;">
                     <h1>Learning support all in one place</h1>
-                    <p>Nurture your students by spending less time meddling with admin, and let IEP Pal do the work.</p>
+                    <p>Nurture your students by spending less time meddling with administrative load, and let IEP Pal do
+                        the work.</p>
                     <div style="display:flex;align-items:center;gap:16px;margin-top:16px;">
                         <button class="btn-accent" data-page="contact"
                             style="padding:10px 24px;font-size:0.88rem;border-radius:8px;box-shadow:none;letter-spacing:0.01em;font-weight:500;">Book
@@ -3221,61 +3305,112 @@
                 <div class="fade-in-right">
                     <div class="feature-demo" onclick="showDemoCTA(event)">
                         <div class="id-sidebar">
-                            <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
-                            <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
+                            <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP
+                                    Pal</span></div>
+                            <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                                </svg><span>Classrooms</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg><span>Strategy Library</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg><span>Settings</span></div>
                             <div style="flex:1;"></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span>Dark Mode</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg><span>Sign Out</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="4" />
+                                    <path
+                                        d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                </svg><span>Dark Mode</span></div>
+                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg><span>Sign Out</span></div>
                         </div>
                         <div class="id-main">
                             <div class="id-header">
                                 <div>
                                     <h2>John Doe</h2>
-                                    <div class="id-subtitle">Level 2 — Algebra 2</div>
+                                    <div class="id-subtitle">Grade 6 - English</div>
                                 </div>
                                 <div style="display:flex;gap:0.4em;">
-                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> New Goal</button>
-                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> New IEP</button>
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24"
+                                            style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg> New Goal</button>
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24"
+                                            style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg> New IEP</button>
                                 </div>
                             </div>
                             <!-- IEPs Section -->
                             <div style="margin-bottom:1em;">
-                                <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.5em;">IEPs</h3>
+                                <h3
+                                    style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.5em;">
+                                    IEPs</h3>
                                 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5em;">
-                                    <div class="fd-card-hover fd-card-green" style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
+                                    <div class="fd-card-hover fd-card-green"
+                                        style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
                                         <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Case History</div>
-                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated 15/02/2026</div>
+                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated
+                                            15/02/2026</div>
                                     </div>
-                                    <div class="fd-card-hover fd-card-green" style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
-                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Functional Assessment</div>
-                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated 10/02/2026</div>
+                                    <div class="fd-card-hover fd-card-green"
+                                        style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Grade 6: Semester 1
+                                            Reading
+                                            Assessment</div>
+                                        <div style="font-size:0.58em;color:#4ade80;margin-top:0.15em;">Updated
+                                            10/02/2026</div>
                                     </div>
-                                    <div class="fd-card-hover fd-card-neutral" style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
-                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Behavior Profile</div>
-                                        <div style="font-size:0.58em;color:#737373;margin-top:0.15em;">Not yet filled</div>
+                                    <div class="fd-card-hover fd-card-neutral"
+                                        style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.55em 0.6em;cursor:pointer;">
+                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;">Behavior Profile
+                                        </div>
+                                        <div style="font-size:0.58em;color:#737373;margin-top:0.15em;">Not yet filled
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Goals Section -->
                             <div>
-                                <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.4em;">Goals</h3>
-                                <div style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5em;">Active (2)</div>
+                                <h3
+                                    style="font-family:'Playfair Display',Georgia,serif;font-size:1.3em;color:#f5f5f5;margin-bottom:0.4em;">
+                                    Goals</h3>
+                                <div
+                                    style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5em;">
+                                    Active (2)</div>
                                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5em;">
-                                    <div class="fd-card-hover fd-card-neutral" style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;">
-                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">Improve reading fluency by 20%</div>
-                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Comprehension</div>
-                                        <div style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Increase oral reading fluency from 60 to 72 words per minute</div>
+                                    <div class="fd-card-hover fd-card-neutral"
+                                        style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;">
+                                        <div
+                                            style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">
+                                            Improve reading fluency by 20%</div>
+                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Comprehension
+                                        </div>
+                                        <div
+                                            style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+                                            Increase oral reading fluency from 60 to 72 words per minute</div>
                                         <div style="display:flex;gap:0.6em;font-size:0.55em;color:#525252;">
                                             <span>Target: 06/15/2026</span>
                                             <span>Created: 01/20/2026</span>
                                         </div>
                                     </div>
-                                    <div class="fd-card-hover fd-card-neutral" style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;">
-                                        <div style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">Build social interaction skills</div>
-                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Relationships</div>
-                                        <div style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Initiate peer conversations 3+ times per class session</div>
+                                    <div class="fd-card-hover fd-card-neutral"
+                                        style="background:#262626;border:1px solid #404040;border-radius:0.55em;padding:0.6em;cursor:pointer;">
+                                        <div
+                                            style="font-size:0.78em;font-weight:500;color:#f5f5f5;margin-bottom:0.25em;">
+                                            Build social interaction skills</div>
+                                        <div style="font-size:0.62em;color:#a3a3a3;margin-bottom:0.2em;">Relationships
+                                        </div>
+                                        <div
+                                            style="font-size:0.58em;color:#737373;line-height:1.5;margin-bottom:0.3em;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+                                            Initiate peer conversations 3+ times per class session</div>
                                         <div style="display:flex;gap:0.6em;font-size:0.55em;color:#525252;">
                                             <span>Target: 05/30/2026</span>
                                             <span>Created: 01/15/2026</span>
@@ -3284,7 +3419,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="id-cta-overlay"><h3>See It Live</h3><p>Manage IEPs and goals in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
+                        <div class="id-cta-overlay">
+                            <h3>See It Live</h3>
+                            <p>Manage IEPs and goals in IEP Pal</p><button class="id-cta-btn" data-page="contact"
+                                onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close"
+                                onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3307,112 +3447,275 @@
                     <div class="fade-in-left">
                         <div class="feature-demo" onclick="showDemoCTA(event)">
                             <div class="id-sidebar">
-                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
-                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
-                            <div style="flex:1;"></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span>Dark Mode</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg><span>Sign Out</span></div>
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP
+                                        Pal</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                                    </svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg><span>Settings</span></div>
+                                <div style="flex:1;"></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path
+                                            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                    </svg><span>Dark Mode</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg><span>Sign Out</span></div>
                             </div>
                             <div class="id-main" style="padding:0.8em 1.2em 0;display:flex;flex-direction:column;">
                                 <!-- Back to Goal -->
-                                <div class="sb-back" style="display:flex;align-items:center;gap:0.3em;color:#737373;font-size:0.7em;margin-bottom:0.5em;">
-                                    <svg viewBox="0 0 24 24" style="width:0.85em;height:0.85em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                <div class="sb-back"
+                                    style="display:flex;align-items:center;gap:0.3em;color:#737373;font-size:0.7em;margin-bottom:0.5em;">
+                                    <svg viewBox="0 0 24 24"
+                                        style="width:0.85em;height:0.85em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                                    </svg>
                                     Back to Goal
                                 </div>
                                 <!-- Title — looks like an active input being typed -->
                                 <div style="margin-bottom:0.5em;border-bottom:1px solid #333;padding-bottom:0.35em;">
-                                    <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.5em;font-weight:700;color:#f5f5f5;display:flex;align-items:baseline;">Behavior &amp; Engagement<span style="display:inline-block;width:1px;height:1em;background:#f5f5f5;margin-left:2px;animation:sb-blink 1s step-end infinite;"></span></div>
+                                    <div
+                                        style="font-family:'Playfair Display',Georgia,serif;font-size:1.5em;font-weight:700;color:#f5f5f5;display:flex;align-items:baseline;">
+                                        Behavior &amp; Engagement<span
+                                            style="display:inline-block;width:1px;height:1em;background:#f5f5f5;margin-left:2px;animation:sb-blink 1s step-end infinite;"></span>
+                                    </div>
                                     <div style="color:#525252;font-size:0.65em;margin-top:0.15em;">2 questions</div>
                                 </div>
 
                                 <!-- Question 1: Likert — complete question -->
-                                <div class="sb-question" style="background:rgba(255,255,255,0.025);border:1px solid #333;border-radius:0.65em;margin-bottom:0.35em;overflow:hidden;">
+                                <div class="sb-question"
+                                    style="background:rgba(255,255,255,0.025);border:1px solid #333;border-radius:0.65em;margin-bottom:0.35em;overflow:hidden;">
                                     <div style="padding:0.45em 0.55em 0.35em;">
-                                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3em;">
+                                        <div
+                                            style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3em;">
                                             <div style="display:flex;align-items:center;gap:0.3em;">
-                                                <span style="width:1.2em;height:1.2em;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:0.5em;font-weight:600;color:#a3a3a3;">1</span>
-                                                <span class="sb-type-badge" style="padding:0.12em 0.4em;border-radius:0.3em;font-size:0.55em;font-weight:500;color:#a3a3a3;background:#333;">Likert Scale</span>
+                                                <span
+                                                    style="width:1.2em;height:1.2em;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:0.5em;font-weight:600;color:#a3a3a3;">1</span>
+                                                <span class="sb-type-badge"
+                                                    style="padding:0.12em 0.4em;border-radius:0.3em;font-size:0.55em;font-weight:500;color:#a3a3a3;background:#333;">Likert
+                                                    Scale</span>
                                             </div>
                                             <div style="display:flex;align-items:center;gap:0.1em;">
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M18 15l-6-6-6 6"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M6 9l6 6 6-6"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path d="M18 15l-6-6-6 6" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path d="M6 9l6 6 6-6" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path
+                                                            d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                                                    </svg></span>
                                             </div>
                                         </div>
-                                        <div style="font-size:0.75em;font-weight:500;color:#e5e5e5;">How engaged is the student during guided reading?</div>
+                                        <div style="font-size:0.75em;font-weight:500;color:#e5e5e5;">How engaged is the
+                                            student during guided reading?</div>
                                     </div>
-                                    <div style="margin:0 0.55em 0.45em;padding:0.35em;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.04);border-radius:0.4em;">
-                                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25em;">
-                                            <span style="font-size:0.48em;color:#525252;text-transform:uppercase;letter-spacing:0.05em;font-weight:500;">5-point scale</span>
-                                            <span class="sb-add-link" style="font-size:0.48em;color:#525252;">+ Add point</span>
+                                    <div
+                                        style="margin:0 0.55em 0.45em;padding:0.35em;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.04);border-radius:0.4em;">
+                                        <div
+                                            style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25em;">
+                                            <span
+                                                style="font-size:0.48em;color:#525252;text-transform:uppercase;letter-spacing:0.05em;font-weight:500;">5-point
+                                                scale</span>
+                                            <span class="sb-add-link" style="font-size:0.48em;color:#525252;">+ Add
+                                                point</span>
                                         </div>
                                         <div style="display:flex;flex-direction:column;gap:0.14em;">
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">1</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Strongly Disagree</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">2</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Disagree</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">3</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Neutral</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">4</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Agree</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">5</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Strongly Agree</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">1</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Strongly
+                                                    Disagree</span><svg viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">2</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Disagree</span><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">3</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Neutral</span><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">4</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Agree</span><svg
+                                                    viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">5</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Strongly
+                                                    Agree</span><svg viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Question 2: Checkbox with filled options -->
-                                <div class="sb-question" style="background:rgba(255,255,255,0.025);border:1px solid #333;border-radius:0.65em;margin-bottom:0.35em;overflow:hidden;">
+                                <div class="sb-question"
+                                    style="background:rgba(255,255,255,0.025);border:1px solid #333;border-radius:0.65em;margin-bottom:0.35em;overflow:hidden;">
                                     <div style="padding:0.45em 0.55em 0.35em;">
-                                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3em;">
+                                        <div
+                                            style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3em;">
                                             <div style="display:flex;align-items:center;gap:0.3em;">
-                                                <span style="width:1.2em;height:1.2em;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:0.5em;font-weight:600;color:#a3a3a3;">2</span>
-                                                <span class="sb-type-badge" style="padding:0.12em 0.4em;border-radius:0.3em;font-size:0.55em;font-weight:500;color:#a3a3a3;background:#333;">Checkbox</span>
-                                                <span class="sb-pill" style="padding:0.1em 0.35em;border-radius:1em;font-size:0.45em;font-weight:500;color:#e5e5e5;background:#262626;">Multi-select</span>
+                                                <span
+                                                    style="width:1.2em;height:1.2em;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:0.5em;font-weight:600;color:#a3a3a3;">2</span>
+                                                <span class="sb-type-badge"
+                                                    style="padding:0.12em 0.4em;border-radius:0.3em;font-size:0.55em;font-weight:500;color:#a3a3a3;background:#333;">Checkbox</span>
+                                                <span class="sb-pill"
+                                                    style="padding:0.1em 0.35em;border-radius:1em;font-size:0.45em;font-weight:500;color:#e5e5e5;background:#262626;">Multi-select</span>
                                             </div>
                                             <div style="display:flex;align-items:center;gap:0.1em;">
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M18 15l-6-6-6 6"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M6 9l6 6 6-6"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></span>
-                                                <span class="sb-action"><svg viewBox="0 0 24 24" style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path d="M18 15l-6-6-6 6" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.65em;height:0.65em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path d="M6 9l6 6 6-6" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                                    </svg></span>
+                                                <span class="sb-action"><svg viewBox="0 0 24 24"
+                                                        style="width:0.55em;height:0.55em;fill:none;stroke:#525252;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                                        <path
+                                                            d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                                                    </svg></span>
                                             </div>
                                         </div>
-                                        <div style="font-size:0.75em;font-weight:500;color:#e5e5e5;">Which strategies have been most effective?</div>
+                                        <div style="font-size:0.75em;font-weight:500;color:#e5e5e5;">Which strategies
+                                            have been most effective?</div>
                                     </div>
-                                    <div style="margin:0 0.55em 0.45em;padding:0.35em;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.04);border-radius:0.4em;">
-                                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25em;">
-                                            <span style="font-size:0.48em;color:#525252;text-transform:uppercase;letter-spacing:0.05em;font-weight:500;">3 options</span>
-                                            <span class="sb-add-link" style="font-size:0.48em;color:#525252;">+ Add option</span>
+                                    <div
+                                        style="margin:0 0.55em 0.45em;padding:0.35em;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.04);border-radius:0.4em;">
+                                        <div
+                                            style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25em;">
+                                            <span
+                                                style="font-size:0.48em;color:#525252;text-transform:uppercase;letter-spacing:0.05em;font-weight:500;">3
+                                                options</span>
+                                            <span class="sb-add-link" style="font-size:0.48em;color:#525252;">+ Add
+                                                option</span>
                                         </div>
                                         <div style="display:flex;flex-direction:column;gap:0.14em;">
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">1</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Visual schedules</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">2</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Sensory breaks</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-                                            <div class="sb-option-row" style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">3</span><span style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Guided prompts</span><svg viewBox="0 0 24 24" style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">1</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Visual
+                                                    schedules</span><svg viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">2</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Sensory
+                                                    breaks</span><svg viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
+                                            <div class="sb-option-row"
+                                                style="display:flex;align-items:center;gap:0.25em;padding:0.04em;"><span
+                                                    style="width:1em;height:1em;border-radius:50%;background:#1f1f1f;border:1px solid #404040;display:flex;align-items:center;justify-content:center;font-size:0.4em;font-weight:600;color:#525252;flex-shrink:0;">3</span><span
+                                                    style="flex:1;background:#1f1f1f;border:1px solid #333;border-radius:0.2em;padding:0.12em 0.3em;font-size:0.5em;color:#a3a3a3;">Guided
+                                                    prompts</span><svg viewBox="0 0 24 24"
+                                                    style="width:0.45em;height:0.45em;fill:none;stroke:#404040;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg></div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Add question buttons -->
                                 <div style="display:flex;gap:0.3em;margin-top:0.15em;margin-bottom:0.4em;">
-                                    <span class="sb-add-btn" style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
-                                        <svg viewBox="0 0 24 24" style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    <span class="sb-add-btn"
+                                        style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
+                                        <svg viewBox="0 0 24 24"
+                                            style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                            <line x1="12" y1="5" x2="12" y2="19" />
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                        </svg>
                                         Likert
                                     </span>
-                                    <span class="sb-add-btn" style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
-                                        <svg viewBox="0 0 24 24" style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    <span class="sb-add-btn"
+                                        style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
+                                        <svg viewBox="0 0 24 24"
+                                            style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                            <line x1="12" y1="5" x2="12" y2="19" />
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                        </svg>
                                         Text
                                     </span>
-                                    <span class="sb-add-btn" style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
-                                        <svg viewBox="0 0 24 24" style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    <span class="sb-add-btn"
+                                        style="display:flex;align-items:center;gap:0.2em;padding:0.25em 0.5em;border-radius:0.35em;border:1px dashed #404040;font-size:0.55em;color:#525252;">
+                                        <svg viewBox="0 0 24 24"
+                                            style="width:0.75em;height:0.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                                            <line x1="12" y1="5" x2="12" y2="19" />
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                        </svg>
                                         Checkbox
                                     </span>
                                 </div>
 
                                 <!-- Sticky footer -->
-                                <div style="margin-top:auto;border-top:1px solid #262626;padding:0.4em 0;display:flex;align-items:center;justify-content:space-between;">
+                                <div
+                                    style="margin-top:auto;border-top:1px solid #262626;padding:0.4em 0;display:flex;align-items:center;justify-content:space-between;">
                                     <span class="sb-cancel" style="font-size:0.58em;color:#737373;">Cancel</span>
-                                    <span class="sb-submit" style="padding:0.25em 0.6em;border-radius:0.3em;font-size:0.58em;font-weight:500;color:#171717;background:#f5f5f5;">Create Survey</span>
+                                    <span class="sb-submit"
+                                        style="padding:0.25em 0.6em;border-radius:0.3em;font-size:0.58em;font-weight:500;color:#171717;background:#f5f5f5;">Create
+                                        Survey</span>
                                 </div>
                             </div>
-                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Try qualitative surveys in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
+                            <div class="id-cta-overlay">
+                                <h3>See It Live</h3>
+                                <p>Try qualitative surveys in IEP Pal</p><button class="id-cta-btn" data-page="contact"
+                                    onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close"
+                                    onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button>
+                            </div>
                         </div>
                     </div>
                     <div class="fade-in-right">
@@ -3420,7 +3723,8 @@
                             style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
                             Qualitative Data Surveys</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
-                            Build custom surveys with Likert scales, text responses, and checkboxes &mdash; all from one intuitive editor.</p>
+                            Build custom surveys with Likert scales, text responses, and checkboxes &mdash; all from one
+                            intuitive editor.</p>
                         <ul class="feature-tags">
                             <li>Survey builder</li>
                             <li>Likert scales</li>
@@ -3435,7 +3739,7 @@
                     <div class="fade-in-left">
                         <h3
                             style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
-                            Data Visualization</h3>
+                            Data Visualizations</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">
                             Transform raw data into clear, actionable visual insights for every student.</p>
                         <ul class="feature-tags">
@@ -3447,117 +3751,278 @@
                     <div class="fade-in-right">
                         <div class="feature-demo" onclick="showDemoCTA(event)">
                             <div class="id-sidebar">
-                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
-                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
-                            <div style="flex:1;"></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span>Dark Mode</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg><span>Sign Out</span></div>
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP
+                                        Pal</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                                    </svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg><span>Settings</span></div>
+                                <div style="flex:1;"></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path
+                                            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                    </svg><span>Dark Mode</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg><span>Sign Out</span></div>
                             </div>
                             <div class="id-main" style="padding:1em 1.2em;">
-                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6em;">
+                                <div
+                                    style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6em;">
                                     <h2 style="font-size:1.6em;margin:0;">Data Visualiser</h2>
-                                    <div class="fd-status-badge fd-badge-green"><span style="width:0.35em;height:0.35em;border-radius:50%;background:#4ade80;"></span> On Track</div>
+                                    <div class="fd-status-badge fd-badge-green"><span
+                                            style="width:0.35em;height:0.35em;border-radius:50%;background:#4ade80;"></span>
+                                        On Track</div>
                                 </div>
                                 <div style="display:flex;gap:0.7em;height:calc(100% - 3em);">
                                     <div class="fd-chart-card">
                                         <div class="fd-chart-title">Pomodoro Study Time vs Test Score (Weekly)</div>
                                         <!-- Legend -->
                                         <div class="fd-chart-legend">
-                                            <span><span style="width:1.2em;height:0.15em;border-radius:1px;background:linear-gradient(to right,#ec4899,#f97316);display:inline-block;"></span> Data</span>
-                                            <span><span style="width:1.2em;height:0;border-top:1px dashed #d4d4d4;display:inline-block;"></span> Trend</span>
-                                            <span><span style="width:1.2em;height:0;border-top:1px dashed #737373;display:inline-block;"></span> Goal</span>
+                                            <span><span
+                                                    style="width:1.2em;height:0.15em;border-radius:1px;background:linear-gradient(to right,#ec4899,#f97316);display:inline-block;"></span>
+                                                Data</span>
+                                            <span><span
+                                                    style="width:1.2em;height:0;border-top:1px dashed #d4d4d4;display:inline-block;"></span>
+                                                Trend</span>
+                                            <span><span
+                                                    style="width:1.2em;height:0;border-top:1px dashed #737373;display:inline-block;"></span>
+                                                Goal</span>
                                         </div>
                                         <!-- Chart: 10 data points, goal=90 at week 12. Y scale 55-95, X weeks 1-12 -->
                                         <svg viewBox="0 0 280 140" style="flex:1;width:100%;" fill="none">
                                             <defs>
                                                 <linearGradient id="dv-grad" x1="0" y1="1" x2="0" y2="0">
-                                                    <stop offset="0%" stop-color="#f97316"/>
-                                                    <stop offset="100%" stop-color="#ec4899"/>
+                                                    <stop offset="0%" stop-color="#f97316" />
+                                                    <stop offset="100%" stop-color="#ec4899" />
                                                 </linearGradient>
                                             </defs>
                                             <!-- Y-axis grid lines (subtle, no X grid) -->
-                                            <line x1="35" y1="107" x2="270" y2="107" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-                                            <line x1="35" y1="81" x2="270" y2="81" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-                                            <line x1="35" y1="54" x2="270" y2="54" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-                                            <line x1="35" y1="28" x2="270" y2="28" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+                                            <line x1="35" y1="107" x2="270" y2="107" stroke="rgba(255,255,255,0.08)"
+                                                stroke-width="0.5" />
+                                            <line x1="35" y1="81" x2="270" y2="81" stroke="rgba(255,255,255,0.08)"
+                                                stroke-width="0.5" />
+                                            <line x1="35" y1="54" x2="270" y2="54" stroke="rgba(255,255,255,0.08)"
+                                                stroke-width="0.5" />
+                                            <line x1="35" y1="28" x2="270" y2="28" stroke="rgba(255,255,255,0.08)"
+                                                stroke-width="0.5" />
                                             <!-- Y axis labels -->
-                                            <text x="30" y="109" fill="#b5b5b5" font-size="5" text-anchor="end" font-family="Georgia,serif">60</text>
-                                            <text x="30" y="83" fill="#b5b5b5" font-size="5" text-anchor="end" font-family="Georgia,serif">70</text>
-                                            <text x="30" y="56" fill="#b5b5b5" font-size="5" text-anchor="end" font-family="Georgia,serif">80</text>
-                                            <text x="30" y="30" fill="#b5b5b5" font-size="5" text-anchor="end" font-family="Georgia,serif">90</text>
+                                            <text x="30" y="109" fill="#b5b5b5" font-size="5" text-anchor="end"
+                                                font-family="Georgia,serif">60</text>
+                                            <text x="30" y="83" fill="#b5b5b5" font-size="5" text-anchor="end"
+                                                font-family="Georgia,serif">70</text>
+                                            <text x="30" y="56" fill="#b5b5b5" font-size="5" text-anchor="end"
+                                                font-family="Georgia,serif">80</text>
+                                            <text x="30" y="30" fill="#b5b5b5" font-size="5" text-anchor="end"
+                                                font-family="Georgia,serif">90</text>
                                             <!-- X axis labels (weeks 1-12) -->
-                                            <text x="35" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">1</text>
-                                            <text x="56" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">2</text>
-                                            <text x="78" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">3</text>
-                                            <text x="99" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">4</text>
-                                            <text x="121" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">5</text>
-                                            <text x="142" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">6</text>
-                                            <text x="163" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">7</text>
-                                            <text x="185" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">8</text>
-                                            <text x="206" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">9</text>
-                                            <text x="228" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">10</text>
-                                            <text x="249" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">11</text>
-                                            <text x="270" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle" font-family="Georgia,serif">12</text>
+                                            <text x="35" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">1</text>
+                                            <text x="56" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">2</text>
+                                            <text x="78" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">3</text>
+                                            <text x="99" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">4</text>
+                                            <text x="121" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">5</text>
+                                            <text x="142" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">6</text>
+                                            <text x="163" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">7</text>
+                                            <text x="185" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">8</text>
+                                            <text x="206" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">9</text>
+                                            <text x="228" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">10</text>
+                                            <text x="249" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">11</text>
+                                            <text x="270" y="130" fill="#a3a3a3" font-size="4.5" text-anchor="middle"
+                                                font-family="Georgia,serif">12</text>
                                             <!-- Goal crosshair lines (gray dashed) -->
-                                            <line x1="35" y1="28" x2="270" y2="28" stroke="rgba(115,115,115,0.4)" stroke-width="1" stroke-dasharray="4,4"/>
-                                            <line x1="270" y1="15" x2="270" y2="120" stroke="rgba(115,115,115,0.4)" stroke-width="1" stroke-dasharray="4,4"/>
+                                            <line x1="35" y1="28" x2="270" y2="28" stroke="rgba(115,115,115,0.4)"
+                                                stroke-width="1" stroke-dasharray="4,4" />
+                                            <line x1="270" y1="15" x2="270" y2="120" stroke="rgba(115,115,115,0.4)"
+                                                stroke-width="1" stroke-dasharray="4,4" />
                                             <!-- Data line (pink-to-orange gradient) — 10 points with natural scatter -->
-                                            <polyline points="35,112 56,99 78,107 99,86 121,75 142,81 163,62 185,52 206,57 228,39" stroke="url(#dv-grad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <polyline
+                                                points="35,112 56,99 78,107 99,86 121,75 142,81 163,62 185,52 206,57 228,39"
+                                                stroke="url(#dv-grad)" stroke-width="2.5" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                             <!-- Regression line (light dashed, dark mode) — slope=3.0, intercept=54.9 -->
-                                            <line x1="35" y1="112" x2="270" y2="26" stroke="#e5e5e5" stroke-width="1.5" stroke-dasharray="6,4"/>
+                                            <line x1="35" y1="112" x2="270" y2="26" stroke="#e5e5e5" stroke-width="1.5"
+                                                stroke-dasharray="6,4" />
                                             <!-- Hover indicator line -->
-                                            <line id="dv-hover-line" x1="0" y1="0" x2="0" y2="120" stroke="rgba(163,163,163,0.3)" stroke-width="0.5" stroke-dasharray="2,2" opacity="0" style="transition:opacity 0.15s"/>
+                                            <line id="dv-hover-line" x1="0" y1="0" x2="0" y2="120"
+                                                stroke="rgba(163,163,163,0.3)" stroke-width="0.5" stroke-dasharray="2,2"
+                                                opacity="0" style="transition:opacity 0.15s" />
                                             <!-- Data dots -->
-                                            <circle cx="35" cy="112" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="56" cy="99" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="78" cy="107" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="99" cy="86" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="121" cy="75" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="142" cy="81" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="163" cy="62" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="185" cy="52" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="206" cy="57" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
-                                            <circle cx="228" cy="39" r="2.5" fill="url(#dv-grad)" pointer-events="none"/>
+                                            <circle cx="35" cy="112" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="56" cy="99" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="78" cy="107" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="99" cy="86" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="121" cy="75" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="142" cy="81" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="163" cy="62" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="185" cy="52" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="206" cy="57" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
+                                            <circle cx="228" cy="39" r="2.5" fill="url(#dv-grad)"
+                                                pointer-events="none" />
                                             <!-- Data label pills (alternating above/below like MVP) -->
                                             <g pointer-events="none">
-                                                <!-- Wk1 above --><rect x="24" y="98" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="35" y="103.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">20 · 58</text>
-                                                <!-- Wk2 below --><rect x="45" y="105" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="56" y="110.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">30 · 63</text>
-                                                <!-- Wk3 above --><rect x="67" y="93" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="78" y="98.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">35 · 60</text>
-                                                <!-- Wk4 below --><rect x="88" y="92" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="99" y="97.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">40 · 68</text>
-                                                <!-- Wk5 above --><rect x="110" y="61" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="121" y="66.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">45 · 72</text>
-                                                <!-- Wk6 below --><rect x="131" y="87" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="142" y="92.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">50 · 70</text>
-                                                <!-- Wk7 above --><rect x="152" y="48" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="163" y="53.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">55 · 77</text>
-                                                <!-- Wk8 below --><rect x="174" y="58" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="185" y="63.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">60 · 81</text>
-                                                <!-- Wk9 above --><rect x="195" y="43" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="206" y="48.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">65 · 79</text>
-                                                <!-- Wk10 below --><rect x="217" y="45" width="22" height="7.5" rx="2.5" fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/><text x="228" y="50.3" fill="#fff" font-size="4" text-anchor="middle" font-family="Georgia,serif" font-weight="700">75 · 86</text>
+                                                <!-- Wk1 above -->
+                                                <rect x="24" y="98" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="35" y="103.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">20 · 58</text>
+                                                <!-- Wk2 below -->
+                                                <rect x="45" y="105" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="56" y="110.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">30 · 63</text>
+                                                <!-- Wk3 above -->
+                                                <rect x="67" y="93" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="78" y="98.3" fill="#fff" font-size="4"
+                                                    text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">35 · 60</text>
+                                                <!-- Wk4 below -->
+                                                <rect x="88" y="92" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="99" y="97.3" fill="#fff" font-size="4"
+                                                    text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">40 · 68</text>
+                                                <!-- Wk5 above -->
+                                                <rect x="110" y="61" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="121" y="66.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">45 · 72</text>
+                                                <!-- Wk6 below -->
+                                                <rect x="131" y="87" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="142" y="92.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">50 · 70</text>
+                                                <!-- Wk7 above -->
+                                                <rect x="152" y="48" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="163" y="53.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">55 · 77</text>
+                                                <!-- Wk8 below -->
+                                                <rect x="174" y="58" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="185" y="63.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">60 · 81</text>
+                                                <!-- Wk9 above -->
+                                                <rect x="195" y="43" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="206" y="48.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">65 · 79</text>
+                                                <!-- Wk10 below -->
+                                                <rect x="217" y="45" width="22" height="7.5" rx="2.5"
+                                                    fill="rgba(64,64,64,0.95)" stroke="rgba(255,255,255,0.25)"
+                                                    stroke-width="0.5" /><text x="228" y="50.3" fill="#fff"
+                                                    font-size="4" text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="700">75 · 86</text>
                                             </g>
                                             <!-- Highlight ring -->
-                                            <circle id="dv-highlight" cx="0" cy="0" r="5" fill="rgba(236,72,153,0.12)" stroke="#ec4899" stroke-width="0.8" opacity="0" pointer-events="none" style="transition:opacity 0.15s"/>
+                                            <circle id="dv-highlight" cx="0" cy="0" r="5" fill="rgba(236,72,153,0.12)"
+                                                stroke="#ec4899" stroke-width="0.8" opacity="0" pointer-events="none"
+                                                style="transition:opacity 0.15s" />
                                             <!-- Hit areas for tooltip (larger invisible circles) -->
-                                            <circle cx="35" cy="112" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,1,58,20)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,1,58,20)" onclick="event.stopPropagation()"/>
-                                            <circle cx="56" cy="99" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,2,63,30)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,2,63,30)" onclick="event.stopPropagation()"/>
-                                            <circle cx="78" cy="107" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,3,60,35)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,3,60,35)" onclick="event.stopPropagation()"/>
-                                            <circle cx="99" cy="86" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,4,68,40)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,4,68,40)" onclick="event.stopPropagation()"/>
-                                            <circle cx="121" cy="75" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,5,72,45)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,5,72,45)" onclick="event.stopPropagation()"/>
-                                            <circle cx="142" cy="81" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,6,70,50)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,6,70,50)" onclick="event.stopPropagation()"/>
-                                            <circle cx="163" cy="62" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,7,77,55)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,7,77,55)" onclick="event.stopPropagation()"/>
-                                            <circle cx="185" cy="52" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,8,81,60)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,8,81,60)" onclick="event.stopPropagation()"/>
-                                            <circle cx="206" cy="57" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,9,79,65)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,9,79,65)" onclick="event.stopPropagation()"/>
-                                            <circle cx="228" cy="39" r="14" fill="transparent" cursor="pointer" onmouseenter="showDvTip(event,10,86,75)" onmouseleave="hideDvTip()" ontouchstart="showDvTip(event,10,86,75)" onclick="event.stopPropagation()"/>
+                                            <circle cx="35" cy="112" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,1,58,20)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,1,58,20)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="56" cy="99" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,2,63,30)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,2,63,30)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="78" cy="107" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,3,60,35)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,3,60,35)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="99" cy="86" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,4,68,40)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,4,68,40)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="121" cy="75" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,5,72,45)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,5,72,45)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="142" cy="81" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,6,70,50)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,6,70,50)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="163" cy="62" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,7,77,55)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,7,77,55)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="185" cy="52" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,8,81,60)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,8,81,60)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="206" cy="57" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,9,79,65)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,9,79,65)"
+                                                onclick="event.stopPropagation()" />
+                                            <circle cx="228" cy="39" r="14" fill="transparent" cursor="pointer"
+                                                onmouseenter="showDvTip(event,10,86,75)" onmouseleave="hideDvTip()"
+                                                ontouchstart="showDvTip(event,10,86,75)"
+                                                onclick="event.stopPropagation()" />
                                             <!-- Tooltip -->
-                                            <g id="dv-tooltip" opacity="0" pointer-events="none" style="transition:opacity 0.15s">
-                                                <rect width="105" height="46" rx="6" fill="#171717"/>
-                                                <text id="dv-t1" x="52.5" y="14" fill="white" font-size="6.5" text-anchor="middle" font-family="Georgia,serif" font-weight="600"></text>
-                                                <text id="dv-t2" x="52.5" y="26" fill="rgba(255,255,255,0.75)" font-size="5.5" text-anchor="middle" font-family="Georgia,serif"></text>
-                                                <text id="dv-t3" x="52.5" y="38" fill="rgba(255,255,255,0.75)" font-size="5.5" text-anchor="middle" font-family="Georgia,serif"></text>
+                                            <g id="dv-tooltip" opacity="0" pointer-events="none"
+                                                style="transition:opacity 0.15s">
+                                                <rect width="105" height="46" rx="6" fill="#171717" />
+                                                <text id="dv-t1" x="52.5" y="14" fill="white" font-size="6.5"
+                                                    text-anchor="middle" font-family="Georgia,serif"
+                                                    font-weight="600"></text>
+                                                <text id="dv-t2" x="52.5" y="26" fill="rgba(255,255,255,0.75)"
+                                                    font-size="5.5" text-anchor="middle"
+                                                    font-family="Georgia,serif"></text>
+                                                <text id="dv-t3" x="52.5" y="38" fill="rgba(255,255,255,0.75)"
+                                                    font-size="5.5" text-anchor="middle"
+                                                    font-family="Georgia,serif"></text>
                                             </g>
                                             <!-- Axis titles -->
-                                            <text x="152" y="139" fill="#a3a3a3" font-size="5" text-anchor="middle" font-family="Georgia,serif" font-style="italic">Weeks</text>
-                                            <text x="10" y="68" fill="#a3a3a3" font-size="5" text-anchor="middle" font-family="Georgia,serif" font-style="italic" transform="rotate(-90 10 68)">Test Score</text>
+                                            <text x="152" y="139" fill="#a3a3a3" font-size="5" text-anchor="middle"
+                                                font-family="Georgia,serif" font-style="italic">Weeks</text>
+                                            <text x="10" y="68" fill="#a3a3a3" font-size="5" text-anchor="middle"
+                                                font-family="Georgia,serif" font-style="italic"
+                                                transform="rotate(-90 10 68)">Test Score</text>
                                         </svg>
-                                        <div style="text-align:center;font-size:0.52em;color:#737373;margin-top:0.2em;">Trend predicts about <span style="font-weight:600;color:#e5e5e5;">90.9</span> by Week 12 (goal is <span style="font-weight:600;color:#e5e5e5;">90</span>)</div>
+                                        <div style="text-align:center;font-size:0.52em;color:#737373;margin-top:0.2em;">
+                                            Trend predicts about <span
+                                                style="font-weight:600;color:#e5e5e5;">90.9</span> by Week 12 (goal is
+                                            <span style="font-weight:600;color:#e5e5e5;">90</span>)
+                                        </div>
                                     </div>
                                     <div class="fd-controls">
                                         <div>
@@ -3573,17 +4038,24 @@
                                             <div class="fd-ctrl-input">12</div>
                                         </div>
                                         <div style="border-top:1px solid #404040;padding-top:0.4em;margin-top:0.1em;">
-                                            <div class="fd-ctrl-label" style="font-weight:600;color:#e5e5e5;">Add Week</div>
+                                            <div class="fd-ctrl-label" style="font-weight:600;color:#e5e5e5;">Add Week
+                                            </div>
                                             <div style="display:flex;gap:0.3em;margin-top:0.2em;">
                                                 <div class="fd-ctrl-input" style="flex:1;color:#525252;">Mins/day</div>
                                                 <div class="fd-ctrl-input" style="flex:1;color:#525252;">Score</div>
                                             </div>
-                                            <button class="fd-btn-primary" style="width:100%;margin-top:0.3em;font-size:0.68em;padding:0.4em;">Add</button>
+                                            <button class="fd-btn-primary"
+                                                style="width:100%;margin-top:0.3em;font-size:0.68em;padding:0.4em;">Add</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Try data visualization in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
+                            <div class="id-cta-overlay">
+                                <h3>See It Live</h3>
+                                <p>Try data visualization in IEP Pal</p><button class="id-cta-btn" data-page="contact"
+                                    onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close"
+                                    onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3629,13 +4101,31 @@
                     <div class="fade-in-left">
                         <div class="feature-demo" onclick="showDemoCTA(event)">
                             <div class="id-sidebar">
-                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP Pal</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg><span>Classrooms</span></div>
-                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Strategy Library</span></div>
-                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></div>
-                            <div style="flex:1;"></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span>Dark Mode</span></div>
-                            <div class="id-sidebar-icon"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg><span>Sign Out</span></div>
+                                <div class="id-sidebar-logo"><img src="logo.svg" alt="" width="80" height="80"><span>IEP
+                                        Pal</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                                    </svg><span>Classrooms</span></div>
+                                <div class="id-sidebar-icon active"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg><span>Strategy Library</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg><span>Settings</span></div>
+                                <div style="flex:1;"></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path
+                                            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                    </svg><span>Dark Mode</span></div>
+                                <div class="id-sidebar-icon"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg><span>Sign Out</span></div>
                             </div>
                             <div class="id-main">
                                 <div class="id-header">
@@ -3643,57 +4133,108 @@
                                         <h2 style="font-family:'Playfair Display',Georgia,serif;">Strategy Library</h2>
                                         <div class="id-subtitle">152 evidence-based strategies from 12 books</div>
                                     </div>
-                                    <button class="id-new-btn"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M12 5v14M5 12h14"/></svg> Add Strategy</button>
+                                    <button class="id-new-btn"><svg viewBox="0 0 24 24"
+                                            style="width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg> Add Strategy</button>
                                 </div>
-                                <div style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8em;">Browse by category</div>
+                                <div
+                                    style="font-size:0.6em;font-weight:500;color:#737373;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8em;">
+                                    Browse by category</div>
                                 <div class="fd-strat-grid">
                                     <!-- Row 1 -->
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#ef4444;"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                                            <div><div class="fd-strat-name">Behavioral</div><div class="fd-strat-count">24 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#ef4444;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Behavioral</div>
+                                                <div class="fd-strat-count">24 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#f97316;"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-                                            <div><div class="fd-strat-name">Emotional Regulation</div><div class="fd-strat-count">18 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#f97316;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Emotional Regulation</div>
+                                                <div class="fd-strat-count">18 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#f59e0b;"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></div>
-                                            <div><div class="fd-strat-name">Self-Regulation</div><div class="fd-strat-count">14 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#f59e0b;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                    <path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Self-Regulation</div>
+                                                <div class="fd-strat-count">14 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                     <!-- Row 2 -->
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#10b981;"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-                                            <div><div class="fd-strat-name">Environment & Sensory</div><div class="fd-strat-count">20 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#10b981;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Environment & Sensory</div>
+                                                <div class="fd-strat-count">20 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#06b6d4;"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-                                            <div><div class="fd-strat-name">Literacy & Reading</div><div class="fd-strat-count">22 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#06b6d4;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                                                    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Literacy & Reading</div>
+                                                <div class="fd-strat-count">22 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                     <div class="fd-strat-tile">
                                         <div style="display:flex;align-items:flex-start;gap:0.4em;margin-bottom:0.3em;">
-                                            <div class="fd-strat-icon" style="background:#6366f1;"><svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 018 8c0 6-8 12-8 12S4 16 4 10a8 8 0 018-8z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                                            <div><div class="fd-strat-name">Executive Function</div><div class="fd-strat-count">19 strategies</div></div>
+                                            <div class="fd-strat-icon" style="background:#6366f1;"><svg
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M12 2a8 8 0 018 8c0 6-8 12-8 12S4 16 4 10a8 8 0 018-8z" />
+                                                    <circle cx="12" cy="10" r="3" />
+                                                </svg></div>
+                                            <div>
+                                                <div class="fd-strat-name">Executive Function</div>
+                                                <div class="fd-strat-count">19 strategies</div>
+                                            </div>
                                         </div>
                                         <div class="fd-strat-browse">Browse</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="id-cta-overlay"><h3>See It Live</h3><p>Browse 150+ strategies in IEP Pal</p><button class="id-cta-btn" data-page="contact" onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close" onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button></div>
+                            <div class="id-cta-overlay">
+                                <h3>See It Live</h3>
+                                <p>Browse 150+ strategies in IEP Pal</p><button class="id-cta-btn" data-page="contact"
+                                    onclick="event.stopPropagation();">Book a Demo</button><button class="id-cta-close"
+                                    onclick="event.stopPropagation();this.parentElement.classList.remove('visible')">Close</button>
+                            </div>
                         </div>
                     </div>
                     <div class="fade-in-right">
@@ -3701,7 +4242,8 @@
                             style="font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.01em;">
                             Strategy Library</h3>
                         <p style="color:var(--text-secondary);font-size:1rem;line-height:1.85;margin-bottom:22px;">Add
-                            proven strategies from our curated library directly to student profiles.</p>
+                            proven strategies from our curated library or create new ones, directly add them to student
+                            profiles.</p>
                         <ul class="feature-tags">
                             <li>150+ curated strategies</li>
                             <li>Add to student profiles</li>
@@ -3920,7 +4462,15 @@
     <div id="about" class="page">
         <section class="about-hero">
             <h1>About IEP Pal</h1>
-            <p>We saw first hand that educators, many of whom became friends, needed a way to expand support to students with special learning needs. Current systems overload teachers with administrative tasks and data, both of which require time and resources-taking away from their ability to support students. We want educators to see the long-term and positive impact of their support on students. IEP Pal exists to free teachers from that administrative burden so they can spend more time in meaningful, in-person relationships with students. We will accomplish this by empowering educators with accessible tools, robust data, and development opportunities. We will work unrelentingly to evolve learning support by consistently speaking directly with educators. In the long-term we will ensure the strengthening of teaching practice and student growth by putting both above all else.</p>
+            <p>We saw first hand that educators, many of whom are friends, needed a way to expand support to students
+                with special learning needs. Current systems overload teachers with administrative tasks and data, both
+                of which require time and resources-taking away from their ability to support students. We want
+                educators to see the long-term and positive impact of their support on students. IEP Pal exists to free
+                teachers from that administrative burden so they can spend more time in meaningful, in-person
+                relationships with students. We will accomplish this by empowering educators with accessible tools,
+                robust data, and development opportunities. We will work unrelentingly to evolve learning support by
+                consistently speaking directly with educators. In the long-term we will ensure the strengthening of
+                teaching practice and student growth by putting both above all else.</p>
         </section>
         <section class="section fade-in" style="padding-top:20px;">
             <div class="section-header">
@@ -3956,13 +4506,14 @@
                     </div>
                     <div onclick="openCard('niranjan')"
                         style="cursor:pointer;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);">
-                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img src="niranjan.jpg"
-                                alt="Niranjan"
+                        <div style="aspect-ratio:1;background:var(--bg-tertiary);overflow:hidden;"><img
+                                src="niranjan.jpg" alt="Niranjan"
                                 style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
                         </div>
                         <div style="padding:16px;text-align:center;">
-                            <h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Niranjan</h4>
-                            <p style="font-size:0.82rem;color:#64748b;font-weight:500;">Advisor & Software Engineer</p>
+                            <h4 style="font-size:1rem;font-weight:600;margin-bottom:2px;">Niranjan P.</h4>
+                            <p style="font-size:0.82rem;color:#64748b;font-weight:500;">Senior Software Engineer &
+                                Advisor</p>
                         </div>
                     </div>
                 </div>
@@ -3996,7 +4547,7 @@
                 var tcData = {
                     ansel: { img: 'ansel1.jpeg', linkedin: 'https://www.linkedin.com/in/ansel-natarajan/', name: 'Ansel Natarajan', role: 'Co-Founder', desc: "Hey! I'm Ansel, I was born and raised in Singapore and have resided here my whole life. After recently graduating high school and working in EdTech, I joined the Singapore Armed Forces (SAF) as part of my Singaporean National Service (NS). Outside of NS, I love weightlifting, reading non-fiction, and I'm slowly forcing myself to become a runner. My experiences traveling around the world have helped to cultivate a deep passion for education, coaching, and helping others fulfill their potential \u2014 IEP Pal is an incarnation of my wildest dreams of empowering those in education." },
                     ian: { img: 'ian.png', linkedin: 'https://www.linkedin.com/in/ian-wilson-a9ab40258/', name: 'Ian Wilson', role: 'Co-Founder and Software Developer', desc: "Hi! I'm Ian, I'm French and Canadian but currently based in Singapore, where I am currently serving my mandatory 2 year national service as an infantry sergeant. I am passionate about exploring studies and careers in Physics, Sustainability, and AI post-NS. I am deeply intrigued by the opportunities that exist at the intersection of these fields and look forward to pursuing them in the future. As a student who went through the majority of my secondary education with an IEP, I hope to be able to contribute meaningfully to the field, and support students the way I would have hoped to have been supported when I was in their shoes." },
-                    niranjan: { img: 'niranjan.jpg', linkedin: '#', name: 'Niranjan', role: 'Advisor & Software Engineer', desc: "I am an engineering leader by profession and a mental health professional by training, with experience building and scaling technology platforms at Dhiway Networks, VMware, and Motorola Solutions. I hold a Master\u2019s degree in Information Technology and completed the GMITE (General Management Programme for IT Executives) at the Indian Institute of Management Bangalore, and I also earned a work-integrated Master\u2019s degree in Psychology driven by a deep interest in human development and behaviour. I am a certified mental health counsellor accredited by the National Institute of Mental Health and Neurosciences (NIMHANS). For over nine years, I have volunteered part-time with Samadhana Counselling Center \u2014 a non-profit providing accessible counselling to children, adolescents, and families \u2014 as a personal commitment to serving and supporting others. Through this platform, I bring together technology leadership, management training, and lived counselling experience to create thoughtful, individualized educational support for every child." }
+                    niranjan: { img: 'niranjan.jpg', linkedin: '#', name: 'Niranjan', role: 'Advisor & Software Engineer', desc: "I am an engineering leader by profession and a mental health professional by training. I have experience building and scaling technology platforms at Dhiway Networks, VMware, and Motorola Solutions. I hold a Master\u2019s degree in Information Technology and completed the GMITE (General Management Programme for IT Executives) at the Indian Institute of Management Bangalore; Moreover, I earned a work-integrated Master\u2019s degree in Psychology driven by a deep interest in human development and behaviour. I am a certified mental health counsellor accredited by the National Institute of Mental Health and Neurosciences (NIMHANS). For over nine years, I have volunteered part-time with Samadhana Counselling Center \u2014 a non-profit providing accessible counselling to children, adolescents, and families \u2014 as a personal commitment to serving and supporting others. Through this platform, I bring together technology leadership, management training, and lived counselling experience to create thoughtful, individualized educational support for every child." }
                 };
                 var tcOpen = null;
                 function openCard(who) {
@@ -4185,7 +4736,7 @@
                 <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
                     <span
                         style="background:#ef4444;color:white;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em;">Latest</span>
-                    <span style="color:var(--text-muted);font-size:0.85rem;">Feb 20, 2026</span>
+                    <span style="color:var(--text-muted);font-size:0.85rem;">March 1st, 2026</span>
                     <span style="color:var(--text-muted);font-size:0.85rem;margin-left:auto;">2 min read</span>
                 </div>
                 <div
@@ -4319,18 +4870,25 @@
 
             <!-- Tab switcher -->
             <div style="max-width:720px;margin:0 auto;">
-                <div class="contact-tabs" style="display:flex;gap:4px;background:var(--bg-tertiary);border-radius:var(--radius-md);padding:4px;margin-bottom:32px;">
+                <div class="contact-tabs"
+                    style="display:flex;gap:4px;background:var(--bg-tertiary);border-radius:var(--radius-md);padding:4px;margin-bottom:32px;">
                     <button class="contact-tab active" data-contact-tab="demo"
                         style="flex:1;padding:12px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border:none;display:flex;align-items:center;justify-content:center;gap:8px;">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                            <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><circle cx="8" cy="14" r="1.5"/><path d="M13 13h4M13 16h2.5"/>
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"
+                            viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="14" rx="2" />
+                            <path d="M3 8h18" />
+                            <circle cx="8" cy="14" r="1.5" />
+                            <path d="M13 13h4M13 16h2.5" />
                         </svg>
                         Book a Demo
                     </button>
                     <button class="contact-tab" data-contact-tab="general"
                         style="flex:1;padding:12px 20px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border:none;display:flex;align-items:center;justify-content:center;gap:8px;">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"
+                            viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
                         </svg>
                         Contact Us
                     </button>
@@ -4344,8 +4902,11 @@
                         <input type="hidden" name="subject" value="Demo Request - IEP Pal Website">
                         <input type="hidden" name="from_name" value="IEP Pal Website">
                         <div style="margin-bottom:20px;">
-                            <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">Schedule a Demo</h3>
-                            <p style="color:var(--text-muted);font-size:0.85rem;">See IEP Pal in action. We'll walk you through the platform and answer any questions.</p>
+                            <h3
+                                style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">
+                                Schedule a Demo</h3>
+                            <p style="color:var(--text-muted);font-size:0.85rem;">See IEP Pal in action. We'll walk you
+                                through the platform and answer any questions.</p>
                         </div>
                         <div class="contact-fields"
                             style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
@@ -4356,16 +4917,18 @@
                         </div>
                         <div class="contact-fields"
                             style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-                            <div class="form-group" style="margin-bottom:0;"><label>School / Organization</label><input name="organization"
-                                    type="text" placeholder="Lincoln Elementary" /></div>
+                            <div class="form-group" style="margin-bottom:0;"><label>School / Organization</label><input
+                                    name="organization" type="text" placeholder="Lincoln Elementary" /></div>
                             <div class="form-group" style="margin-bottom:0;"><label>Role</label><input name="role"
                                     type="text" placeholder="SpEd Teacher" /></div>
                         </div>
                         <div class="form-group"><label>What are you hoping to see?</label><textarea name="message"
-                                placeholder="e.g. IEP tracking for 30+ students, data collection features..." rows="3"></textarea></div>
+                                placeholder="e.g. IEP tracking for 30+ students, data collection features..."
+                                rows="3"></textarea></div>
                         <button type="submit" class="btn-accent demo-submit-btn"
                             style="width:100%;justify-content:center;margin-top:4px;">
-                            Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                            Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 16 16">
                                 <path d="M3 8h10M9 4l4 4-4 4" />
                             </svg>
                         </button>
@@ -4380,8 +4943,11 @@
                         <input type="hidden" name="subject" value="New Contact - IEP Pal Website">
                         <input type="hidden" name="from_name" value="IEP Pal Website">
                         <div style="margin-bottom:20px;">
-                            <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">Send a Message</h3>
-                            <p style="color:var(--text-muted);font-size:0.85rem;">Questions, feedback, or just want to say hi? We'd love to hear from you.</p>
+                            <h3
+                                style="font-family:var(--font-display);font-size:1.25rem;font-weight:500;margin-bottom:4px;">
+                                Send a Message</h3>
+                            <p style="color:var(--text-muted);font-size:0.85rem;">Questions, feedback, or just want to
+                                say hi? We'd love to hear from you.</p>
                         </div>
                         <div class="contact-fields"
                             style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
@@ -4394,7 +4960,8 @@
                                 placeholder="Tell us about your needs..." required></textarea></div>
                         <button type="submit" id="cf-btn" class="btn-accent"
                             style="width:100%;justify-content:center;margin-top:4px;">
-                            Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                            Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 16 16">
                                 <path d="M3 8h10M9 4l4 4-4 4" />
                             </svg>
                         </button>
@@ -4408,40 +4975,52 @@
                 background: transparent;
                 color: var(--text-muted);
             }
+
             .contact-tab.active {
                 background: var(--bg-card);
                 color: var(--text-primary);
-                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             }
+
             .contact-tab:hover:not(.active) {
                 color: var(--text-secondary);
             }
+
             .contact-panel {
                 display: none;
             }
+
             .contact-panel.active {
                 display: block;
                 animation: contactFadeIn 0.3s ease;
             }
+
             @keyframes contactFadeIn {
-                from { opacity: 0; transform: translateY(8px); }
-                to { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(8px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
 
         <script>
             /* Contact tab switching */
-            document.querySelectorAll('.contact-tab').forEach(function(tab) {
-                tab.addEventListener('click', function() {
-                    document.querySelectorAll('.contact-tab').forEach(function(t) { t.classList.remove('active'); });
-                    document.querySelectorAll('.contact-panel').forEach(function(p) { p.classList.remove('active'); });
+            document.querySelectorAll('.contact-tab').forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    document.querySelectorAll('.contact-tab').forEach(function (t) { t.classList.remove('active'); });
+                    document.querySelectorAll('.contact-panel').forEach(function (p) { p.classList.remove('active'); });
                     tab.classList.add('active');
                     document.getElementById('contact-panel-' + tab.dataset.contactTab).classList.add('active');
                 });
             });
 
             /* Demo form submission */
-            document.getElementById('demo-form').addEventListener('submit', function(e) {
+            document.getElementById('demo-form').addEventListener('submit', function (e) {
                 e.preventDefault();
                 var btn = this.querySelector('.demo-submit-btn');
                 btn.disabled = true;
@@ -4451,12 +5030,12 @@
                 fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
-                }).then(function(res) { return res.json(); }).then(function(data) {
+                }).then(function (res) { return res.json(); }).then(function (data) {
                     if (data.success) {
                         btn.textContent = 'Request Sent!';
                         btn.style.background = '#22c55e';
                         form.reset();
-                        setTimeout(function() {
+                        setTimeout(function () {
                             btn.disabled = false;
                             btn.style.background = '';
                             btn.innerHTML = 'Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
@@ -4464,11 +5043,11 @@
                     } else {
                         btn.textContent = 'Error - try again';
                         btn.disabled = false;
-                        setTimeout(function() {
+                        setTimeout(function () {
                             btn.innerHTML = 'Request Demo <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
                         }, 2000);
                     }
-                }).catch(function() {
+                }).catch(function () {
                     btn.textContent = 'Error - try again';
                     btn.disabled = false;
                 });
@@ -4897,9 +5476,9 @@
                         <div class="help-answer" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
                             <div
                                 style="padding:0 24px 20px;color:var(--text-secondary);font-size:0.9rem;line-height:1.7;border-top:1px solid var(--border-subtle);padding-top:16px;">
-                                First, begin by creating a class. Click "+ New Classroom" in the top right. Fill up your
+                                First, begin by creating a class. Click "+ New Classroom" in the top right. Fill in your
                                 class details. Once inside, click "+ Add Student," which is the middle button on the top
-                                right. Once your student is added, click on their profile and fill up the IEP template
+                                right. Once your student is added, click on their profile and fill in the IEP template
                                 present. If your IEP Template is not viewing, contact your administrator.
                             </div>
                         </div>
@@ -5276,7 +5855,7 @@
                 var el = t.closest(interactiveSelectors);
                 el.style.transition = 'transform 0.1s';
                 el.style.transform = 'scale(0.95)';
-                setTimeout(function() { el.style.transform = ''; }, 150);
+                setTimeout(function () { el.style.transform = ''; }, 150);
                 return;
             }
             var demo = e.currentTarget;
